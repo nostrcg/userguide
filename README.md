@@ -1,41 +1,41 @@
-# Website
+# Nostr User Guide
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+A friendly, user-focused guide to getting started with Nostr - the decentralized social network.
 
-## Installation
+**Live Site:** https://nostrcg.github.io/userguide/
 
-```bash
-yarn
-```
+## Contents
 
-## Local Development
+- **Getting Started** - What is Nostr, why use it, quick start guide
+- **Clients** - Mobile, web, and desktop app recommendations
+- **Using Nostr** - Posting, following, messaging, zaps, relays
+- **Account** - Profile setup, verification, key backup, multi-client use
+- **Help** - FAQ, troubleshooting, glossary, resources
 
-```bash
-yarn start
-```
+## Related
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- [Nostr Developer Guide](https://nostrcg.github.io/devguide/) - Technical documentation for developers
+- [W3C Nostr Community Group](https://www.w3.org/community/nostr/)
 
-## Build
+## Development
 
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+This site is built with [Docusaurus](https://docusaurus.io/).
 
 ```bash
-USE_SSH=true yarn deploy
+# Install dependencies
+npm install
+
+# Start local dev server
+npm start
+
+# Build for production
+npm run build
 ```
 
-Not using SSH:
+## Contributing
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+Contributions welcome! Please submit issues and pull requests.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## License
+
+Content is available under Creative Commons. See individual files for details.
