@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Specialized Clients | Nostr User Guide</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" property="og:url" content="https://nostrcg.github.io/userguide/clients/specialized"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Specialized Clients | Nostr User Guide"><meta data-rh="true" name="description" content="Nostr apps for specific use cases"><meta data-rh="true" property="og:description" content="Nostr apps for specific use cases"><link data-rh="true" rel="icon" href="/userguide/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://nostrcg.github.io/userguide/clients/specialized"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/clients/specialized" hreflang="en"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/clients/specialized" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Specialized Clients","item":"https://nostrcg.github.io/userguide/clients/specialized"}]}</script><link rel="stylesheet" href="/userguide/assets/css/styles.fcc1196d.css">
-<script src="/userguide/assets/js/runtime~main.1d404eda.js" defer="defer"></script>
+<script src="/userguide/assets/js/runtime~main.69d35716.js" defer="defer"></script>
 <script src="/userguide/assets/js/main.6e657376.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -118,12 +118,66 @@
 <li class="">Moderated spaces</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chachi">Chachi<a href="#chachi" class="hash-link" aria-label="Direct link to Chachi" title="Direct link to Chachi" translate="no">​</a></h3>
+<p>Chachi is a <strong>relay-based group chat client</strong> implementing NIP-29, built by <a href="https://njump.me/npub107jk7htfv243u0x5ynn43scq9wrxtaasmrwwa8lfu2ydwag6cx2quqncxg" target="_blank" rel="noopener noreferrer" class="">Verbiricha</a> (creator of Habla.news). It&#x27;s designed to be mobile-friendly, bandwidth efficient, and interoperable with all kinds of content.</p>
 <ul>
 <li class=""><strong>URL:</strong> <a href="https://chachi.chat" target="_blank" rel="noopener noreferrer" class="">chachi.chat</a></li>
-<li class="">NIP-29 group chat implementation</li>
-<li class="">Relay-based groups</li>
-<li class="">Private team communication</li>
+<li class=""><strong>Source:</strong> <a href="https://git.v0l.io/verbiricha/chachi" target="_blank" rel="noopener noreferrer" class="">git.v0l.io/verbiricha/chachi</a></li>
+<li class=""><strong>License:</strong> MIT (Open Source)</li>
 </ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-chachi-different">What Makes Chachi Different<a href="#what-makes-chachi-different" class="hash-link" aria-label="Direct link to What Makes Chachi Different" title="Direct link to What Makes Chachi Different" translate="no">​</a></h4>
+<p>Unlike traditional chat apps, Chachi uses <strong>NIP-29 relay-based groups</strong>:</p>
+<table><thead><tr><th>Traditional Chat</th><th>Chachi (NIP-29)</th></tr></thead><tbody><tr><td>Company controls your data</td><td>Community chooses where data lives</td></tr><tr><td>Locked to one platform</td><td>Interoperable with other NIP-29 clients</td></tr><tr><td>Lose access if banned</td><td>Move groups to different relays</td></tr><tr><td>Centralized servers</td><td>Decentralized relay infrastructure</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-features">Core Features<a href="#core-features" class="hash-link" aria-label="Direct link to Core Features" title="Direct link to Core Features" translate="no">​</a></h4>
+<p><strong>Group Management:</strong></p>
+<ul>
+<li class="">Create, edit, join, and leave groups</li>
+<li class="">Bookmark favorite groups</li>
+<li class="">Accept/reject membership requests (for admins)</li>
+<li class="">Delete events and moderate content</li>
+<li class="">Role-based administration</li>
+</ul>
+<p><strong>Chat &amp; Content:</strong></p>
+<ul>
+<li class="">Real-time messaging with threading</li>
+<li class="">Posts with NIP-22 comment support</li>
+<li class="">Unread message counters</li>
+<li class="">Support for text notes, polls, highlights</li>
+<li class="">Custom emoji support</li>
+</ul>
+<p><strong>Planned Features (OpenSats Grant):</strong></p>
+<ul>
+<li class="">Long-form content, video, audio, wikis</li>
+<li class="">Calendar events for group scheduling</li>
+<li class="">NIP-17 direct messages</li>
+<li class="">PWA for mobile installation</li>
+<li class="">Zaps integration</li>
+<li class="">NIP-46/NIP-55 login methods</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-nip-29-groups-work">How NIP-29 Groups Work<a href="#how-nip-29-groups-work" class="hash-link" aria-label="Direct link to How NIP-29 Groups Work" title="Direct link to How NIP-29 Groups Work" translate="no">​</a></h4>
+<p>Groups are hosted on relays and identified like: <code>groups.0xchat.com&#x27;groupname</code></p>
+<p><strong>Group Types:</strong></p>
+<ul>
+<li class=""><strong>Public/Open</strong> — Anyone can read and join freely</li>
+<li class=""><strong>Public/Closed</strong> — Anyone can read, but joining requires approval</li>
+<li class=""><strong>Private/Open</strong> — Members only read, anyone can request to join</li>
+<li class=""><strong>Private/Closed</strong> — Members only, admin approval required</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started-with-chachi">Getting Started with Chachi<a href="#getting-started-with-chachi" class="hash-link" aria-label="Direct link to Getting Started with Chachi" title="Direct link to Getting Started with Chachi" translate="no">​</a></h4>
+<ol>
+<li class="">Visit <a href="https://chachi.chat" target="_blank" rel="noopener noreferrer" class="">chachi.chat</a></li>
+<li class="">Login with your Nostr key (or browser extension)</li>
+<li class="">Browse available groups or create your own</li>
+<li class="">Join the official Chachi group: <code>chachi.chat/groups.0xchat.com/chachi</code></li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-cases">Use Cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Open source projects</strong> — Coordinate development</li>
+<li class=""><strong>Local meetups</strong> — Organize events and discussions</li>
+<li class=""><strong>Topic communities</strong> — Create spaces around interests</li>
+<li class=""><strong>Private teams</strong> — Secure team communication</li>
+<li class=""><strong>Study groups</strong> — Collaborative learning</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Blossom Integration</div><div class="admonitionContent_BuS1"><p>Chachi uses <a class="" href="/userguide/clients/specialized#blossom">Blossom</a> for file hosting, so your media is also decentralized and censorship-resistant.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zapddit">Zapddit<a href="#zapddit" class="hash-link" aria-label="Direct link to Zapddit" title="Direct link to Zapddit" translate="no">​</a></h3>
 <ul>
 <li class="">Reddit-style client for Nostr</li>
@@ -245,7 +299,7 @@
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary-table">Summary Table<a href="#summary-table" class="hash-link" aria-label="Direct link to Summary Table" title="Direct link to Summary Table" translate="no">​</a></h2>
-<table><thead><tr><th>Category</th><th>App</th><th>Platform</th></tr></thead><tbody><tr><td>Long-form</td><td>Habla, Yakihonne</td><td>Web</td></tr><tr><td>Photos</td><td>Olas</td><td>Mobile/Web</td></tr><tr><td>Streaming</td><td>Zap.stream</td><td>Web</td></tr><tr><td>Podcasts</td><td>Fountain</td><td>Mobile</td></tr><tr><td>Music</td><td>Wavlake</td><td>Web</td></tr><tr><td>Chat</td><td>0xchat, Flotilla</td><td>Mobile/Web</td></tr><tr><td>Communities</td><td>Satellite, Zapddit</td><td>Web</td></tr><tr><td>Marketplace</td><td>Shopstr, Mostro</td><td>Web</td></tr><tr><td>Gaming</td><td>Jester, POGN</td><td>Web</td></tr><tr><td>Media Hosting</td><td>Blossom servers</td><td>Web</td></tr><tr><td>Code</td><td>GitWorkshop</td><td>Web</td></tr></tbody></table>
+<table><thead><tr><th>Category</th><th>App</th><th>Platform</th></tr></thead><tbody><tr><td>Long-form</td><td>Habla, Yakihonne</td><td>Web</td></tr><tr><td>Photos</td><td>Olas</td><td>Mobile/Web</td></tr><tr><td>Streaming</td><td>Zap.stream</td><td>Web</td></tr><tr><td>Podcasts</td><td>Fountain</td><td>Mobile</td></tr><tr><td>Music</td><td>Wavlake</td><td>Web</td></tr><tr><td>Chat</td><td>0xchat, Flotilla</td><td>Mobile/Web</td></tr><tr><td>Group Chat</td><td>Chachi (NIP-29)</td><td>Web/PWA</td></tr><tr><td>Communities</td><td>Satellite, Zapddit</td><td>Web</td></tr><tr><td>Marketplace</td><td>Shopstr, Mostro</td><td>Web</td></tr><tr><td>Gaming</td><td>Jester, POGN</td><td>Web</td></tr><tr><td>Media Hosting</td><td>Blossom servers</td><td>Web</td></tr><tr><td>Code</td><td>GitWorkshop</td><td>Web</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="one-account-for-everything">One Account for Everything<a href="#one-account-for-everything" class="hash-link" aria-label="Direct link to One Account for Everything" title="Direct link to One Account for Everything" translate="no">​</a></h2>
 <p>Remember: your Nostr keys work in <strong>all</strong> these apps!</p>
 <p><img decoding="async" loading="lazy" alt="One Identity, Many Apps" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjI4MCIgdmlld0JveD0iMCAwIDcwMCAyODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImtleUdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzhCNUNGNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3QzNBRUQiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImFwcEdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzA2QjZENCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwODkxQjIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJzaGFkb3ciIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVEcm9wU2hhZG93IGR4PSIyIiBkeT0iMiIgc3RkRGV2aWF0aW9uPSIzIiBmbG9vZC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCAtLT4KICA8cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2Y4ZmFmYyIgcng9IjEyIi8+CgogIDwhLS0gWW91ciBLZXlzIChDZW50ZXIgVG9wKSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTAsIDYwKSI+CiAgICA8cmVjdCB4PSItNzAiIHk9Ii0zNSIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3MCIgcng9IjEyIiBmaWxsPSJ1cmwoI2tleUdyYWRpZW50KSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiLz4KICAgIDx0ZXh0IHk9Ii01IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjcwMCI+WW91ciBLZXlzPC90ZXh0PgogICAgPHRleHQgeT0iMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxMSI+KE9uZSBJZGVudGl0eSk8L3RleHQ+CiAgPC9nPgoKICA8IS0tIENvbm5lY3RpbmcgTGluZXMgLS0+CiAgPGcgc3Ryb2tlPSIjOEI1Q0Y2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQsNCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBkPSJNIDM1MCA5NSBMIDM1MCAxNDAgTCA4MCAxNDAgTCA4MCAxNzAiLz4KICAgIDxwYXRoIGQ9Ik0gMzUwIDk1IEwgMzUwIDE0MCBMIDIwNSAxNDAgTCAyMDUgMTcwIi8+CiAgICA8cGF0aCBkPSJNIDM1MCA5NSBMIDM1MCAxNzAiLz4KICAgIDxwYXRoIGQ9Ik0gMzUwIDk1IEwgMzUwIDE0MCBMIDQ5NSAxNDAgTCA0OTUgMTcwIi8+CiAgICA8cGF0aCBkPSJNIDM1MCA5NSBMIDM1MCAxNDAgTCA2MjAgMTQwIEwgNjIwIDE3MCIvPgogIDwvZz4KCiAgPCEtLSBBcHAgQm94ZXMgLS0+CiAgPCEtLSBEYW11cyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MCwgMjEwKSI+CiAgICA8cmVjdCB4PSItNTUiIHk9Ii0zNSIgd2lkdGg9IjExMCIgaGVpZ2h0PSI3MCIgcng9IjEwIiBmaWxsPSJ1cmwoI2FwcEdyYWRpZW50KSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiLz4KICAgIDx0ZXh0IHk9Ii01IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjYwMCI+RGFtdXM8L3RleHQ+CiAgICA8dGV4dCB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjgpIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjEwIj5Tb2NpYWw8L3RleHQ+CiAgPC9nPgoKICA8IS0tIEhhYmxhIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwNSwgMjEwKSI+CiAgICA8cmVjdCB4PSItNTUiIHk9Ii0zNSIgd2lkdGg9IjExMCIgaGVpZ2h0PSI3MCIgcng9IjEwIiBmaWxsPSJ1cmwoI2FwcEdyYWRpZW50KSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiLz4KICAgIDx0ZXh0IHk9Ii01IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjYwMCI+SGFibGE8L3RleHQ+CiAgICA8dGV4dCB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjgpIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjEwIj5CbG9nczwvdGV4dD4KICA8L2c+CgogIDwhLS0gT2xhcyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTAsIDIxMCkiPgogICAgPHJlY3QgeD0iLTU1IiB5PSItMzUiIHdpZHRoPSIxMTAiIGhlaWdodD0iNzAiIHJ4PSIxMCIgZmlsbD0idXJsKCNhcHBHcmFkaWVudCkiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+CiAgICA8dGV4dCB5PSItNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiPk9sYXM8L3RleHQ+CiAgICA8dGV4dCB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjgpIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjEwIj5QaG90b3M8L3RleHQ+CiAgPC9nPgoKICA8IS0tIFphcC5zdHJlYW0gLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDk1LCAyMTApIj4KICAgIDxyZWN0IHg9Ii01NSIgeT0iLTM1IiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjcwIiByeD0iMTAiIGZpbGw9InVybCgjYXBwR3JhZGllbnQpIiBmaWx0ZXI9InVybCgjc2hhZG93KSIvPgogICAgPHRleHQgeT0iLTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNjAwIj5aYXAuc3RyZWFtPC90ZXh0PgogICAgPHRleHQgeT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxMCI+U3RyZWFtaW5nPC90ZXh0PgogIDwvZz4KCiAgPCEtLSBGb3VudGFpbiAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MjAsIDIxMCkiPgogICAgPHJlY3QgeD0iLTU1IiB5PSItMzUiIHdpZHRoPSIxMTAiIGhlaWdodD0iNzAiIHJ4PSIxMCIgZmlsbD0idXJsKCNhcHBHcmFkaWVudCkiIGZpbHRlcj0idXJsKCNzaGFkb3cpIi8+CiAgICA8dGV4dCB5PSItNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiPkZvdW50YWluPC90ZXh0PgogICAgPHRleHQgeT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxMCI+UG9kY2FzdHM8L3RleHQ+CiAgPC9nPgo8L3N2Zz4K" width="700" height="280" class="img_ev3q"></p>
