@@ -136,10 +136,75 @@ For group discussions.
 
 ### Chachi
 
+Chachi is a **relay-based group chat client** implementing NIP-29, built by [Verbiricha](https://njump.me/npub107jk7htfv243u0x5ynn43scq9wrxtaasmrwwa8lfu2ydwag6cx2quqncxg) (creator of Habla.news). It's designed to be mobile-friendly, bandwidth efficient, and interoperable with all kinds of content.
+
 - **URL:** [chachi.chat](https://chachi.chat)
-- NIP-29 group chat implementation
-- Relay-based groups
-- Private team communication
+- **Source:** [git.v0l.io/verbiricha/chachi](https://git.v0l.io/verbiricha/chachi)
+- **License:** MIT (Open Source)
+
+#### What Makes Chachi Different
+
+Unlike traditional chat apps, Chachi uses **NIP-29 relay-based groups**:
+
+| Traditional Chat | Chachi (NIP-29) |
+|-----------------|-----------------|
+| Company controls your data | Community chooses where data lives |
+| Locked to one platform | Interoperable with other NIP-29 clients |
+| Lose access if banned | Move groups to different relays |
+| Centralized servers | Decentralized relay infrastructure |
+
+#### Core Features
+
+**Group Management:**
+- Create, edit, join, and leave groups
+- Bookmark favorite groups
+- Accept/reject membership requests (for admins)
+- Delete events and moderate content
+- Role-based administration
+
+**Chat & Content:**
+- Real-time messaging with threading
+- Posts with NIP-22 comment support
+- Unread message counters
+- Support for text notes, polls, highlights
+- Custom emoji support
+
+**Planned Features (OpenSats Grant):**
+- Long-form content, video, audio, wikis
+- Calendar events for group scheduling
+- NIP-17 direct messages
+- PWA for mobile installation
+- Zaps integration
+- NIP-46/NIP-55 login methods
+
+#### How NIP-29 Groups Work
+
+Groups are hosted on relays and identified like: `groups.0xchat.com'groupname`
+
+**Group Types:**
+- **Public/Open** — Anyone can read and join freely
+- **Public/Closed** — Anyone can read, but joining requires approval
+- **Private/Open** — Members only read, anyone can request to join
+- **Private/Closed** — Members only, admin approval required
+
+#### Getting Started with Chachi
+
+1. Visit [chachi.chat](https://chachi.chat)
+2. Login with your Nostr key (or browser extension)
+3. Browse available groups or create your own
+4. Join the official Chachi group: `chachi.chat/groups.0xchat.com/chachi`
+
+#### Use Cases
+
+- **Open source projects** — Coordinate development
+- **Local meetups** — Organize events and discussions
+- **Topic communities** — Create spaces around interests
+- **Private teams** — Secure team communication
+- **Study groups** — Collaborative learning
+
+:::tip Blossom Integration
+Chachi uses [Blossom](/clients/specialized#blossom) for file hosting, so your media is also decentralized and censorship-resistant.
+:::
 
 ### Zapddit
 
@@ -293,6 +358,7 @@ For a complete list of Nostr apps:
 | Podcasts | Fountain | Mobile |
 | Music | Wavlake | Web |
 | Chat | 0xchat, Flotilla | Mobile/Web |
+| Group Chat | Chachi (NIP-29) | Web/PWA |
 | Communities | Satellite, Zapddit | Web |
 | Marketplace | Shopstr, Mostro | Web |
 | Gaming | Jester, POGN | Web |
