@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
         'using-nostr/following',
         'using-nostr/messaging',
         'using-nostr/zaps',
+        'using-nostr/wallet-connect',
         'using-nostr/relays',
       ],
     },

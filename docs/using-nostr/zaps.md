@@ -256,6 +256,7 @@ Live streamers receive zaps:
 
 ## Next Steps
 
+- [Wallet Connect (NWC)](/using-nostr/wallet-connect) - One-click zaps from any app
 - [Understanding Relays](/using-nostr/relays)
 - [Profile Setup](/account/profile-setup) - Add your Lightning address
 - [FAQ](/help/faq)
