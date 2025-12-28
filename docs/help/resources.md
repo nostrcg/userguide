@@ -173,7 +173,7 @@ Set up on your own domain - see [Verification guide](/account/verification).
 
 ## Specialized Apps
 
-### Content
+### Content & Media
 
 | Category | Apps |
 |----------|------|
@@ -182,33 +182,60 @@ Set up on your own domain - see [Verification guide](/account/verification).
 | Video | Zap.stream |
 | Podcasts | Fountain |
 | Music | Wavlake |
+| Media Hosting | nostr.build, Blossom servers |
 
 ### Communication
 
 | Category | Apps |
 |----------|------|
-| Chat | 0xchat |
-| Communities | Satellite |
+| Chat | 0xchat, Flotilla |
+| Communities | Satellite, Zapddit, Chachi |
+| Audio Spaces | Nostr Nests |
 
-### Commerce
+### Commerce & Exchange
 
 | Category | Apps |
 |----------|------|
-| Marketplace | Shopstr, Plebeian Market |
+| Marketplace | Shopstr |
+| P2P Exchange | [Mostro](https://mostro.network) |
+
+### Developer & Tools
+
+| Category | Apps |
+|----------|------|
+| Code Collaboration | [GitWorkshop](https://gitworkshop.dev) |
+| Event Explorer | [njump.me](https://njump.me) |
+| Search | [nostr.band](https://nostr.band) |
+
+### Games
+
+| Category | Apps |
+|----------|------|
+| Chess | [Jester](https://jesterui.github.io) |
+| Poker | POGN |
 
 ## Stay Updated
 
+### Weekly Recaps
+
+- [Nostr Weekly Recap](https://medium.com/@nomishkadilshan4) - Weekly updates on new apps and features
+- [The Nostr Review](https://thenostrreview.substack.com/) - Biweekly protocol updates
+
 ### Following Nostr Development
 
-- Follow developers and builders
-- Watch the NIPs repository
+- Follow developers and builders on Nostr
+- Watch the [NIPs repository](https://github.com/nostr-protocol/nips)
 - Join community discussions
+- Subscribe to [nips.nostr.com](https://nips.nostr.com)
 
-### News
+### Hashtags to Follow
 
+- **#nostr** - General discussion
 - **#nostrdev** - Development updates
 - **#grownostr** - Community growth
-- Many builders share updates on Nostr itself!
+- **#asknostr** - Get help
+- **#introductions** - Meet new people
+- **#plebchain** - Bitcoin community
 
 ## Contribute
 

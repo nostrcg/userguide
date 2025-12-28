@@ -20,12 +20,7 @@ Think of Nostr like email, but for social media:
 
 ## How It Works (Simply Put)
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   You       │────▶│   Relays    │◀────│   Others    │
-│  (Client)   │     │  (Servers)  │     │  (Clients)  │
-└─────────────┘     └─────────────┘     └─────────────┘
-```
+![How Nostr Works](/img/diagrams/nostr-flow.svg)
 
 1. **You** use an app (called a "client") to write posts
 2. **Relays** are servers that store and share your posts

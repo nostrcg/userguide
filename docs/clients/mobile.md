@@ -99,19 +99,73 @@ Same great experience as iOS, now on Android.
 
 ---
 
-### Plebstr
+### 0xchat
 
-A straightforward client focused on simplicity.
+A messaging-focused client for private communication.
 
-- **Download:** [Play Store](https://play.google.com/store/apps/details?id=com.plebstr.client)
+- **Download:** [0xchat.com](https://0xchat.com)
 - **Cost:** Free
 
 **Features:**
-- Simple, clean interface
-- Easy onboarding
-- Basic but solid features
+- Encrypted direct messages (NIP-17/NIP-44)
+- Group chats
+- Voice messages
+- Media sharing
 
-**Best for:** Minimalists
+**Best for:** Private messaging, group conversations
+
+---
+
+## Specialized Mobile Apps
+
+### Fountain
+
+Lightning-powered podcast app with Nostr integration.
+
+- **Download:** [App Store](https://apps.apple.com/app/fountain-podcasts/id1514638905) / [Play Store](https://play.google.com/store/apps/details?id=fm.fountain.apps)
+- **Cost:** Free
+
+**Features:**
+- Stream sats to podcasters
+- Nostr profile sync
+- Audio clips appear in Nostr feeds
+- Value-for-value podcasting
+
+**Best for:** Podcast listeners who want to support creators
+
+---
+
+### Amber (Android Signer)
+
+Keep your keys secure with this dedicated signing app.
+
+- **Download:** [F-Droid](https://f-droid.org/en/packages/com.greenart7c3.nostrsigner/) / [GitHub](https://github.com/greenart7c3/Amber)
+- **Cost:** Free
+
+**Features:**
+- NIP-46 signing device
+- Works with Amethyst, 0xchat, Fountain, and web apps
+- Granular permission controls
+- Multiple account support
+- No servers required
+
+**Best for:** Security-conscious users who want to protect their keys
+
+---
+
+### Citrine
+
+Run a Nostr relay on your phone.
+
+- **Download:** [GitHub](https://github.com/nickkatsios/Citrine)
+- **Cost:** Free
+
+**Features:**
+- Personal relay in your pocket
+- Backup your notes locally
+- Works offline
+
+**Best for:** Advanced users wanting relay independence
 
 ---
 

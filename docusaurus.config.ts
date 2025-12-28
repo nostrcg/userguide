@@ -56,9 +56,24 @@ const config: Config = {
           label: 'Guide',
         },
         {
+          to: '/clients/overview',
+          label: 'Clients',
+          position: 'left',
+        },
+        {
+          to: '/help/faq',
+          label: 'FAQ',
+          position: 'left',
+        },
+        {
+          href: 'https://nostrapps.com',
+          label: 'Apps Directory',
+          position: 'left',
+        },
+        {
           href: 'https://nostrcg.github.io/devguide/',
           label: 'Developer Guide',
-          position: 'left',
+          position: 'right',
         },
         {
           href: 'https://github.com/nostrcg/userguide',
@@ -82,6 +97,10 @@ const config: Config = {
               to: '/clients/overview',
             },
             {
+              label: 'Specialized Apps',
+              to: '/clients/specialized',
+            },
+            {
               label: 'FAQ',
               to: '/help/faq',
             },
@@ -98,6 +117,14 @@ const config: Config = {
               label: 'Nostr Apps Directory',
               href: 'https://nostrapps.com',
             },
+            {
+              label: 'Find Relays',
+              href: 'https://nostr.watch',
+            },
+            {
+              label: 'Search Nostr',
+              href: 'https://nostr.band',
+            },
           ],
         },
         {
@@ -106,6 +133,10 @@ const config: Config = {
             {
               label: 'Developer Guide',
               href: 'https://nostrcg.github.io/devguide/',
+            },
+            {
+              label: 'NIPs Reference',
+              href: 'https://nips.nostr.com',
             },
             {
               label: 'GitHub',

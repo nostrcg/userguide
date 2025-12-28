@@ -119,21 +119,36 @@ For private and group conversations.
 
 For group discussions.
 
+### Flotilla
+
+- **URL:** [flotilla.social](https://flotilla.social)
+- Discord-like experience on Nostr
+- "Relays as groups" concept
+- Rooms, channels, and chat
+- DM alerts and notifications
+
 ### Satellite
 
 - **URL:** [satellite.earth](https://satellite.earth)
-- Reddit-style communities
+- Reddit-style communities (NIP-72)
 - Topic-based discussions
 - Moderated spaces
 
-### Nostr Communities
+### Chachi
 
-Many clients support NIP-72 communities:
-- Topic-based groups
-- Moderator controls
-- Threaded discussions
+- **URL:** [chachi.chat](https://chachi.chat)
+- NIP-29 group chat implementation
+- Relay-based groups
+- Private team communication
 
-**Best for:** Group discussions, forums
+### Zapddit
+
+- Reddit-style client for Nostr
+- Follow topics like subreddits
+- Upzap/downzap with sats
+- Mute topics you don't like
+
+**Best for:** Group discussions, forums, team chat
 
 ---
 
@@ -160,13 +175,103 @@ For buying and selling.
 
 ## Games & Entertainment
 
-### Arcade
+### Jester (Chess)
 
-Games built on Nostr with integrated zaps.
+- **URL:** [jesterui.github.io](https://jesterui.github.io)
+- Play chess with anyone over Nostr
+- No account needed - just share a link
+- Decentralized game state
+
+### POGN (Poker)
+
+- **URL:** [GitHub](https://github.com/jalToorey/pogn)
+- Poker and other games on Nostr
+- Peer-to-peer card games
+- Mental poker implementation
 
 ### Nostr Nests
 
-Audio spaces (like Twitter Spaces/Clubhouse)
+- Audio spaces (like Twitter Spaces/Clubhouse)
+- Live audio conversations
+- Zap speakers in real-time
+
+**Best for:** Gaming and social audio
+
+---
+
+## P2P Exchange
+
+### Mostro
+
+- **URL:** [mostro.network](https://mostro.network)
+- Lightning Network P2P exchange
+- No KYC required
+- Censorship-resistant trading
+- Escrow protection
+- Buy/sell Bitcoin for any currency
+
+**Best for:** Private, decentralized Bitcoin trading
+
+---
+
+## Media Hosting
+
+### Blossom
+
+Blossom is a protocol for decentralized media hosting on Nostr.
+
+**How it works:**
+- Upload images/videos to Blossom-compatible servers
+- Files are addressed by sha256 hash
+- Mirror to multiple servers for redundancy
+- If one server censors you, switch to another
+
+**Blossom Servers:**
+- [nostr.build](https://nostr.build) - Popular, free hosting
+- [blosstr.com](https://blosstr.com) - Enterprise-grade hosting
+- [nostrmedia.com](https://nostrmedia.com) - Image & video hosting
+
+**Best for:** Censorship-resistant media storage
+
+---
+
+## Code Collaboration
+
+### GitWorkshop
+
+- **URL:** [gitworkshop.dev](https://gitworkshop.dev)
+- Decentralized GitHub alternative
+- Issues and pull requests over Nostr
+- Repository discovery
+- NIP-34 compliant
+
+### Gitstr
+
+- **URL:** [GitHub](https://github.com/fiatjaf/gitstr)
+- Send and receive git patches over Nostr
+- No central server needed
+- Announce repos to relays
+
+**Best for:** Developers wanting decentralized code collaboration
+
+---
+
+## AI & Data Services
+
+### Data Vending Machines (DVMs)
+
+DVMs allow AI and computational services to be offered over Nostr:
+- Request AI processing (translations, summaries, image generation)
+- Pay with Lightning
+- Decentralized marketplace for compute
+
+### MCP Bridge
+
+- Connects AI agents (like Claude) to Nostr
+- AI can read and write to Nostr
+- Decentralized AI tool discovery
+
+**Best for:** AI enthusiasts, developers building AI-powered apps
 
 ---
 
@@ -201,33 +306,24 @@ For a complete list of Nostr apps:
 
 | Category | App | Platform |
 |----------|-----|----------|
-| Long-form | Habla | Web |
-| Long-form | Yakihonne | Web |
-| Photos | Olas | Mobile |
+| Long-form | Habla, Yakihonne | Web |
+| Photos | Olas | Mobile/Web |
 | Streaming | Zap.stream | Web |
 | Podcasts | Fountain | Mobile |
 | Music | Wavlake | Web |
-| Chat | 0xchat | Mobile |
-| Communities | Satellite | Web |
-| Marketplace | Shopstr | Web |
+| Chat | 0xchat, Flotilla | Mobile/Web |
+| Communities | Satellite, Zapddit | Web |
+| Marketplace | Shopstr, Mostro | Web |
+| Gaming | Jester, POGN | Web |
+| Media Hosting | Blossom servers | Web |
+| Code | GitWorkshop | Web |
+| AI/DVMs | Various | Web |
 
 ## One Account for Everything
 
 Remember: your Nostr keys work in **all** these apps!
 
-```
-                    ┌─────────────┐
-                    │  Your Keys  │
-                    └──────┬──────┘
-                           │
-    ┌─────────┬─────────┬──┴──┬─────────┬─────────┐
-    ▼         ▼         ▼     ▼         ▼         ▼
- ┌─────┐  ┌─────┐  ┌─────┐ ┌─────┐  ┌─────┐  ┌─────┐
- │Damus│  │Habla│  │Olas │ │0xchat│ │Zap. │  │Foun-│
- │     │  │     │  │     │ │     │  │stream│ │tain │
- └─────┘  └─────┘  └─────┘ └─────┘  └─────┘  └─────┘
-  Social   Blogs   Photos   Chat   Streaming Podcasts
-```
+![One Identity, Many Apps](/img/diagrams/one-identity-many-apps.svg)
 
 - Post on Damus
 - Write on Habla
