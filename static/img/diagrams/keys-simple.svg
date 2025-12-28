@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="180" viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="publicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="privateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="180" fill="#f8fafc" rx="8"/>
+
+  <!-- Public Key -->
+  <g transform="translate(125, 90)">
+    <rect x="-100" y="-50" width="200" height="100" rx="12" fill="url(#publicGradient)" filter="url(#shadow)"/>
+    <text y="-15" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="700">Public Key</text>
+    <text y="5" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="12">npub1...</text>
+    <text y="30" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11">✓ Share freely</text>
+  </g>
+
+  <!-- Private Key -->
+  <g transform="translate(375, 90)">
+    <rect x="-100" y="-50" width="200" height="100" rx="12" fill="url(#privateGradient)" filter="url(#shadow)"/>
+    <text y="-15" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="700">Private Key</text>
+    <text y="5" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="12">nsec1...</text>
+    <text y="30" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11">⚠ Never share!</text>
+  </g>
+</svg>
