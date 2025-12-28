@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-using-nostr/messaging" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Messaging | Nostr User Guide</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" property="og:url" content="https://nostrcg.github.io/userguide/using-nostr/messaging"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Messaging | Nostr User Guide"><meta data-rh="true" name="description" content="Private and direct messaging on Nostr"><meta data-rh="true" property="og:description" content="Private and direct messaging on Nostr"><link data-rh="true" rel="icon" href="/userguide/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://nostrcg.github.io/userguide/using-nostr/messaging"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/using-nostr/messaging" hreflang="en"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/using-nostr/messaging" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Messaging","item":"https://nostrcg.github.io/userguide/using-nostr/messaging"}]}</script><link rel="stylesheet" href="/userguide/assets/css/styles.fcc1196d.css">
+<script src="/userguide/assets/js/runtime~main.70971613.js" defer="defer"></script>
+<script src="/userguide/assets/js/main.731a2753.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/userguide/img/logo.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/userguide/"><div class="navbar__logo"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"></div><b class="navbar__title text--truncate">Nostr User Guide</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/userguide/">Guide</a><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/userguide/"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/"><span title="What is Nostr?" class="linkLabel_WmDU">What is Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/why-nostr"><span title="Why Nostr?" class="linkLabel_WmDU">Why Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/quick-start"><span title="Quick Start" class="linkLabel_WmDU">Quick Start</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/your-identity"><span title="Your Identity" class="linkLabel_WmDU">Your Identity</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/clients/overview"><span title="Clients" class="categoryLinkLabel_W154">Clients</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/userguide/using-nostr/posting"><span title="Using Nostr" class="categoryLinkLabel_W154">Using Nostr</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/using-nostr/posting"><span title="Posting" class="linkLabel_WmDU">Posting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/using-nostr/following"><span title="Following" class="linkLabel_WmDU">Following</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/userguide/using-nostr/messaging"><span title="Messaging" class="linkLabel_WmDU">Messaging</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/using-nostr/zaps"><span title="Zaps &amp; Lightning" class="linkLabel_WmDU">Zaps &amp; Lightning</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/using-nostr/relays"><span title="Relays" class="linkLabel_WmDU">Relays</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/account/profile-setup"><span title="Your Account" class="categoryLinkLabel_W154">Your Account</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/help/faq"><span title="Help" class="categoryLinkLabel_W154">Help</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/userguide/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Using Nostr</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Messaging</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Direct Messaging</h1></header>
+<p>Nostr supports private messaging between users. Here&#x27;s how it works and how to use it securely.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-dms-work">How DMs Work<a href="#how-dms-work" class="hash-link" aria-label="Direct link to How DMs Work" title="Direct link to How DMs Work" translate="no">​</a></h2>
+<p>Direct messages on Nostr are:</p>
+<ul>
+<li class=""><strong>Encrypted</strong> - Only sender and recipient can read</li>
+<li class=""><strong>Stored on relays</strong> - Like other events</li>
+<li class=""><strong>Linked to your identity</strong> - Uses your keys</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">┌─────────┐     Encrypted     ┌─────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   You   │ ────────────────▶ │ Relays  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│ (send)  │                   │ (store) │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└─────────┘                   └────┬────┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                   │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                              Encrypted</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                   │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                   ▼</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                             ┌─────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                             │ Friend  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                             │(receive)│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                             └─────────┘</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="encryption-versions">Encryption Versions<a href="#encryption-versions" class="hash-link" aria-label="Direct link to Encryption Versions" title="Direct link to Encryption Versions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nip-04-legacy">NIP-04 (Legacy)<a href="#nip-04-legacy" class="hash-link" aria-label="Direct link to NIP-04 (Legacy)" title="Direct link to NIP-04 (Legacy)" translate="no">​</a></h3>
+<p>The original DM encryption:</p>
+<ul>
+<li class="">Widely supported</li>
+<li class="">Has known limitations</li>
+<li class="">Being phased out</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nip-44-modern">NIP-44 (Modern)<a href="#nip-44-modern" class="hash-link" aria-label="Direct link to NIP-44 (Modern)" title="Direct link to NIP-44 (Modern)" translate="no">​</a></h3>
+<p>The newer, more secure version:</p>
+<ul>
+<li class="">Stronger encryption</li>
+<li class="">Better privacy</li>
+<li class="">Not all clients support yet</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Check Your Client</div><div class="admonitionContent_BuS1"><p>Look for &quot;NIP-44&quot; or &quot;Encrypted DMs&quot; in your client&#x27;s features to know which version it uses.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sending-messages">Sending Messages<a href="#sending-messages" class="hash-link" aria-label="Direct link to Sending Messages" title="Direct link to Sending Messages" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-steps">Basic Steps<a href="#basic-steps" class="hash-link" aria-label="Direct link to Basic Steps" title="Direct link to Basic Steps" translate="no">​</a></h3>
+<ol>
+<li class="">Open someone&#x27;s profile</li>
+<li class="">Look for the message/DM icon</li>
+<li class="">Write your message</li>
+<li class="">Send!</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="in-different-clients">In Different Clients<a href="#in-different-clients" class="hash-link" aria-label="Direct link to In Different Clients" title="Direct link to In Different Clients" translate="no">​</a></h3>
+<table><thead><tr><th>Client</th><th>How to DM</th></tr></thead><tbody><tr><td>Damus</td><td>Profile → Message icon</td></tr><tr><td>Primal</td><td>Profile → Message</td></tr><tr><td>Amethyst</td><td>Profile → Message</td></tr><tr><td>0xchat</td><td>Built for messaging</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reading-messages">Reading Messages<a href="#reading-messages" class="hash-link" aria-label="Direct link to Reading Messages" title="Direct link to Reading Messages" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inbox">Inbox<a href="#inbox" class="hash-link" aria-label="Direct link to Inbox" title="Direct link to Inbox" translate="no">​</a></h3>
+<p>Most clients have a messages section:</p>
+<ul>
+<li class="">Look for envelope or chat icon</li>
+<li class="">May show unread count</li>
+<li class="">Organized by conversation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="notifications">Notifications<a href="#notifications" class="hash-link" aria-label="Direct link to Notifications" title="Direct link to Notifications" translate="no">​</a></h3>
+<p>Get notified of new messages:</p>
+<ul>
+<li class="">Push notifications (mobile)</li>
+<li class="">In-app badges</li>
+<li class="">Depends on client settings</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="group-messaging">Group Messaging<a href="#group-messaging" class="hash-link" aria-label="Direct link to Group Messaging" title="Direct link to Group Messaging" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="encrypted-groups">Encrypted Groups<a href="#encrypted-groups" class="hash-link" aria-label="Direct link to Encrypted Groups" title="Direct link to Encrypted Groups" translate="no">​</a></h3>
+<p>Some clients support group DMs:</p>
+<ul>
+<li class="">Multiple participants</li>
+<li class="">Encrypted for all members</li>
+<li class="">Features vary by client</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="0xchat">0xchat<a href="#0xchat" class="hash-link" aria-label="Direct link to 0xchat" title="Direct link to 0xchat" translate="no">​</a></h3>
+<p>Specialized for messaging:</p>
+<ul>
+<li class="">Group chats</li>
+<li class="">Voice messages</li>
+<li class="">Media sharing</li>
+<li class="">Mobile-first design</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="privacy-considerations">Privacy Considerations<a href="#privacy-considerations" class="hash-link" aria-label="Direct link to Privacy Considerations" title="Direct link to Privacy Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-encrypted">What&#x27;s Encrypted<a href="#whats-encrypted" class="hash-link" aria-label="Direct link to What&#x27;s Encrypted" title="Direct link to What&#x27;s Encrypted" translate="no">​</a></h3>
+<p>✅ Message content
+✅ Media in messages (usually)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-visible">What&#x27;s Visible<a href="#whats-visible" class="hash-link" aria-label="Direct link to What&#x27;s Visible" title="Direct link to What&#x27;s Visible" translate="no">​</a></h3>
+<p>⚠️ That you messaged someone (metadata)
+⚠️ When you messaged (timestamp)
+⚠️ Size of messages</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="metadata-privacy">Metadata Privacy<a href="#metadata-privacy" class="hash-link" aria-label="Direct link to Metadata Privacy" title="Direct link to Metadata Privacy" translate="no">​</a></h3>
+<p>Even though content is encrypted:</p>
+<ul>
+<li class="">Relays know who&#x27;s talking to whom</li>
+<li class="">Timestamps are visible</li>
+<li class="">This is a trade-off for decentralization</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-tips">Security Tips<a href="#security-tips" class="hash-link" aria-label="Direct link to Security Tips" title="Direct link to Security Tips" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dos">Do&#x27;s<a href="#dos" class="hash-link" aria-label="Direct link to Do&#x27;s" title="Direct link to Do&#x27;s" translate="no">​</a></h3>
+<ul>
+<li class="">✅ Verify who you&#x27;re messaging (check npub)</li>
+<li class="">✅ Use clients that support NIP-44</li>
+<li class="">✅ Be cautious with sensitive info</li>
+<li class="">✅ Use specialized messaging apps for more privacy</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="donts">Don&#x27;ts<a href="#donts" class="hash-link" aria-label="Direct link to Don&#x27;ts" title="Direct link to Don&#x27;ts" translate="no">​</a></h3>
+<ul>
+<li class="">❌ Send sensitive credentials via DM</li>
+<li class="">❌ Trust unverified contacts</li>
+<li class="">❌ Assume total anonymity</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="message-requests">Message Requests<a href="#message-requests" class="hash-link" aria-label="Direct link to Message Requests" title="Direct link to Message Requests" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-unknown-contacts">From Unknown Contacts<a href="#from-unknown-contacts" class="hash-link" aria-label="Direct link to From Unknown Contacts" title="Direct link to From Unknown Contacts" translate="no">​</a></h3>
+<p>Some clients filter messages from:</p>
+<ul>
+<li class="">People you don&#x27;t follow</li>
+<li class="">New accounts</li>
+<li class="">Potential spam</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="managing-requests">Managing Requests<a href="#managing-requests" class="hash-link" aria-label="Direct link to Managing Requests" title="Direct link to Managing Requests" translate="no">​</a></h3>
+<p>Look for:</p>
+<ul>
+<li class="">Message requests folder</li>
+<li class="">Filter settings</li>
+<li class="">Spam controls</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="messages-not-sending">Messages Not Sending?<a href="#messages-not-sending" class="hash-link" aria-label="Direct link to Messages Not Sending?" title="Direct link to Messages Not Sending?" translate="no">​</a></h3>
+<ol>
+<li class="">Check relay connections</li>
+<li class="">Verify recipient&#x27;s npub</li>
+<li class="">Try refreshing</li>
+<li class="">Check internet connection</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="not-receiving-messages">Not Receiving Messages?<a href="#not-receiving-messages" class="hash-link" aria-label="Direct link to Not Receiving Messages?" title="Direct link to Not Receiving Messages?" translate="no">​</a></h3>
+<ol>
+<li class="">Check your DM inbox</li>
+<li class="">Look in requests/filtered</li>
+<li class="">Verify relay settings</li>
+<li class="">Other person might be on different relays</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-read-old-messages">Can&#x27;t Read Old Messages?<a href="#cant-read-old-messages" class="hash-link" aria-label="Direct link to Can&#x27;t Read Old Messages?" title="Direct link to Can&#x27;t Read Old Messages?" translate="no">​</a></h3>
+<p>If you&#x27;ve lost access to old messages:</p>
+<ul>
+<li class="">Encryption keys may have changed</li>
+<li class="">Relay may have deleted old data</li>
+<li class="">Try other relays</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="specialized-messaging-clients">Specialized Messaging Clients<a href="#specialized-messaging-clients" class="hash-link" aria-label="Direct link to Specialized Messaging Clients" title="Direct link to Specialized Messaging Clients" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="0xchat-1">0xchat<a href="#0xchat-1" class="hash-link" aria-label="Direct link to 0xchat" title="Direct link to 0xchat" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Best for:</strong> Messaging-focused experience</li>
+<li class=""><strong>Features:</strong> Groups, voice, media</li>
+<li class=""><strong>Platform:</strong> Mobile</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="blowater">Blowater<a href="#blowater" class="hash-link" aria-label="Direct link to Blowater" title="Direct link to Blowater" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Best for:</strong> Clean chat interface</li>
+<li class=""><strong>Features:</strong> Focused on conversation</li>
+<li class=""><strong>Platform:</strong> Web/Desktop</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dms-vs-other-communication">DMs vs. Other Communication<a href="#dms-vs-other-communication" class="hash-link" aria-label="Direct link to DMs vs. Other Communication" title="Direct link to DMs vs. Other Communication" translate="no">​</a></h2>
+<table><thead><tr><th>Feature</th><th>Nostr DM</th><th>Signal</th><th>Email</th></tr></thead><tbody><tr><td>Encrypted</td><td>✅</td><td>✅</td><td>❌*</td></tr><tr><td>Decentralized</td><td>✅</td><td>❌</td><td>❌</td></tr><tr><td>Linked to identity</td><td>✅</td><td>Phone #</td><td>Email</td></tr><tr><td>Metadata protection</td><td>⚠️</td><td>✅</td><td>❌</td></tr></tbody></table>
+<p>*Unless using PGP</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-casual-chat">For Casual Chat<a href="#for-casual-chat" class="hash-link" aria-label="Direct link to For Casual Chat" title="Direct link to For Casual Chat" translate="no">​</a></h3>
+<ul>
+<li class="">Use any Nostr client</li>
+<li class="">Standard DM features work well</li>
+<li class="">Enjoy the convenience</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="for-sensitive-communication">For Sensitive Communication<a href="#for-sensitive-communication" class="hash-link" aria-label="Direct link to For Sensitive Communication" title="Direct link to For Sensitive Communication" translate="no">​</a></h3>
+<ul>
+<li class="">Use NIP-44 compatible clients</li>
+<li class="">Consider specialized messaging apps</li>
+<li class="">Be aware of metadata limitations</li>
+<li class="">For very sensitive: use Signal, etc.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="future-improvements">Future Improvements<a href="#future-improvements" class="hash-link" aria-label="Direct link to Future Improvements" title="Direct link to Future Improvements" translate="no">​</a></h2>
+<p>The Nostr community is working on:</p>
+<ul>
+<li class="">Better group messaging</li>
+<li class="">Improved privacy</li>
+<li class="">Voice and video</li>
+<li class="">Better relay privacy</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/userguide/using-nostr/zaps">Zaps &amp; Lightning</a> - Send payments</li>
+<li class=""><a class="" href="/userguide/using-nostr/relays">Understanding Relays</a></li>
+<li class=""><a class="" href="/userguide/help/faq">FAQ</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/nostrcg/userguide/tree/main/docs/using-nostr/messaging.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/userguide/using-nostr/following"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Following</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/userguide/using-nostr/zaps"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Zaps &amp; Lightning</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#how-dms-work" class="table-of-contents__link toc-highlight">How DMs Work</a></li><li><a href="#encryption-versions" class="table-of-contents__link toc-highlight">Encryption Versions</a><ul><li><a href="#nip-04-legacy" class="table-of-contents__link toc-highlight">NIP-04 (Legacy)</a></li><li><a href="#nip-44-modern" class="table-of-contents__link toc-highlight">NIP-44 (Modern)</a></li></ul></li><li><a href="#sending-messages" class="table-of-contents__link toc-highlight">Sending Messages</a><ul><li><a href="#basic-steps" class="table-of-contents__link toc-highlight">Basic Steps</a></li><li><a href="#in-different-clients" class="table-of-contents__link toc-highlight">In Different Clients</a></li></ul></li><li><a href="#reading-messages" class="table-of-contents__link toc-highlight">Reading Messages</a><ul><li><a href="#inbox" class="table-of-contents__link toc-highlight">Inbox</a></li><li><a href="#notifications" class="table-of-contents__link toc-highlight">Notifications</a></li></ul></li><li><a href="#group-messaging" class="table-of-contents__link toc-highlight">Group Messaging</a><ul><li><a href="#encrypted-groups" class="table-of-contents__link toc-highlight">Encrypted Groups</a></li><li><a href="#0xchat" class="table-of-contents__link toc-highlight">0xchat</a></li></ul></li><li><a href="#privacy-considerations" class="table-of-contents__link toc-highlight">Privacy Considerations</a><ul><li><a href="#whats-encrypted" class="table-of-contents__link toc-highlight">What&#39;s Encrypted</a></li><li><a href="#whats-visible" class="table-of-contents__link toc-highlight">What&#39;s Visible</a></li><li><a href="#metadata-privacy" class="table-of-contents__link toc-highlight">Metadata Privacy</a></li></ul></li><li><a href="#security-tips" class="table-of-contents__link toc-highlight">Security Tips</a><ul><li><a href="#dos" class="table-of-contents__link toc-highlight">Do&#39;s</a></li><li><a href="#donts" class="table-of-contents__link toc-highlight">Don&#39;ts</a></li></ul></li><li><a href="#message-requests" class="table-of-contents__link toc-highlight">Message Requests</a><ul><li><a href="#from-unknown-contacts" class="table-of-contents__link toc-highlight">From Unknown Contacts</a></li><li><a href="#managing-requests" class="table-of-contents__link toc-highlight">Managing Requests</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a><ul><li><a href="#messages-not-sending" class="table-of-contents__link toc-highlight">Messages Not Sending?</a></li><li><a href="#not-receiving-messages" class="table-of-contents__link toc-highlight">Not Receiving Messages?</a></li><li><a href="#cant-read-old-messages" class="table-of-contents__link toc-highlight">Can&#39;t Read Old Messages?</a></li></ul></li><li><a href="#specialized-messaging-clients" class="table-of-contents__link toc-highlight">Specialized Messaging Clients</a><ul><li><a href="#0xchat-1" class="table-of-contents__link toc-highlight">0xchat</a></li><li><a href="#blowater" class="table-of-contents__link toc-highlight">Blowater</a></li></ul></li><li><a href="#dms-vs-other-communication" class="table-of-contents__link toc-highlight">DMs vs. Other Communication</a></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a><ul><li><a href="#for-casual-chat" class="table-of-contents__link toc-highlight">For Casual Chat</a></li><li><a href="#for-sensitive-communication" class="table-of-contents__link toc-highlight">For Sensitive Communication</a></li></ul></li><li><a href="#future-improvements" class="table-of-contents__link toc-highlight">Future Improvements</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Guide</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/userguide/">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/overview">Choose a Client</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/help/faq">FAQ</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.w3.org/community/nostr/" target="_blank" rel="noopener noreferrer" class="footer__link-item">W3C Nostr CG<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr Apps Directory<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with love for the Nostr community.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-account/backup-keys" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Backup Your Keys | Nostr User Guide</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" property="og:url" content="https://nostrcg.github.io/userguide/account/backup-keys"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Backup Your Keys | Nostr User Guide"><meta data-rh="true" name="description" content="How to safely backup your Nostr private key"><meta data-rh="true" property="og:description" content="How to safely backup your Nostr private key"><link data-rh="true" rel="icon" href="/userguide/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://nostrcg.github.io/userguide/account/backup-keys"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/account/backup-keys" hreflang="en"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/account/backup-keys" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Backup Your Keys","item":"https://nostrcg.github.io/userguide/account/backup-keys"}]}</script><link rel="stylesheet" href="/userguide/assets/css/styles.fcc1196d.css">
+<script src="/userguide/assets/js/runtime~main.70971613.js" defer="defer"></script>
+<script src="/userguide/assets/js/main.731a2753.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/userguide/img/logo.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/userguide/"><div class="navbar__logo"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"></div><b class="navbar__title text--truncate">Nostr User Guide</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/userguide/">Guide</a><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/userguide/"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/"><span title="What is Nostr?" class="linkLabel_WmDU">What is Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/why-nostr"><span title="Why Nostr?" class="linkLabel_WmDU">Why Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/quick-start"><span title="Quick Start" class="linkLabel_WmDU">Quick Start</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/your-identity"><span title="Your Identity" class="linkLabel_WmDU">Your Identity</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/clients/overview"><span title="Clients" class="categoryLinkLabel_W154">Clients</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/using-nostr/posting"><span title="Using Nostr" class="categoryLinkLabel_W154">Using Nostr</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/userguide/account/profile-setup"><span title="Your Account" class="categoryLinkLabel_W154">Your Account</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/account/profile-setup"><span title="Profile Setup" class="linkLabel_WmDU">Profile Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/account/verification"><span title="Verification" class="linkLabel_WmDU">Verification</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/userguide/account/backup-keys"><span title="Backup Your Keys" class="linkLabel_WmDU">Backup Your Keys</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/account/multiple-clients"><span title="Multiple Clients" class="linkLabel_WmDU">Multiple Clients</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/help/faq"><span title="Help" class="categoryLinkLabel_W154">Help</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/userguide/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Your Account</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Backup Your Keys</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Backup Your Keys</h1></header>
+<p>Your private key (nsec) is your identity. Losing it means losing your account forever. Here&#x27;s how to back it up safely.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-backup-matters">Why Backup Matters<a href="#why-backup-matters" class="hash-link" aria-label="Direct link to Why Backup Matters" title="Direct link to Why Backup Matters" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>No Recovery Option</div><div class="admonitionContent_BuS1"><p>Unlike traditional social media:</p><ul>
+<li class="">No &quot;forgot password&quot; option</li>
+<li class="">No customer support to help</li>
+<li class="">No email reset</li>
+<li class="">If lost, it&#x27;s lost forever</li>
+</ul></div></div>
+<p>With proper backup:</p>
+<ul>
+<li class="">✅ Access from any device</li>
+<li class="">✅ Recover if phone is lost</li>
+<li class="">✅ Import into new clients</li>
+<li class="">✅ Peace of mind</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="your-private-key">Your Private Key<a href="#your-private-key" class="hash-link" aria-label="Direct link to Your Private Key" title="Direct link to Your Private Key" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-it-looks-like">What It Looks Like<a href="#what-it-looks-like" class="hash-link" aria-label="Direct link to What It Looks Like" title="Direct link to What It Looks Like" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">nsec1abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567...</span><br></span></code></pre></div></div>
+<ul>
+<li class="">Starts with <code>nsec1</code></li>
+<li class="">63 characters long</li>
+<li class="">Mix of letters and numbers</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-to-find-it">Where to Find It<a href="#where-to-find-it" class="hash-link" aria-label="Direct link to Where to Find It" title="Direct link to Where to Find It" translate="no">​</a></h3>
+<ol>
+<li class="">Open your Nostr client</li>
+<li class="">Go to Settings or Profile</li>
+<li class="">Look for &quot;Keys&quot;, &quot;Account&quot;, or &quot;Security&quot;</li>
+<li class="">Find and reveal your nsec</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Handle With Care</div><div class="admonitionContent_BuS1"><ul>
+<li class="">Don&#x27;t display it in public</li>
+<li class="">Don&#x27;t screenshot if possible</li>
+<li class="">Copy/paste carefully</li>
+<li class="">Close the screen when done</li>
+</ul></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="backup-methods">Backup Methods<a href="#backup-methods" class="hash-link" aria-label="Direct link to Backup Methods" title="Direct link to Backup Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="method-1-paper-backup-recommended">Method 1: Paper Backup (Recommended)<a href="#method-1-paper-backup-recommended" class="hash-link" aria-label="Direct link to Method 1: Paper Backup (Recommended)" title="Direct link to Method 1: Paper Backup (Recommended)" translate="no">​</a></h3>
+<p>The safest long-term storage:</p>
+<ol>
+<li class=""><strong>Write it down</strong> on paper</li>
+<li class=""><strong>Double-check</strong> every character</li>
+<li class=""><strong>Store safely</strong> - fireproof safe, safety deposit box</li>
+<li class=""><strong>Make a second copy</strong> in different location</li>
+</ol>
+<p><strong>Tips:</strong></p>
+<ul>
+<li class="">Use pen, not pencil (fades)</li>
+<li class="">Write clearly</li>
+<li class="">Include today&#x27;s date</li>
+<li class="">Note what it&#x27;s for</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="method-2-password-manager">Method 2: Password Manager<a href="#method-2-password-manager" class="hash-link" aria-label="Direct link to Method 2: Password Manager" title="Direct link to Method 2: Password Manager" translate="no">​</a></h3>
+<p>Secure digital storage:</p>
+<p><strong>Good options:</strong></p>
+<ul>
+<li class="">Bitwarden</li>
+<li class="">1Password</li>
+<li class="">KeePass</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li class="">Open your password manager</li>
+<li class="">Create new secure note</li>
+<li class="">Add your nsec</li>
+<li class="">Label it clearly</li>
+<li class="">Sync across devices</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="method-3-encrypted-file">Method 3: Encrypted File<a href="#method-3-encrypted-file" class="hash-link" aria-label="Direct link to Method 3: Encrypted File" title="Direct link to Method 3: Encrypted File" translate="no">​</a></h3>
+<p>For tech-savvy users:</p>
+<ol>
+<li class="">Create a text file with your nsec</li>
+<li class="">Encrypt with strong password (GPG, VeraCrypt)</li>
+<li class="">Store encrypted file in multiple locations</li>
+<li class="">Remember the encryption password!</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="method-4-seed-phrase-advanced">Method 4: Seed Phrase (Advanced)<a href="#method-4-seed-phrase-advanced" class="hash-link" aria-label="Direct link to Method 4: Seed Phrase (Advanced)" title="Direct link to Method 4: Seed Phrase (Advanced)" translate="no">​</a></h3>
+<p>Some tools convert nsec to seed words:</p>
+<ul>
+<li class="">12 or 24 word phrase</li>
+<li class="">Easier to write down</li>
+<li class="">More error-resistant</li>
+<li class="">Use trusted tools only</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage-locations">Storage Locations<a href="#storage-locations" class="hash-link" aria-label="Direct link to Storage Locations" title="Direct link to Storage Locations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="good-places">Good Places<a href="#good-places" class="hash-link" aria-label="Direct link to Good Places" title="Direct link to Good Places" translate="no">​</a></h3>
+<table><thead><tr><th>Location</th><th>Pros</th><th>Cons</th></tr></thead><tbody><tr><td>Home safe</td><td>Physical security</td><td>Fire/theft risk</td></tr><tr><td>Safety deposit box</td><td>Very secure</td><td>Less accessible</td></tr><tr><td>Password manager</td><td>Convenient</td><td>Requires master password</td></tr><tr><td>With trusted family</td><td>Distributed</td><td>Trust required</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="avoid-these">Avoid These<a href="#avoid-these" class="hash-link" aria-label="Direct link to Avoid These" title="Direct link to Avoid These" translate="no">​</a></h3>
+<ul>
+<li class="">❌ Plain text on computer</li>
+<li class="">❌ Email to yourself</li>
+<li class="">❌ Cloud notes (Google Keep, etc.)</li>
+<li class="">❌ Screenshots in photo library</li>
+<li class="">❌ Browser saved passwords</li>
+<li class="">❌ Sticky notes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-your-backup">Testing Your Backup<a href="#testing-your-backup" class="hash-link" aria-label="Direct link to Testing Your Backup" title="Direct link to Testing Your Backup" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verify-it-works">Verify It Works<a href="#verify-it-works" class="hash-link" aria-label="Direct link to Verify It Works" title="Direct link to Verify It Works" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Open a different client</strong> or device</li>
+<li class=""><strong>Import your nsec</strong> from your backup</li>
+<li class=""><strong>Confirm</strong> your profile loads correctly</li>
+<li class=""><strong>Log out</strong> of the test device</li>
+</ol>
+<p>Don&#x27;t skip this step! You don&#x27;t want to discover a typo when you actually need it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-best-practices">Security Best Practices<a href="#security-best-practices" class="hash-link" aria-label="Direct link to Security Best Practices" title="Direct link to Security Best Practices" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dos">Do&#x27;s<a href="#dos" class="hash-link" aria-label="Direct link to Do&#x27;s" title="Direct link to Do&#x27;s" translate="no">​</a></h3>
+<ul>
+<li class="">✅ Make multiple backups</li>
+<li class="">✅ Store in different locations</li>
+<li class="">✅ Test your backup</li>
+<li class="">✅ Update if you create new key</li>
+<li class="">✅ Tell trusted person where backup is</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="donts">Don&#x27;ts<a href="#donts" class="hash-link" aria-label="Direct link to Don&#x27;ts" title="Direct link to Don&#x27;ts" translate="no">​</a></h3>
+<ul>
+<li class="">❌ Store only on one device</li>
+<li class="">❌ Share with strangers</li>
+<li class="">❌ Enter on suspicious websites</li>
+<li class="">❌ Post anywhere online</li>
+<li class="">❌ Store unencrypted digitally</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="if-you-havent-backed-up-yet">If You Haven&#x27;t Backed Up Yet<a href="#if-you-havent-backed-up-yet" class="hash-link" aria-label="Direct link to If You Haven&#x27;t Backed Up Yet" title="Direct link to If You Haven&#x27;t Backed Up Yet" translate="no">​</a></h2>
+<p>Do it now! Here&#x27;s the quick version:</p>
+<ol>
+<li class="">Open your Nostr app</li>
+<li class="">Find your nsec in settings</li>
+<li class="">Write it on paper</li>
+<li class="">Store paper safely</li>
+<li class="">Test by importing elsewhere</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-if-you-lose-your-key">What If You Lose Your Key?<a href="#what-if-you-lose-your-key" class="hash-link" aria-label="Direct link to What If You Lose Your Key?" title="Direct link to What If You Lose Your Key?" translate="no">​</a></h2>
+<p>If you lose your nsec with no backup:</p>
+<ol>
+<li class=""><strong>Create a new account</strong> - new keys</li>
+<li class=""><strong>Post about the change</strong> - let followers know</li>
+<li class=""><strong>Update your profiles</strong> - website, etc.</li>
+<li class=""><strong>Accept the loss</strong> - old posts stay, but you can&#x27;t manage them</li>
+</ol>
+<p>Learn from it: Always backup your new key!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="backup-checklist">Backup Checklist<a href="#backup-checklist" class="hash-link" aria-label="Direct link to Backup Checklist" title="Direct link to Backup Checklist" translate="no">​</a></h2>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Found my nsec in app settings</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Written on paper (carefully!)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Stored paper in safe location</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Made second copy in different location</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Tested by importing to another client</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Told trusted person where backup is</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="using-signers-alternative">Using Signers (Alternative)<a href="#using-signers-alternative" class="hash-link" aria-label="Direct link to Using Signers (Alternative)" title="Direct link to Using Signers (Alternative)" translate="no">​</a></h2>
+<p>Instead of backing up nsec directly, consider a signer:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-a-signer">What&#x27;s a Signer?<a href="#whats-a-signer" class="hash-link" aria-label="Direct link to What&#x27;s a Signer?" title="Direct link to What&#x27;s a Signer?" translate="no">​</a></h3>
+<p>An app that holds your key and signs on your behalf:</p>
+<ul>
+<li class="">Key stays in one secure place</li>
+<li class="">Apps never see your actual key</li>
+<li class="">More secure day-to-day</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="popular-signers">Popular Signers<a href="#popular-signers" class="hash-link" aria-label="Direct link to Popular Signers" title="Direct link to Popular Signers" translate="no">​</a></h3>
+<table><thead><tr><th>Platform</th><th>Signer</th></tr></thead><tbody><tr><td>Browser</td><td>Alby, nos2x</td></tr><tr><td>Android</td><td>Amber</td></tr><tr><td>Web</td><td>nsec.app</td></tr></tbody></table>
+<p><strong>You still need to backup the signer&#x27;s key!</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-multiple-keys">Advanced: Multiple Keys<a href="#advanced-multiple-keys" class="hash-link" aria-label="Direct link to Advanced: Multiple Keys" title="Direct link to Advanced: Multiple Keys" translate="no">​</a></h2>
+<p>Some users have multiple identities:</p>
+<ul>
+<li class="">Main identity</li>
+<li class="">Anonymous identity</li>
+<li class="">Work identity</li>
+</ul>
+<p><strong>Backup each key separately</strong> with clear labels.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
+<table><thead><tr><th>Priority</th><th>Action</th></tr></thead><tbody><tr><td>🔴 Critical</td><td>Write nsec on paper</td></tr><tr><td>🔴 Critical</td><td>Store paper safely</td></tr><tr><td>🟠 Important</td><td>Make second backup</td></tr><tr><td>🟠 Important</td><td>Test your backup</td></tr><tr><td>🟢 Good</td><td>Consider signer app</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/userguide/account/multiple-clients">Multiple Clients</a> - Use your backup</li>
+<li class=""><a class="" href="/userguide/getting-started/your-identity">Your Identity</a> - Understand keys</li>
+<li class=""><a class="" href="/userguide/account/verification">Verification</a> - Add trust layer</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/nostrcg/userguide/tree/main/docs/account/backup-keys.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/userguide/account/verification"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Verification</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/userguide/account/multiple-clients"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Multiple Clients</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#why-backup-matters" class="table-of-contents__link toc-highlight">Why Backup Matters</a></li><li><a href="#your-private-key" class="table-of-contents__link toc-highlight">Your Private Key</a><ul><li><a href="#what-it-looks-like" class="table-of-contents__link toc-highlight">What It Looks Like</a></li><li><a href="#where-to-find-it" class="table-of-contents__link toc-highlight">Where to Find It</a></li></ul></li><li><a href="#backup-methods" class="table-of-contents__link toc-highlight">Backup Methods</a><ul><li><a href="#method-1-paper-backup-recommended" class="table-of-contents__link toc-highlight">Method 1: Paper Backup (Recommended)</a></li><li><a href="#method-2-password-manager" class="table-of-contents__link toc-highlight">Method 2: Password Manager</a></li><li><a href="#method-3-encrypted-file" class="table-of-contents__link toc-highlight">Method 3: Encrypted File</a></li><li><a href="#method-4-seed-phrase-advanced" class="table-of-contents__link toc-highlight">Method 4: Seed Phrase (Advanced)</a></li></ul></li><li><a href="#storage-locations" class="table-of-contents__link toc-highlight">Storage Locations</a><ul><li><a href="#good-places" class="table-of-contents__link toc-highlight">Good Places</a></li><li><a href="#avoid-these" class="table-of-contents__link toc-highlight">Avoid These</a></li></ul></li><li><a href="#testing-your-backup" class="table-of-contents__link toc-highlight">Testing Your Backup</a><ul><li><a href="#verify-it-works" class="table-of-contents__link toc-highlight">Verify It Works</a></li></ul></li><li><a href="#security-best-practices" class="table-of-contents__link toc-highlight">Security Best Practices</a><ul><li><a href="#dos" class="table-of-contents__link toc-highlight">Do&#39;s</a></li><li><a href="#donts" class="table-of-contents__link toc-highlight">Don&#39;ts</a></li></ul></li><li><a href="#if-you-havent-backed-up-yet" class="table-of-contents__link toc-highlight">If You Haven&#39;t Backed Up Yet</a></li><li><a href="#what-if-you-lose-your-key" class="table-of-contents__link toc-highlight">What If You Lose Your Key?</a></li><li><a href="#backup-checklist" class="table-of-contents__link toc-highlight">Backup Checklist</a></li><li><a href="#using-signers-alternative" class="table-of-contents__link toc-highlight">Using Signers (Alternative)</a><ul><li><a href="#whats-a-signer" class="table-of-contents__link toc-highlight">What&#39;s a Signer?</a></li><li><a href="#popular-signers" class="table-of-contents__link toc-highlight">Popular Signers</a></li></ul></li><li><a href="#advanced-multiple-keys" class="table-of-contents__link toc-highlight">Advanced: Multiple Keys</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Guide</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/userguide/">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/overview">Choose a Client</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/help/faq">FAQ</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.w3.org/community/nostr/" target="_blank" rel="noopener noreferrer" class="footer__link-item">W3C Nostr CG<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr Apps Directory<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with love for the Nostr community.</div></div></div></footer></div>
+</body>
+</html>
