@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="280" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="privateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="publicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="signatureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="280" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="16" font-weight="700">How Nostr Keys Work</text>
+
+  <!-- Private Key -->
+  <g transform="translate(150, 100)">
+    <rect x="-110" y="-45" width="220" height="90" rx="12" fill="url(#privateGrad)" filter="url(#shadow)"/>
+    <text y="-15" text-anchor="middle" fill="white" font-family="system-ui" font-size="15" font-weight="700">🔐 Private Key (nsec)</text>
+    <text y="8" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="12">Your secret password</text>
+    <text y="28" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11">⚠️ NEVER share this!</text>
+  </g>
+
+  <!-- Arrow down -->
+  <line x1="150" y1="150" x2="150" y2="185" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="180" y="172" fill="#64748b" font-family="system-ui" font-size="10">generates</text>
+
+  <!-- Public Key -->
+  <g transform="translate(150, 230)">
+    <rect x="-110" y="-35" width="220" height="70" rx="12" fill="url(#publicGrad)" filter="url(#shadow)"/>
+    <text y="-5" text-anchor="middle" fill="white" font-family="system-ui" font-size="15" font-weight="700">🌐 Public Key (npub)</text>
+    <text y="18" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="12">Your public identity</text>
+  </g>
+
+  <!-- Arrow to signature -->
+  <line x1="265" y1="100" x2="335" y2="100" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="300" y="90" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">signs posts</text>
+
+  <!-- Signature/Verification -->
+  <g transform="translate(450, 100)">
+    <rect x="-100" y="-45" width="200" height="90" rx="12" fill="url(#signatureGrad)" filter="url(#shadow)"/>
+    <text y="-15" text-anchor="middle" fill="white" font-family="system-ui" font-size="15" font-weight="700">✍️ Signature</text>
+    <text y="8" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui" font-size="12">Proves it's really you</text>
+    <text y="28" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="11">Can't be forged</text>
+  </g>
+
+  <!-- Arrow from public to verify -->
+  <line x1="265" y1="230" x2="350" y2="160" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="320" y="210" fill="#64748b" font-family="system-ui" font-size="10">verifies</text>
+</svg>

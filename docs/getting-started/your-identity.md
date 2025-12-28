@@ -48,19 +48,7 @@ There is no "forgot password" - if someone gets your key, they have it forever.
 
 Think of it like a special lock and key:
 
-```
-┌─────────────────┐
-│   Private Key   │──creates──▶ Signature on posts
-│   (Your Secret) │
-└─────────────────┘
-        │
-        │ generates
-        ▼
-┌─────────────────┐
-│   Public Key    │──verifies──▶ "Yes, this is really from them"
-│ (Share Freely)  │
-└─────────────────┘
-```
+![How Nostr Keys Work](/img/diagrams/keys-explained.svg)
 
 1. You write a post
 2. Your private key "signs" the post
@@ -141,12 +129,7 @@ Instead of entering your private key into every app, a signer:
 
 ### How It Works
 
-```
-┌─────────┐     ┌──────────┐     ┌─────────┐
-│  App    │────▶│  Signer  │────▶│  Relay  │
-│(Client) │ ask │(Has Key) │sign │(Server) │
-└─────────┘     └──────────┘     └─────────┘
-```
+![How Signers Protect Your Keys](/img/diagrams/signer-flow.svg)
 
 1. App asks signer to sign something
 2. Signer shows you what it's signing

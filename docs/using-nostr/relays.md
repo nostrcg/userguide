@@ -15,23 +15,7 @@ Think of relays like:
 - **Bulletin boards** - Places where content is posted
 - **Radio towers** - Broadcasting your signal
 
-```
-       ┌─────────────────────────────────┐
-       │         The Internet            │
-       └─────────────────────────────────┘
-              ▲     ▲     ▲     ▲
-              │     │     │     │
-         ┌────┴─┐ ┌─┴───┐ ┌┴────┐ ┌┴────┐
-         │Relay │ │Relay│ │Relay│ │Relay│
-         │  A   │ │  B  │ │  C  │ │  D  │
-         └──────┘ └─────┘ └─────┘ └─────┘
-              ▲           ▲     ▲
-              │           │     │
-         ┌────┴───────────┴─────┴────┐
-         │          You              │
-         │       (your app)          │
-         └───────────────────────────┘
-```
+![Relay Network](/img/diagrams/relay-network.svg)
 
 ## Why Multiple Relays?
 

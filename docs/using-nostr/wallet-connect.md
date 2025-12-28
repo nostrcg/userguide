@@ -12,13 +12,7 @@ Nostr Wallet Connect (NWC) is an open protocol that connects your Lightning wall
 
 NWC allows any app to request payments from your wallet:
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   App       │────▶│   Nostr     │────▶│   Your      │
-│ (Damus,     │     │   Relay     │     │   Wallet    │
-│  Primal)    │     │ (encrypted) │     │ (Alby, etc) │
-└─────────────┘     └─────────────┘     └─────────────┘
-```
+![NWC Flow](/img/diagrams/nwc-flow.svg)
 
 1. You connect your wallet once using a connection string
 2. Apps send encrypted payment requests through Nostr relays

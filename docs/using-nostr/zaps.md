@@ -23,26 +23,13 @@ You ──Zap (21 sats)──▶ Creator
 
 ## How Zaps Work
 
+![How Zaps Work](/img/diagrams/zap-flow.svg)
+
 1. You click the zap button on a post
 2. Choose an amount
 3. Your wallet pays via Lightning Network
 4. Creator receives sats instantly
 5. The zap appears on the post
-
-### The Technical Flow
-
-```
-┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
-│  You    │───▶│ Wallet  │───▶│Lightning│───▶│ Creator │
-│(client) │    │  (pay)  │    │ Network │    │ (recv)  │
-└─────────┘    └─────────┘    └─────────┘    └─────────┘
-                                   │
-                                   ▼
-                             ┌─────────────┐
-                             │ Zap Receipt │
-                             │  (on post)  │
-                             └─────────────┘
-```
 
 ## Setting Up to Receive Zaps
 
