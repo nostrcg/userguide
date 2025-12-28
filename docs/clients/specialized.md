@@ -256,25 +256,6 @@ Blossom is a protocol for decentralized media hosting on Nostr.
 
 ---
 
-## AI & Data Services
-
-### Data Vending Machines (DVMs)
-
-DVMs allow AI and computational services to be offered over Nostr:
-- Request AI processing (translations, summaries, image generation)
-- Pay with Lightning
-- Decentralized marketplace for compute
-
-### MCP Bridge
-
-- Connects AI agents (like Claude) to Nostr
-- AI can read and write to Nostr
-- Decentralized AI tool discovery
-
-**Best for:** AI enthusiasts, developers building AI-powered apps
-
----
-
 ## Developer Tools
 
 ### Njump
@@ -317,7 +298,6 @@ For a complete list of Nostr apps:
 | Gaming | Jester, POGN | Web |
 | Media Hosting | Blossom servers | Web |
 | Code | GitWorkshop | Web |
-| AI/DVMs | Various | Web |
 
 ## One Account for Everything
 

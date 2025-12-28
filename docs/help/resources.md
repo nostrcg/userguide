@@ -216,11 +216,6 @@ Set up on your own domain - see [Verification guide](/account/verification).
 
 ## Stay Updated
 
-### Weekly Recaps
-
-- [Nostr Weekly Recap](https://medium.com/@nomishkadilshan4) - Weekly updates on new apps and features
-- [The Nostr Review](https://thenostrreview.substack.com/) - Biweekly protocol updates
-
 ### Following Nostr Development
 
 - Follow developers and builders on Nostr
