@@ -4,246 +4,161 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Troubleshooting | Nostr User Guide</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://nostrcg.github.io/userguide/img/nostr-social-card.jpg"><meta data-rh="true" property="og:url" content="https://nostrcg.github.io/userguide/help/troubleshooting"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Troubleshooting | Nostr User Guide"><meta data-rh="true" name="description" content="Solving common Nostr issues"><meta data-rh="true" property="og:description" content="Solving common Nostr issues"><link data-rh="true" rel="icon" href="/userguide/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://nostrcg.github.io/userguide/help/troubleshooting"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/help/troubleshooting" hreflang="en"><link data-rh="true" rel="alternate" href="https://nostrcg.github.io/userguide/help/troubleshooting" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Troubleshooting","item":"https://nostrcg.github.io/userguide/help/troubleshooting"}]}</script><link rel="stylesheet" href="/userguide/assets/css/styles.fcc1196d.css">
-<script src="/userguide/assets/js/runtime~main.69d35716.js" defer="defer"></script>
-<script src="/userguide/assets/js/main.6e657376.js" defer="defer"></script>
+<script src="/userguide/assets/js/runtime~main.bb742f43.js" defer="defer"></script>
+<script src="/userguide/assets/js/main.16f00572.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/userguide/img/logo.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/userguide/"><div class="navbar__logo"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/userguide/img/logo.jpg" alt="Nostr Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"></div><b class="navbar__title text--truncate">Nostr User Guide</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/userguide/">Guide</a><a class="navbar__item navbar__link" href="/userguide/clients/overview">Clients</a><a class="navbar__item navbar__link" href="/userguide/help/faq">FAQ</a><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Apps Directory<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/userguide/"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/"><span title="What is Nostr?" class="linkLabel_WmDU">What is Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/why-nostr"><span title="Why Nostr?" class="linkLabel_WmDU">Why Nostr?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/quick-start"><span title="Quick Start" class="linkLabel_WmDU">Quick Start</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/getting-started/your-identity"><span title="Your Identity" class="linkLabel_WmDU">Your Identity</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/clients/overview"><span title="Clients" class="categoryLinkLabel_W154">Clients</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/using-nostr/posting"><span title="Using Nostr" class="categoryLinkLabel_W154">Using Nostr</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/userguide/account/profile-setup"><span title="Your Account" class="categoryLinkLabel_W154">Your Account</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/userguide/help/faq"><span title="Help" class="categoryLinkLabel_W154">Help</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/help/faq"><span title="FAQ" class="linkLabel_WmDU">FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/userguide/help/troubleshooting"><span title="Troubleshooting" class="linkLabel_WmDU">Troubleshooting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/help/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/userguide/help/resources"><span title="Resources" class="linkLabel_WmDU">Resources</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/userguide/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Help</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Troubleshooting</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Troubleshooting</h1></header>
-<p>Having issues? Here are solutions to common problems.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connection-issues">Connection Issues<a href="#connection-issues" class="hash-link" aria-label="Direct link to Connection Issues" title="Direct link to Connection Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-connect-to-relay">&quot;Can&#x27;t connect to relay&quot;<a href="#cant-connect-to-relay" class="hash-link" aria-label="Direct link to &quot;Can&#x27;t connect to relay&quot;" title="Direct link to &quot;Can&#x27;t connect to relay&quot;" translate="no">​</a></h3>
-<p><strong>Symptoms:</strong> Error messages about relay connections, posts not loading.</p>
-<p><strong>Solutions:</strong></p>
+<p>Something not working? Start here. Most problems are fixed by one of three things: waiting a moment, checking your relay settings, or trying the same account in a different app.</p>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>Before you try anything else</div><div class="admonitionContent_BuS1"><p><strong>Don&#x27;t log out, uninstall the app or reset your phone until your nsec is saved.</strong> If you pasted your key into an app, logging out erases it from that device, and nobody can recover it for you. See <a class="" href="/userguide/account/backup-keys">Backup Your Keys</a>.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>The quickest test</div><div class="admonitionContent_BuS1"><p>Every Nostr app works with the same account. If something looks broken, log into a <strong>second</strong> app with your saved key (for example <a href="https://jumble.social" target="_blank" rel="noopener noreferrer" class="">jumble.social</a> or <a href="https://primal.net" target="_blank" rel="noopener noreferrer" class="">primal.net</a> in a browser). If it works there, the problem is the first app, not your account.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="account-and-login">Account and login<a href="#account-and-login" class="hash-link" aria-label="Direct link to Account and login" title="Direct link to Account and login" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-log-in-with-my-key">Can&#x27;t log in with my key<a href="#cant-log-in-with-my-key" class="hash-link" aria-label="Direct link to Can&#x27;t log in with my key" title="Direct link to Can&#x27;t log in with my key" translate="no">​</a></h3>
+<p>Check that:</p>
 <ol>
-<li class=""><strong>Check internet connection</strong> - Try loading other websites</li>
-<li class=""><strong>Wait and retry</strong> - Relays sometimes have temporary issues</li>
-<li class=""><strong>Remove problematic relay</strong> - In settings, remove the failing relay</li>
-<li class=""><strong>Check relay URL</strong> - Make sure it starts with <code>wss://</code></li>
+<li class="">You&#x27;re using your <strong>nsec</strong> (starts <code>nsec1</code>), not your npub. The npub is public and can&#x27;t log you in.</li>
+<li class="">There are no extra spaces before or after the key.</li>
+<li class="">You copied the whole key.</li>
+<li class="">You chose <strong>Log in</strong>, not <em>Create account</em>.</li>
+<li class="">The app or website is real. Type well-known addresses yourself; never paste your nsec into a site someone sent you a link to.</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="relay-refused-connection">&quot;Relay refused connection&quot;<a href="#relay-refused-connection" class="hash-link" aria-label="Direct link to &quot;Relay refused connection&quot;" title="Direct link to &quot;Relay refused connection&quot;" translate="no">​</a></h3>
-<p><strong>Possible causes:</strong></p>
-<ul>
-<li class="">Relay is down for maintenance</li>
-<li class="">You&#x27;re rate-limited (too many requests)</li>
-<li class="">Relay requires authentication or payment</li>
-</ul>
-<p><strong>Solutions:</strong></p>
+<p><strong>Trying to log in with an encrypted backup (<code>ncryptsec1…</code>)?</strong> Some apps, including Primal and Damus, can&#x27;t log in with an ncryptsec yet. Use your plain nsec backup in those apps, or use a signer.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-profile-is-blank-in-a-new-app">My profile is blank in a new app<a href="#my-profile-is-blank-in-a-new-app" class="hash-link" aria-label="Direct link to My profile is blank in a new app" title="Direct link to My profile is blank in a new app" translate="no">​</a></h3>
 <ol>
-<li class="">Wait and try again later</li>
-<li class="">Try a different relay</li>
-<li class="">Check if relay requires signup</li>
+<li class="">Wait a minute and pull to refresh. The app is fetching your profile from relays.</li>
+<li class="">Check you logged in with the right key. Compare the npub shown in the new app with the one in your old app.</li>
+<li class="">If it&#x27;s still blank, open your profile in an app where it does show, edit any field and save. This publishes your profile again to that app&#x27;s relays.</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="app-is-very-slow">App is very slow<a href="#app-is-very-slow" class="hash-link" aria-label="Direct link to App is very slow" title="Direct link to App is very slow" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-profile-shows-in-some-apps-but-not-others">My profile shows in some apps but not others<a href="#my-profile-shows-in-some-apps-but-not-others" class="hash-link" aria-label="Direct link to My profile shows in some apps but not others" title="Direct link to My profile shows in some apps but not others" translate="no">​</a></h3>
+<p>Different apps talk to different relays. Open <em>Settings → Relays</em> in the app that works and make sure you have a <strong>write/outbox</strong> list. Then re-save your profile from that app. If the list is empty, add a big public relay such as <code>wss://relay.damus.io</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-lost-my-private-key">I lost my private key<a href="#i-lost-my-private-key" class="hash-link" aria-label="Direct link to I lost my private key" title="Direct link to I lost my private key" translate="no">​</a></h3>
+<p>Look everywhere first: your password manager, phone notes, screenshots, emails to yourself, and the settings of <strong>every</strong> app or device that&#x27;s still logged in. Any logged-in app can show you the key, usually under <em>Settings → Keys</em>.</p>
+<p>If it&#x27;s truly gone, the account can&#x27;t be recovered. Create a new one, follow your friends again, and tell people it&#x27;s your new account.</p>
+<p>→ For next time: <a class="" href="/userguide/account/backup-keys">Backup Your Keys</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-think-my-key-leaked">I think my key leaked<a href="#i-think-my-key-leaked" class="hash-link" aria-label="Direct link to I think my key leaked" title="Direct link to I think my key leaked" translate="no">​</a></h3>
+<p>A Nostr key can&#x27;t be changed. Make a new account (ideally with a signer), <strong>revoke every Nostr Wallet Connect connection</strong> in your wallet, and post from the old account pointing to your new npub before an attacker does. Full steps are in the <a class="" href="/userguide/help/faq">FAQ</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="someone-is-impersonating-me">Someone is impersonating me<a href="#someone-is-impersonating-me" class="hash-link" aria-label="Direct link to Someone is impersonating me" title="Direct link to Someone is impersonating me" translate="no">​</a></h3>
 <ol>
-<li class=""><strong>Reduce relays</strong> - Too many relays slow things down</li>
-<li class=""><strong>Clear cache</strong> - Look in app settings</li>
-<li class=""><strong>Check internet speed</strong> - Test your connection</li>
-<li class=""><strong>Try different client</strong> - Some are faster than others</li>
-<li class=""><strong>Disable media auto-load</strong> - If available in settings</li>
+<li class="">Report and mute the impersonator.</li>
+<li class="">Post from your real account so followers know which npub is yours.</li>
+<li class="">Set up a readable handle (NIP-05) so people can tell you apart. See <a class="" href="/userguide/account/verification">Verification</a>.</li>
+<li class="">Turn on <em>web of trust</em> filtering in settings. It hides accounts that nobody you follow is connected to.</li>
 </ol>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="account-issues">Account Issues<a href="#account-issues" class="hash-link" aria-label="Direct link to Account Issues" title="Direct link to Account Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-log-in-with-private-key">Can&#x27;t log in with private key<a href="#cant-log-in-with-private-key" class="hash-link" aria-label="Direct link to Can&#x27;t log in with private key" title="Direct link to Can&#x27;t log in with private key" translate="no">​</a></h3>
-<p><strong>Check:</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="posts-and-feeds">Posts and feeds<a href="#posts-and-feeds" class="hash-link" aria-label="Direct link to Posts and feeds" title="Direct link to Posts and feeds" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-feed-is-empty-or-boring">My feed is empty or boring<a href="#my-feed-is-empty-or-boring" class="hash-link" aria-label="Direct link to My feed is empty or boring" title="Direct link to My feed is empty or boring" translate="no">​</a></h3>
+<p>This is the most common problem, and it isn&#x27;t a bug. Nostr has no algorithm by default: the people you follow <em>are</em> your feed. Follow at least 20 people, using the topic lists your app offers during sign-up or hashtags such as <code>#photography</code>, <code>#books</code> or <code>#music</code>. Most apps also have other feed tabs, like trending or popular with your follows.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-posts-dont-show-up-for-other-people">My posts don&#x27;t show up for other people<a href="#my-posts-dont-show-up-for-other-people" class="hash-link" aria-label="Direct link to My posts don&#x27;t show up for other people" title="Direct link to My posts don&#x27;t show up for other people" translate="no">​</a></h3>
 <ol>
-<li class="">Using <strong>nsec</strong> (not npub) - must start with <code>nsec1</code></li>
-<li class="">No extra spaces before/after</li>
-<li class="">Complete key (63 characters after nsec1)</li>
-<li class="">Correct app (is it a real Nostr app?)</li>
+<li class="">Wait a moment and refresh.</li>
+<li class="">Open <em>Settings → Relays</em> and check you have a <strong>write/outbox</strong> list (where your posts go). If it&#x27;s empty, add <code>wss://relay.damus.io</code>.</li>
+<li class="">Log into a second app and see if your post is there.</li>
+<li class="">Ask a friend to look for it, or open it on <a href="https://njump.me" target="_blank" rel="noopener noreferrer" class="">njump.me</a>.</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="profile-not-loading">Profile not loading<a href="#profile-not-loading" class="hash-link" aria-label="Direct link to Profile not loading" title="Direct link to Profile not loading" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-cant-see-someones-posts">I can&#x27;t see someone&#x27;s posts<a href="#i-cant-see-someones-posts" class="hash-link" aria-label="Direct link to I can&#x27;t see someone&#x27;s posts" title="Direct link to I can&#x27;t see someone&#x27;s posts" translate="no">​</a></h3>
 <ol>
-<li class="">Wait for relay sync (can take a minute)</li>
-<li class="">Refresh or pull-to-refresh</li>
-<li class="">Check relay connections</li>
-<li class="">Verify using correct key</li>
+<li class=""><strong>Check you&#x27;re following the right account.</strong> Compare the npub, not just the name and picture.</li>
+<li class=""><strong>Try another app.</strong> Each app uses different relays and spam filters, so they don&#x27;t always see the same things.</li>
+<li class=""><strong>Check your mute list and spam filters.</strong> A strict web-of-trust filter can hide people nobody you follow is connected to.</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lost-my-private-key">Lost my private key<a href="#lost-my-private-key" class="hash-link" aria-label="Direct link to Lost my private key" title="Direct link to Lost my private key" translate="no">​</a></h3>
-<p><strong>Unfortunately:</strong> There&#x27;s no recovery. You&#x27;ll need to create a new account.</p>
-<p><strong>For next time:</strong> Back up immediately after creating account.
-→ See <a class="" href="/userguide/account/backup-keys">Backup Your Keys</a></p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="profile-shows-on-some-apps-but-not-others">Profile shows on some apps but not others<a href="#profile-shows-on-some-apps-but-not-others" class="hash-link" aria-label="Direct link to Profile shows on some apps but not others" title="Direct link to Profile shows on some apps but not others" translate="no">​</a></h3>
-<p><strong>Cause:</strong> Different apps may use different relays.</p>
-<p><strong>Solution:</strong></p>
-<ol>
-<li class="">Ensure both apps are connected to common relays</li>
-<li class="">Re-publish your profile (edit and save in working app)</li>
-<li class="">Wait for sync</li>
-</ol>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="content-issues">Content Issues<a href="#content-issues" class="hash-link" aria-label="Direct link to Content Issues" title="Direct link to Content Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="posts-not-appearing">Posts not appearing<a href="#posts-not-appearing" class="hash-link" aria-label="Direct link to Posts not appearing" title="Direct link to Posts not appearing" translate="no">​</a></h3>
-<p><strong>After posting:</strong></p>
-<ol>
-<li class="">Wait a moment (not instant)</li>
-<li class="">Pull to refresh</li>
-<li class="">Check relay connections</li>
-<li class="">Try posting from different client</li>
-</ol>
-<p><strong>Your posts invisible to others:</strong></p>
-<ol>
-<li class="">Check you&#x27;re connected to public relays</li>
-<li class="">Verify posts are actually being sent (check relay logs if technical)</li>
-<li class="">Ask someone to check specific relays</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-see-someones-posts">Can&#x27;t see someone&#x27;s posts<a href="#cant-see-someones-posts" class="hash-link" aria-label="Direct link to Can&#x27;t see someone&#x27;s posts" title="Direct link to Can&#x27;t see someone&#x27;s posts" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class=""><strong>Check relay overlap</strong> - You need common relays</li>
-<li class=""><strong>Add their relays</strong> - Look at their profile for relay hints</li>
-<li class=""><strong>Search by npub</strong> - Directly search for their public key</li>
-<li class=""><strong>They may have blocked you</strong> - Check with mutual friends</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="missing-direct-messages">Missing direct messages<a href="#missing-direct-messages" class="hash-link" aria-label="Direct link to Missing direct messages" title="Direct link to Missing direct messages" translate="no">​</a></h3>
-<p><strong>Possible causes:</strong></p>
-<ul>
-<li class="">DMs take time to sync</li>
-<li class="">On different relays</li>
-<li class="">Client-specific issues</li>
-</ul>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class="">Wait for sync</li>
-<li class="">Check DM inbox (not filtered/requests)</li>
-<li class="">Ensure connected to common relays</li>
-<li class="">Try different client</li>
-</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-post-looks-different-or-is-missing-in-different-apps">A post looks different, or is missing, in different apps<a href="#a-post-looks-different-or-is-missing-in-different-apps" class="hash-link" aria-label="Direct link to A post looks different, or is missing, in different apps" title="Direct link to A post looks different, or is missing, in different apps" translate="no">​</a></h3>
+<p>That&#x27;s normal. Each app talks to its own mix of relays and has its own filters. Try another app, or open the post on <a href="https://njump.me" target="_blank" rel="noopener noreferrer" class="">njump.me</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="old-posts-disappeared">Old posts disappeared<a href="#old-posts-disappeared" class="hash-link" aria-label="Direct link to Old posts disappeared" title="Direct link to Old posts disappeared" translate="no">​</a></h3>
-<p><strong>Possible causes:</strong></p>
+<p>Relays are run by many different people. A relay may drop old data or shut down, and an app may clear its cache. Modern apps find posts through your relay list automatically, so try another app before assuming a post is gone.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-deleted-a-post-but-people-can-still-see-it">I deleted a post but people can still see it<a href="#i-deleted-a-post-but-people-can-still-see-it" class="hash-link" aria-label="Direct link to I deleted a post but people can still see it" title="Direct link to I deleted a post but people can still see it" translate="no">​</a></h3>
+<p>Deleting sends a <em>request</em> (NIP-09). Most apps and relays honour it, but some don&#x27;t, and someone may already have a copy. Treat every post as permanent.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="private-messages">Private messages<a href="#private-messages" class="hash-link" aria-label="Direct link to Private messages" title="Direct link to Private messages" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-message-didnt-arrive-or-i-cant-see-a-message-someone-sent">My message didn&#x27;t arrive, or I can&#x27;t see a message someone sent<a href="#my-message-didnt-arrive-or-i-cant-see-a-message-someone-sent" class="hash-link" aria-label="Direct link to My message didn&#x27;t arrive, or I can&#x27;t see a message someone sent" title="Direct link to My message didn&#x27;t arrive, or I can&#x27;t see a message someone sent" translate="no">​</a></h3>
+<p>The most likely cause: <strong>you&#x27;re using apps with different message standards.</strong></p>
+<table><thead><tr><th>Standard</th><th>Apps</th><th>Notes</th></tr></thead><tbody><tr><td><strong>NIP-17</strong> (modern)</td><td>Amethyst, 0xchat, Keychat, Coracle, Flotilla</td><td>Damus is switching over in its next update. Hides the content and the sender.</td></tr><tr><td><strong>NIP-04</strong> (older)</td><td>Primal still uses this as of October 2026</td><td>Content is encrypted, but anyone can see who messaged whom, and when. Newer apps may hide these messages.</td></tr></tbody></table>
+<p>What to do:</p>
+<ol>
+<li class="">Ask the other person which app they use, and both use apps with the same standard.</li>
+<li class="">If your app has a separate <em>requests</em> tab, check it. Some apps put messages from people you don&#x27;t follow there.</li>
+<li class="">Open <em>Settings → Relays</em> and check you have a <strong>DM inbox</strong> list. Many apps set this up automatically. If it&#x27;s empty, add a big public relay.</li>
+</ol>
+<p>→ More: <a class="" href="/userguide/using-nostr/messaging">Messaging</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="zaps-and-wallets">Zaps and wallets<a href="#zaps-and-wallets" class="hash-link" aria-label="Direct link to Zaps and wallets" title="Direct link to Zaps and wallets" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-cant-send-zaps">I can&#x27;t send zaps<a href="#i-cant-send-zaps" class="hash-link" aria-label="Direct link to I can&#x27;t send zaps" title="Direct link to I can&#x27;t send zaps" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Is a wallet connected?</strong> Open <em>Settings → Wallet</em> (or <em>Zaps</em>). If you use Primal, its phone apps have a built-in wallet. Otherwise connect a wallet with Nostr Wallet Connect. See <a class="" href="/userguide/using-nostr/wallet-connect">Wallet Connect</a>.</li>
+<li class=""><strong>Do you have a balance?</strong></li>
+<li class=""><strong>Have you hit your spending budget?</strong> NWC connections often have a monthly limit. Raise it in your wallet if needed.</li>
+<li class=""><strong>Does the person have a Lightning address?</strong> No ⚡ button usually means they haven&#x27;t added one.</li>
+<li class=""><strong>Try again, or try a smaller amount.</strong> Lightning payments sometimes fail to find a route.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="im-not-receiving-zaps">I&#x27;m not receiving zaps<a href="#im-not-receiving-zaps" class="hash-link" aria-label="Direct link to I&#x27;m not receiving zaps" title="Direct link to I&#x27;m not receiving zaps" translate="no">​</a></h3>
+<ol>
+<li class="">Check your profile has a <strong>Lightning address</strong> (sometimes labelled <em>LN address</em>) and that it&#x27;s typed correctly.</li>
+<li class="">Make sure the wallet behind that address is still working. Wallet services change often; if yours closed, get a new address and update your profile.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-primal-wallet-balance-is-gone-after-reinstalling">My Primal wallet balance is gone after reinstalling<a href="#my-primal-wallet-balance-is-gone-after-reinstalling" class="hash-link" aria-label="Direct link to My Primal wallet balance is gone after reinstalling" title="Direct link to My Primal wallet balance is gone after reinstalling" translate="no">​</a></h3>
+<p>The Primal wallet has <strong>its own recovery phrase (12–24 words), separate from your nsec</strong>. Your nsec restores your account, not your sats. Restore the wallet with its recovery phrase. If you never saved it, the funds can&#x27;t be recovered.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-connected-a-wallet-to-an-app-i-no-longer-trust">I connected a wallet to an app I no longer trust<a href="#i-connected-a-wallet-to-an-app-i-no-longer-trust" class="hash-link" aria-label="Direct link to I connected a wallet to an app I no longer trust" title="Direct link to I connected a wallet to an app I no longer trust" translate="no">​</a></h3>
+<p>Open your wallet, find <strong>Connections</strong> (or <em>Apps</em> / <em>Nostr Wallet Connect</em>) and revoke that connection. Do the same for <strong>every</strong> connection if your nsec ever leaks.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="media">Media<a href="#media" class="hash-link" aria-label="Direct link to Media" title="Direct link to Media" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="i-cant-upload-images">I can&#x27;t upload images<a href="#i-cant-upload-images" class="hash-link" aria-label="Direct link to I can&#x27;t upload images" title="Direct link to I can&#x27;t upload images" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Check the app has permission</strong> to use your camera or photo library.</li>
+<li class=""><strong>Try a smaller file</strong> or a common format like JPG.</li>
+<li class=""><strong>Change your media server</strong> in <em>Settings → Media</em>, if your app lets you. Or upload directly at <a href="https://nostr.build" target="_blank" rel="noopener noreferrer" class="">nostr.build</a> or <a href="https://nostrcheck.me" target="_blank" rel="noopener noreferrer" class="">nostrcheck.me</a> and paste the link into your post.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="images-arent-loading">Images aren&#x27;t loading<a href="#images-arent-loading" class="hash-link" aria-label="Direct link to Images aren&#x27;t loading" title="Direct link to Images aren&#x27;t loading" translate="no">​</a></h3>
+<p>The media server hosting that image may be down, or your app may have image loading turned off to save data. Check your settings, or try another app. Some apps let you add a backup media server (the standard is called <em>Blossom</em>) so your own pictures survive if one shuts down.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-profile-picture-isnt-updating">My profile picture isn&#x27;t updating<a href="#my-profile-picture-isnt-updating" class="hash-link" aria-label="Direct link to My profile picture isn&#x27;t updating" title="Direct link to My profile picture isn&#x27;t updating" translate="no">​</a></h3>
+<p>Re-save your profile, wait a minute, then refresh. If one app still shows the old picture, it&#x27;s usually a cache. Check in a second app.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="readable-handle-nip-05">Readable handle (NIP-05)<a href="#readable-handle-nip-05" class="hash-link" aria-label="Direct link to Readable handle (NIP-05)" title="Direct link to Readable handle (NIP-05)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-handle-isnt-showing-or-shows-as-invalid">My handle isn&#x27;t showing, or shows as invalid<a href="#my-handle-isnt-showing-or-shows-as-invalid" class="hash-link" aria-label="Direct link to My handle isn&#x27;t showing, or shows as invalid" title="Direct link to My handle isn&#x27;t showing, or shows as invalid" translate="no">​</a></h3>
+<p>If you use a provider like nostrplebs.com, nostrcheck.me, iris.to or Primal Premium, check you typed the handle exactly as they gave it, and that it&#x27;s linked to your current npub.</p>
+<p>If you host it on your own domain, check:</p>
+<ol>
+<li class="">The file is at <code>https://yourdomain.com/.well-known/nostr.json</code>.</li>
+<li class="">It&#x27;s valid JSON, and the key inside it is in <strong>hex</strong> format, not npub.</li>
+<li class="">The server sends the header <code>Access-Control-Allow-Origin: *</code>, so web apps can read it.</li>
+<li class="">Test it: visit <code>https://yourdomain.com/.well-known/nostr.json?name=yourname</code> in a browser.</li>
+</ol>
+<p>→ Full guide: <a class="" href="/userguide/account/verification">Verification</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="apps-and-performance">Apps and performance<a href="#apps-and-performance" class="hash-link" aria-label="Direct link to Apps and performance" title="Direct link to Apps and performance" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-app-is-slow-or-drains-my-battery">The app is slow or drains my battery<a href="#the-app-is-slow-or-drains-my-battery" class="hash-link" aria-label="Direct link to The app is slow or drains my battery" title="Direct link to The app is slow or drains my battery" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Use fewer relays.</strong> Three to six is plenty. More just slows your app down.</li>
+<li class=""><strong>Turn off media auto-play or auto-load</strong>, if your app has the option.</li>
+<li class=""><strong>Update the app.</strong> Bugs get fixed often.</li>
+<li class=""><strong>Try a different app</strong> with the same account.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-app-i-used-has-closed-or-an-old-guide-links-to-a-dead-app">The app I used has closed, or an old guide links to a dead app<a href="#the-app-i-used-has-closed-or-an-old-guide-links-to-a-dead-app" class="hash-link" aria-label="Direct link to The app I used has closed, or an old guide links to a dead app" title="Direct link to The app I used has closed, or an old guide links to a dead app" translate="no">​</a></h3>
+<p>Your account isn&#x27;t stored in the app. Install another one and log in with your key. Many early Nostr apps have closed, and some of their old web addresses now host spam or gambling sites, so don&#x27;t follow old links.</p>
+<p>→ Current picks: <a class="" href="/userguide/clients/overview">Clients Overview</a></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-all-else-fails">When all else fails<a href="#when-all-else-fails" class="hash-link" aria-label="Direct link to When all else fails" title="Direct link to When all else fails" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Force close and reopen</strong> the app.</li>
+<li class=""><strong>Update</strong> the app.</li>
+<li class=""><strong>Log into a second app</strong> with your saved key to see whether the problem is the app or your account.</li>
+<li class=""><strong>Check relay status</strong> at <a href="https://nostr.watch" target="_blank" rel="noopener noreferrer" class="">nostr.watch</a>.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get-help">Get help<a href="#get-help" class="hash-link" aria-label="Direct link to Get help" title="Direct link to Get help" translate="no">​</a></h3>
 <ul>
-<li class="">Relay deleted old data</li>
-<li class="">Relay went offline</li>
-<li class="">Client cache cleared</li>
+<li class="">Post with <strong>#asknostr</strong>. People are quick to help.</li>
+<li class="">Report bugs on the app&#x27;s own website or GitHub page.</li>
+<li class="">Found a problem with this guide? <a href="https://github.com/nostrcg/userguide/issues" target="_blank" rel="noopener noreferrer" class="">Open an issue</a>.</li>
 </ul>
-<p><strong>Notes:</strong> This is normal in a decentralized system. Important posts should be on multiple relays.</p>
+<p>When reporting a bug, include the app name and version, your device, what you did, and what you expected to happen. <strong>Never include your nsec</strong>, and never send it to anyone offering &quot;support&quot;. Nostr has no support desk, and anyone who asks for your key is a scammer.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="zap-issues">Zap Issues<a href="#zap-issues" class="hash-link" aria-label="Direct link to Zap Issues" title="Direct link to Zap Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-send-zaps">Can&#x27;t send zaps<a href="#cant-send-zaps" class="hash-link" aria-label="Direct link to Can&#x27;t send zaps" title="Direct link to Can&#x27;t send zaps" translate="no">​</a></h3>
-<p><strong>Check:</strong></p>
-<ol>
-<li class=""><strong>Wallet connected?</strong> - Check app settings</li>
-<li class=""><strong>Balance?</strong> - Ensure you have sats</li>
-<li class=""><strong>Lightning address valid?</strong> - Check recipient&#x27;s profile</li>
-<li class=""><strong>Invoice expired?</strong> - Try again quickly</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="not-receiving-zaps">Not receiving zaps<a href="#not-receiving-zaps" class="hash-link" aria-label="Direct link to Not receiving zaps" title="Direct link to Not receiving zaps" translate="no">​</a></h3>
-<p><strong>Check:</strong></p>
-<ol>
-<li class=""><strong>Lightning address in profile?</strong> - Must be set</li>
-<li class=""><strong>Address working?</strong> - Test by sending to yourself</li>
-<li class=""><strong>Wallet active?</strong> - Some require app open</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zaps-showing-as-failed">Zaps showing as failed<a href="#zaps-showing-as-failed" class="hash-link" aria-label="Direct link to Zaps showing as failed" title="Direct link to Zaps showing as failed" translate="no">​</a></h3>
-<p><strong>Common causes:</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h2>
 <ul>
-<li class="">Network timeout</li>
-<li class="">Recipient&#x27;s node offline</li>
-<li class="">Route not found</li>
-</ul>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class="">Try again</li>
-<li class="">Try smaller amount</li>
-<li class="">Check if recipient&#x27;s wallet is active</li>
-</ol>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="media-issues">Media Issues<a href="#media-issues" class="hash-link" aria-label="Direct link to Media Issues" title="Direct link to Media Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cant-upload-images">Can&#x27;t upload images<a href="#cant-upload-images" class="hash-link" aria-label="Direct link to Can&#x27;t upload images" title="Direct link to Can&#x27;t upload images" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class=""><strong>Check file size</strong> - Most have limits (1-5MB typical)</li>
-<li class=""><strong>Try different format</strong> - JPG usually works</li>
-<li class=""><strong>Use external host</strong> - <a href="https://nostr.build" target="_blank" rel="noopener noreferrer" class="">nostr.build</a></li>
-<li class=""><strong>Check permissions</strong> - App may need camera/gallery access</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="images-not-loading">Images not loading<a href="#images-not-loading" class="hash-link" aria-label="Direct link to Images not loading" title="Direct link to Images not loading" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class="">Check internet connection</li>
-<li class="">Image host may be down</li>
-<li class="">Enable image loading in settings</li>
-<li class="">Try different client</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="profile-picture-not-updating">Profile picture not updating<a href="#profile-picture-not-updating" class="hash-link" aria-label="Direct link to Profile picture not updating" title="Direct link to Profile picture not updating" translate="no">​</a></h3>
-<p><strong>Solutions:</strong></p>
-<ol>
-<li class="">Clear cache</li>
-<li class="">Wait for propagation</li>
-<li class="">Re-save profile</li>
-<li class="">Try different image host</li>
-</ol>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verification-issues">Verification Issues<a href="#verification-issues" class="hash-link" aria-label="Direct link to Verification Issues" title="Direct link to Verification Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nip-05-not-showing">NIP-05 not showing<a href="#nip-05-not-showing" class="hash-link" aria-label="Direct link to NIP-05 not showing" title="Direct link to NIP-05 not showing" translate="no">​</a></h3>
-<p><strong>Check:</strong></p>
-<ol>
-<li class="">Correct format: <code>name@domain.com</code></li>
-<li class="">JSON file accessible</li>
-<li class="">CORS headers configured</li>
-<li class="">Public key matches</li>
-</ol>
-<p><strong>Test:</strong> Visit <code>https://yourdomain.com/.well-known/nostr.json?name=yourname</code></p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nip-05-says-invalid">NIP-05 says invalid<a href="#nip-05-says-invalid" class="hash-link" aria-label="Direct link to NIP-05 says invalid" title="Direct link to NIP-05 says invalid" translate="no">​</a></h3>
-<p><strong>Common issues:</strong></p>
-<ol>
-<li class="">JSON syntax error</li>
-<li class="">Wrong public key format (should be hex, not npub)</li>
-<li class="">Server not responding</li>
-<li class="">CORS blocking requests</li>
-</ol>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="client-specific-issues">Client-Specific Issues<a href="#client-specific-issues" class="hash-link" aria-label="Direct link to Client-Specific Issues" title="Direct link to Client-Specific Issues" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="damus-ios">Damus (iOS)<a href="#damus-ios" class="hash-link" aria-label="Direct link to Damus (iOS)" title="Direct link to Damus (iOS)" translate="no">​</a></h3>
-<table><thead><tr><th>Issue</th><th>Solution</th></tr></thead><tbody><tr><td>Notifications not working</td><td>Check Settings → Notifications → Damus</td></tr><tr><td>Posts duplicating</td><td>Clear cache, update app</td></tr><tr><td>Crash on open</td><td>Reinstall, restore from nsec</td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="amethyst-android">Amethyst (Android)<a href="#amethyst-android" class="hash-link" aria-label="Direct link to Amethyst (Android)" title="Direct link to Amethyst (Android)" translate="no">​</a></h3>
-<table><thead><tr><th>Issue</th><th>Solution</th></tr></thead><tbody><tr><td>Battery drain</td><td>Reduce relays, disable background refresh</td></tr><tr><td>Slow loading</td><td>Clear cache in settings</td></tr><tr><td>No notifications</td><td>Check Android notification settings</td></tr></tbody></table>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="primal-web">Primal (Web)<a href="#primal-web" class="hash-link" aria-label="Direct link to Primal (Web)" title="Direct link to Primal (Web)" translate="no">​</a></h3>
-<table><thead><tr><th>Issue</th><th>Solution</th></tr></thead><tbody><tr><td>Doesn&#x27;t load</td><td>Try different browser, clear cache</td></tr><tr><td>Extension not working</td><td>Reinstall extension, check permissions</td></tr><tr><td>Slow</td><td>Try at different time, cache warming</td></tr></tbody></table>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-all-else-fails">When All Else Fails<a href="#when-all-else-fails" class="hash-link" aria-label="Direct link to When All Else Fails" title="Direct link to When All Else Fails" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="general-reset-steps">General Reset Steps<a href="#general-reset-steps" class="hash-link" aria-label="Direct link to General Reset Steps" title="Direct link to General Reset Steps" translate="no">​</a></h3>
-<ol>
-<li class=""><strong>Clear app cache</strong> (if option exists)</li>
-<li class=""><strong>Force close and reopen</strong> app</li>
-<li class=""><strong>Log out and log back in</strong> (with your nsec!)</li>
-<li class=""><strong>Try a different client</strong> to isolate the issue</li>
-<li class=""><strong>Check relay status</strong> at <a href="https://nostr.watch" target="_blank" rel="noopener noreferrer" class="">nostr.watch</a></li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get-help">Get Help<a href="#get-help" class="hash-link" aria-label="Direct link to Get Help" title="Direct link to Get Help" translate="no">​</a></h3>
-<ol>
-<li class=""><strong>#asknostr hashtag</strong> - Community support</li>
-<li class=""><strong>App&#x27;s GitHub</strong> - File an issue</li>
-<li class=""><strong>Nostr communities</strong> - Many helpful groups</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reporting-bugs">Reporting Bugs<a href="#reporting-bugs" class="hash-link" aria-label="Direct link to Reporting Bugs" title="Direct link to Reporting Bugs" translate="no">​</a></h3>
-<p>When reporting issues, include:</p>
-<ul>
-<li class="">Client name and version</li>
-<li class="">Device and OS</li>
-<li class="">Steps to reproduce</li>
-<li class="">Error messages (if any)</li>
-<li class="">What you expected vs what happened</li>
-</ul>
-<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prevention-tips">Prevention Tips<a href="#prevention-tips" class="hash-link" aria-label="Direct link to Prevention Tips" title="Direct link to Prevention Tips" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="avoid-future-issues">Avoid Future Issues<a href="#avoid-future-issues" class="hash-link" aria-label="Direct link to Avoid Future Issues" title="Direct link to Avoid Future Issues" translate="no">​</a></h3>
-<ol>
-<li class=""><strong>Back up your keys</strong> - Can&#x27;t stress this enough</li>
-<li class=""><strong>Use reputable clients</strong> - Stick to well-known apps</li>
-<li class=""><strong>Keep apps updated</strong> - Bugs get fixed</li>
-<li class=""><strong>Use moderate relay count</strong> - 5-10 is usually good</li>
-<li class=""><strong>Don&#x27;t ignore errors</strong> - They often indicate real problems</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
-<ul>
-<li class=""><a class="" href="/userguide/help/faq">FAQ</a> - More answers</li>
-<li class=""><a class="" href="/userguide/help/glossary">Glossary</a> - Understand terms</li>
-<li class=""><a class="" href="/userguide/help/resources">Resources</a> - More help</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/nostrcg/userguide/tree/main/docs/help/troubleshooting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/userguide/help/faq"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FAQ</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/userguide/help/glossary"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Glossary</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#connection-issues" class="table-of-contents__link toc-highlight">Connection Issues</a><ul><li><a href="#cant-connect-to-relay" class="table-of-contents__link toc-highlight">&quot;Can&#39;t connect to relay&quot;</a></li><li><a href="#relay-refused-connection" class="table-of-contents__link toc-highlight">&quot;Relay refused connection&quot;</a></li><li><a href="#app-is-very-slow" class="table-of-contents__link toc-highlight">App is very slow</a></li></ul></li><li><a href="#account-issues" class="table-of-contents__link toc-highlight">Account Issues</a><ul><li><a href="#cant-log-in-with-private-key" class="table-of-contents__link toc-highlight">Can&#39;t log in with private key</a></li><li><a href="#profile-not-loading" class="table-of-contents__link toc-highlight">Profile not loading</a></li><li><a href="#lost-my-private-key" class="table-of-contents__link toc-highlight">Lost my private key</a></li><li><a href="#profile-shows-on-some-apps-but-not-others" class="table-of-contents__link toc-highlight">Profile shows on some apps but not others</a></li></ul></li><li><a href="#content-issues" class="table-of-contents__link toc-highlight">Content Issues</a><ul><li><a href="#posts-not-appearing" class="table-of-contents__link toc-highlight">Posts not appearing</a></li><li><a href="#cant-see-someones-posts" class="table-of-contents__link toc-highlight">Can&#39;t see someone&#39;s posts</a></li><li><a href="#missing-direct-messages" class="table-of-contents__link toc-highlight">Missing direct messages</a></li><li><a href="#old-posts-disappeared" class="table-of-contents__link toc-highlight">Old posts disappeared</a></li></ul></li><li><a href="#zap-issues" class="table-of-contents__link toc-highlight">Zap Issues</a><ul><li><a href="#cant-send-zaps" class="table-of-contents__link toc-highlight">Can&#39;t send zaps</a></li><li><a href="#not-receiving-zaps" class="table-of-contents__link toc-highlight">Not receiving zaps</a></li><li><a href="#zaps-showing-as-failed" class="table-of-contents__link toc-highlight">Zaps showing as failed</a></li></ul></li><li><a href="#media-issues" class="table-of-contents__link toc-highlight">Media Issues</a><ul><li><a href="#cant-upload-images" class="table-of-contents__link toc-highlight">Can&#39;t upload images</a></li><li><a href="#images-not-loading" class="table-of-contents__link toc-highlight">Images not loading</a></li><li><a href="#profile-picture-not-updating" class="table-of-contents__link toc-highlight">Profile picture not updating</a></li></ul></li><li><a href="#verification-issues" class="table-of-contents__link toc-highlight">Verification Issues</a><ul><li><a href="#nip-05-not-showing" class="table-of-contents__link toc-highlight">NIP-05 not showing</a></li><li><a href="#nip-05-says-invalid" class="table-of-contents__link toc-highlight">NIP-05 says invalid</a></li></ul></li><li><a href="#client-specific-issues" class="table-of-contents__link toc-highlight">Client-Specific Issues</a><ul><li><a href="#damus-ios" class="table-of-contents__link toc-highlight">Damus (iOS)</a></li><li><a href="#amethyst-android" class="table-of-contents__link toc-highlight">Amethyst (Android)</a></li><li><a href="#primal-web" class="table-of-contents__link toc-highlight">Primal (Web)</a></li></ul></li><li><a href="#when-all-else-fails" class="table-of-contents__link toc-highlight">When All Else Fails</a><ul><li><a href="#general-reset-steps" class="table-of-contents__link toc-highlight">General Reset Steps</a></li><li><a href="#get-help" class="table-of-contents__link toc-highlight">Get Help</a></li><li><a href="#reporting-bugs" class="table-of-contents__link toc-highlight">Reporting Bugs</a></li></ul></li><li><a href="#prevention-tips" class="table-of-contents__link toc-highlight">Prevention Tips</a><ul><li><a href="#avoid-future-issues" class="table-of-contents__link toc-highlight">Avoid Future Issues</a></li></ul></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Guide</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/userguide/">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/overview">Choose a Client</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/specialized">Specialized Apps</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/help/faq">FAQ</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.w3.org/community/nostr/" target="_blank" rel="noopener noreferrer" class="footer__link-item">W3C Nostr CG<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr Apps Directory<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostr.watch" target="_blank" rel="noopener noreferrer" class="footer__link-item">Find Relays<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostr.band" target="_blank" rel="noopener noreferrer" class="footer__link-item">Search Nostr<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nips.nostr.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">NIPs Reference<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with love for the Nostr community.</div></div></div></footer></div>
+<li class=""><a class="" href="/userguide/help/faq">FAQ</a>: more answers</li>
+<li class=""><a class="" href="/userguide/help/glossary">Glossary</a>: what the words mean</li>
+<li class=""><a class="" href="/userguide/help/resources">Resources</a>: more guides</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/nostrcg/userguide/tree/main/docs/help/troubleshooting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/userguide/help/faq"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FAQ</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/userguide/help/glossary"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Glossary</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#account-and-login" class="table-of-contents__link toc-highlight">Account and login</a><ul><li><a href="#cant-log-in-with-my-key" class="table-of-contents__link toc-highlight">Can&#39;t log in with my key</a></li><li><a href="#my-profile-is-blank-in-a-new-app" class="table-of-contents__link toc-highlight">My profile is blank in a new app</a></li><li><a href="#my-profile-shows-in-some-apps-but-not-others" class="table-of-contents__link toc-highlight">My profile shows in some apps but not others</a></li><li><a href="#i-lost-my-private-key" class="table-of-contents__link toc-highlight">I lost my private key</a></li><li><a href="#i-think-my-key-leaked" class="table-of-contents__link toc-highlight">I think my key leaked</a></li><li><a href="#someone-is-impersonating-me" class="table-of-contents__link toc-highlight">Someone is impersonating me</a></li></ul></li><li><a href="#posts-and-feeds" class="table-of-contents__link toc-highlight">Posts and feeds</a><ul><li><a href="#my-feed-is-empty-or-boring" class="table-of-contents__link toc-highlight">My feed is empty or boring</a></li><li><a href="#my-posts-dont-show-up-for-other-people" class="table-of-contents__link toc-highlight">My posts don&#39;t show up for other people</a></li><li><a href="#i-cant-see-someones-posts" class="table-of-contents__link toc-highlight">I can&#39;t see someone&#39;s posts</a></li><li><a href="#a-post-looks-different-or-is-missing-in-different-apps" class="table-of-contents__link toc-highlight">A post looks different, or is missing, in different apps</a></li><li><a href="#old-posts-disappeared" class="table-of-contents__link toc-highlight">Old posts disappeared</a></li><li><a href="#i-deleted-a-post-but-people-can-still-see-it" class="table-of-contents__link toc-highlight">I deleted a post but people can still see it</a></li></ul></li><li><a href="#private-messages" class="table-of-contents__link toc-highlight">Private messages</a><ul><li><a href="#my-message-didnt-arrive-or-i-cant-see-a-message-someone-sent" class="table-of-contents__link toc-highlight">My message didn&#39;t arrive, or I can&#39;t see a message someone sent</a></li></ul></li><li><a href="#zaps-and-wallets" class="table-of-contents__link toc-highlight">Zaps and wallets</a><ul><li><a href="#i-cant-send-zaps" class="table-of-contents__link toc-highlight">I can&#39;t send zaps</a></li><li><a href="#im-not-receiving-zaps" class="table-of-contents__link toc-highlight">I&#39;m not receiving zaps</a></li><li><a href="#my-primal-wallet-balance-is-gone-after-reinstalling" class="table-of-contents__link toc-highlight">My Primal wallet balance is gone after reinstalling</a></li><li><a href="#i-connected-a-wallet-to-an-app-i-no-longer-trust" class="table-of-contents__link toc-highlight">I connected a wallet to an app I no longer trust</a></li></ul></li><li><a href="#media" class="table-of-contents__link toc-highlight">Media</a><ul><li><a href="#i-cant-upload-images" class="table-of-contents__link toc-highlight">I can&#39;t upload images</a></li><li><a href="#images-arent-loading" class="table-of-contents__link toc-highlight">Images aren&#39;t loading</a></li><li><a href="#my-profile-picture-isnt-updating" class="table-of-contents__link toc-highlight">My profile picture isn&#39;t updating</a></li></ul></li><li><a href="#readable-handle-nip-05" class="table-of-contents__link toc-highlight">Readable handle (NIP-05)</a><ul><li><a href="#my-handle-isnt-showing-or-shows-as-invalid" class="table-of-contents__link toc-highlight">My handle isn&#39;t showing, or shows as invalid</a></li></ul></li><li><a href="#apps-and-performance" class="table-of-contents__link toc-highlight">Apps and performance</a><ul><li><a href="#the-app-is-slow-or-drains-my-battery" class="table-of-contents__link toc-highlight">The app is slow or drains my battery</a></li><li><a href="#the-app-i-used-has-closed-or-an-old-guide-links-to-a-dead-app" class="table-of-contents__link toc-highlight">The app I used has closed, or an old guide links to a dead app</a></li></ul></li><li><a href="#when-all-else-fails" class="table-of-contents__link toc-highlight">When all else fails</a><ul><li><a href="#get-help" class="table-of-contents__link toc-highlight">Get help</a></li></ul></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Guide</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/userguide/">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/overview">Choose a Client</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/clients/specialized">Specialized Apps</a></li><li class="footer__item"><a class="footer__link-item" href="/userguide/help/faq">FAQ</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.w3.org/community/nostr/" target="_blank" rel="noopener noreferrer" class="footer__link-item">W3C Nostr CG<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostrapps.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr Apps Directory<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostr.watch" target="_blank" rel="noopener noreferrer" class="footer__link-item">Find Relays<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nos.today" target="_blank" rel="noopener noreferrer" class="footer__link-item">Search Nostr<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/nostrcg/userguide/wiki" target="_blank" rel="noopener noreferrer" class="footer__link-item">Quick Guide (Wiki)<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nostrcg.github.io/devguide/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Developer Guide<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://nips.nostr.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">NIPs Reference<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/nostrcg/userguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with love for the Nostr community. Last reviewed October 2026.</div></div></div></footer></div>
 </body>
 </html>

@@ -41,18 +41,18 @@
     <text y="12" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="10">Social</text>
   </g>
 
-  <!-- Habla -->
+  <!-- YakiHonne -->
   <g transform="translate(205, 210)">
     <rect x="-55" y="-35" width="110" height="70" rx="10" fill="url(#appGradient)" filter="url(#shadow)"/>
-    <text y="-5" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="600">Habla</text>
-    <text y="12" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="10">Blogs</text>
+    <text y="-5" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="600">YakiHonne</text>
+    <text y="12" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="10">Articles</text>
   </g>
 
-  <!-- Olas -->
+  <!-- Divine -->
   <g transform="translate(350, 210)">
     <rect x="-55" y="-35" width="110" height="70" rx="10" fill="url(#appGradient)" filter="url(#shadow)"/>
-    <text y="-5" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="600">Olas</text>
-    <text y="12" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="10">Photos</text>
+    <text y="-5" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="600">Divine</text>
+    <text y="12" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="system-ui" font-size="10">Videos</text>
   </g>
 
   <!-- Zap.stream -->
