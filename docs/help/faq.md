@@ -137,7 +137,7 @@ An app or browser extension that holds your key in one trusted place. Other apps
 | Android | [Amber](https://github.com/greenart7c3/Amber) |
 | Computer | [Alby](https://getalby.com), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) |
 | iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta via TestFlight; an Android version is on GitHub too) |
-| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd), a self-hosted remote signer |
+| Power users | [`nak bunker`](https://github.com/fiatjaf/nak), a remote signer you run yourself |
 
 Starting from scratch? [nstart.me](https://nstart.me) creates your key, saves an encrypted backup, and can set up a signer login for you.
 

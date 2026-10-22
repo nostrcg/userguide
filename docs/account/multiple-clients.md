@@ -97,7 +97,7 @@ Every time you paste your nsec into an app, that app holds your whole identity. 
 | Android | [Amber](https://github.com/greenart7c3/Amber) | *Log in with Amber* button in Amethyst, Primal and many others. Get it from [Zapstore](https://zapstore.dev) or GitHub. |
 | Computer | [Alby](https://getalby.com) (also a wallet), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome), [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) | *Log in with extension* on Nostr websites |
 | iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta, via TestFlight; Android version on GitHub too) | A `bunker://…` or `nostrconnect://…` link or QR code. Fewer iPhone apps support this so far. |
-| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd) | Your own always-on remote signer |
+| Power users | [`nak bunker`](https://github.com/fiatjaf/nak) | A remote signer you run yourself |
 
 Starting from scratch? [nstart.me](https://nstart.me) creates your key, saves an encrypted backup, and can set up a bunker login.
 

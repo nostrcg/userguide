@@ -87,7 +87,7 @@ Many web clients can be installed as an app with their own window (a "progressiv
 ### Use a signer (recommended)
 
 - **Browser extension:** [Alby](https://getalby.com) (Chrome, Firefox and others), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox). On a Nostr website, click *Log in with extension*.
-- **Remote signer (bunker):** apps that support it connect with a `bunker://…` or `nostrconnect://…` link. Power users can run [nsecBunker](https://github.com/kind-0/nsecbunkerd). [nstart.me](https://nstart.me) can set up a bunker login when you create an account.
+- **Remote signer (bunker):** apps that support it connect with a `bunker://…` or `nostrconnect://…` link. Power users can run their own with [`nak bunker`](https://github.com/fiatjaf/nak). [nstart.me](https://nstart.me) can set up a bunker login when you create an account.
 
 See [Your identity](../getting-started/your-identity.md) for how signers work.
 

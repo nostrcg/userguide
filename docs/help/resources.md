@@ -48,7 +48,7 @@ The easiest way to find people is still inside your app: accept the topic lists 
 | Android | [Amber](https://github.com/greenart7c3/Amber) (also on [Zapstore](https://zapstore.dev)) |
 | Computer | [Alby](https://getalby.com), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome), [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) |
 | iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta via TestFlight; Android version on GitHub too) |
-| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd), a self-hosted remote signer |
+| Power users | [`nak bunker`](https://github.com/fiatjaf/nak), a remote signer you run yourself |
 
 For backups, use a password manager (Bitwarden, 1Password, Proton Pass or your phone's built-in one) plus a paper copy. See [Backup Your Keys](../account/backup-keys.md).
 

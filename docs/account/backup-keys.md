@@ -114,7 +114,7 @@ Every app you paste your nsec into holds your whole identity. A **signer** keeps
 | Android | [Amber](https://github.com/greenart7c3/Amber) |
 | Computer | [Alby](https://getalby.com), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) |
 | iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta, via TestFlight) |
-| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd) |
+| Power users | [`nak bunker`](https://github.com/fiatjaf/nak), a remote signer you run yourself |
 
 **You still need to back up the key inside your signer.** See [Multiple Clients](./multiple-clients.md) for how to log in with one.
 

@@ -125,7 +125,7 @@ Use a web client together with a browser extension. It is the best balance of co
 
 ### With a remote signer (bunker)
 
-Some web clients accept a `bunker://…` link from a remote signer such as [nsecBunker](https://github.com/kind-0/nsecbunkerd), or one set up through [nstart.me](https://nstart.me). Your key stays with the signer.
+Some web clients accept a `bunker://…` link from a remote signer such as Amber, Aegis or [`nak bunker`](https://github.com/fiatjaf/nak), or one set up through [nstart.me](https://nstart.me). Your key stays with the signer.
 
 ### Pasting your nsec
 
