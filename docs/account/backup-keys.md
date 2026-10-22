@@ -1,226 +1,142 @@
 ---
 sidebar_position: 3
 title: Backup Your Keys
-description: How to safely backup your Nostr private key
+description: How to safely back up your Nostr private key
 ---
 
 # Backup Your Keys
 
-Your private key (nsec) is your identity. Losing it means losing your account forever. Here's how to back it up safely.
+Your private key (nsec) **is** your account. There's no "forgot password", no email reset and no support desk. If you lose it, nobody can let you back in. Two minutes on this page is the best investment you'll make.
 
-## Why Backup Matters
+Do this the day you create your account.
 
-:::danger No Recovery Option
-Unlike traditional social media:
-- No "forgot password" option
-- No customer support to help
-- No email reset
-- If lost, it's lost forever
-:::
-
-With proper backup:
-- ✅ Access from any device
-- ✅ Recover if phone is lost
-- ✅ Import into new clients
-- ✅ Peace of mind
-
-## Your Private Key
-
-### What It Looks Like
+## What your nsec looks like
 
 ```
-nsec1abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567...
+nsec1abc123def456ghi789...
 ```
 
 - Starts with `nsec1`
-- 63 characters long
-- Mix of letters and numbers
+- 63 characters of letters and numbers
 
-### Where to Find It
+## Where to find it
 
-1. Open your Nostr client
-2. Go to Settings or Profile
-3. Look for "Keys", "Account", or "Security"
-4. Find and reveal your nsec
+1. Open your Nostr app.
+2. Go to **Settings → Keys** (sometimes *Account*, *Security* or *Backup*).
+3. Reveal or copy your nsec.
 
-:::warning Handle With Care
-- Don't display it in public
-- Don't screenshot if possible
-- Copy/paste carefully
-- Close the screen when done
+If you logged in with a signer, the app doesn't hold your nsec. Look for it in the signer instead.
+
+:::caution Handle with care
+Reveal it somewhere private, copy it carefully, and close the screen when you're done.
 :::
 
-## Backup Methods
+## The backup: two places
 
-### Method 1: Paper Backup (Recommended)
+### 1. A password manager
 
-The safest long-term storage:
+Bitwarden, 1Password, Proton Pass, KeePass or your phone's built-in password manager all work.
 
-1. **Write it down** on paper
-2. **Double-check** every character
-3. **Store safely** - fireproof safe, safety deposit box
-4. **Make a second copy** in different location
+1. Create an entry called "Nostr".
+2. Paste your **nsec** into it.
+3. Add your **npub** too, so you know which account it belongs to.
 
-**Tips:**
-- Use pen, not pencil (fades)
-- Write clearly
-- Include today's date
-- Note what it's for
+### 2. Paper
 
-### Method 2: Password Manager
+1. Write the nsec out clearly, in pen.
+2. Check every character against the screen.
+3. Note what it is ("Nostr key") and the date.
+4. Keep it where you'd keep your passport.
 
-Secure digital storage:
+### Extra protection: an encrypted backup (ncryptsec)
 
-**Good options:**
-- Bitwarden
-- 1Password
-- KeePass
+Some apps, and [nstart.me](https://nstart.me), can give you an **encrypted backup** that starts with `ncryptsec1…`. It's your key locked with a password you choose, so a stolen copy is useless without that password.
 
-**Steps:**
-1. Open your password manager
-2. Create new secure note
-3. Add your nsec
-4. Label it clearly
-5. Sync across devices
+- Save it **as well as** your plain nsec, not instead of it. Primal and Damus can't log in with an ncryptsec yet.
+- Keep the password somewhere **separate**, never on the same piece of paper.
 
-### Method 3: Encrypted File
+## Places to avoid
 
-For tech-savvy users:
+- Screenshots in your photo library (these often sync to the cloud)
+- Emailing it to yourself
+- Chat messages, including messages to yourself
+- Unencrypted notes apps
+- Sticky notes on your desk
 
-1. Create a text file with your nsec
-2. Encrypt with strong password (GPG, VeraCrypt)
-3. Store encrypted file in multiple locations
-4. Remember the encryption password!
+## Test your backup (without logging out)
 
-### Method 4: Seed Phrase (Advanced)
+A backup you've never tried might have a typo.
 
-Some tools convert nsec to seed words:
-- 12 or 24 word phrase
-- Easier to write down
-- More error-resistant
-- Use trusted tools only
+1. Open a **second** app, for example [jumble.social](https://jumble.social) or [primal.net](https://primal.net) in a browser.
+2. Choose **Log in** and use your backup.
+3. If your profile appears, you're safe.
 
-## Storage Locations
+:::danger Don't test by logging out
+If you pasted your nsec into an app, **logging out deletes it from that device**. Never log out, uninstall the app or reset your phone until your backup is saved and tested in a second app. (Logins through a signer aren't affected.)
+:::
 
-### Good Places
+## If you lose your key
 
-| Location | Pros | Cons |
-|----------|------|------|
-| Home safe | Physical security | Fire/theft risk |
-| Safety deposit box | Very secure | Less accessible |
-| Password manager | Convenient | Requires master password |
-| With trusted family | Distributed | Trust required |
+Check everywhere first: your password manager, phone notes, screenshots, emails to yourself, and the settings of **every** app or device that's still logged in. Any logged-in app can show you the key.
 
-### Avoid These
+If it's truly gone, the account can't be recovered:
 
-- ❌ Plain text on computer
-- ❌ Email to yourself
-- ❌ Cloud notes (Google Keep, etc.)
-- ❌ Screenshots in photo library
-- ❌ Browser saved passwords
-- ❌ Sticky notes
+1. **Create a new account**, and back it up properly this time.
+2. **Follow your friends again.**
+3. **Tell people** it's your new account, and update your npub anywhere you've listed it.
 
-## Testing Your Backup
+Your old posts stay up, and you can no longer delete them.
 
-### Verify It Works
+## If your key leaks
 
-1. **Open a different client** or device
-2. **Import your nsec** from your backup
-3. **Confirm** your profile loads correctly
-4. **Log out** of the test device
+If you pasted your nsec somewhere sketchy, or someone else has seen it, move fast. A Nostr key can't be changed.
 
-Don't skip this step! You don't want to discover a typo when you actually need it.
+1. **Make a new account**, ideally with a signer this time.
+2. **Protect your money.** In your wallet, revoke every Nostr Wallet Connect (NWC) connection. Move funds out of any wallet you log into with your Nostr key. Wallets with their own recovery phrase aren't affected.
+3. **From the old account**, post a note pointing to your new npub. Do it before the attacker does, because followers trust the first post they see.
+4. **Update your npub** everywhere you've listed it: website, bio, other social media.
+5. **Move your readable handle (NIP-05) and Lightning address** to the new account.
 
-## Security Best Practices
+## Common scams
 
-### Do's
+- **"Support" messages asking for your nsec**, or for a "verification" key. Nostr has no support desk, and no real app will ever ask.
+- **Websites asking you to paste your nsec** to "claim an airdrop", "get verified" or "recover your account".
+- **"You've been zapped! Claim your sats here"** links.
 
-- ✅ Make multiple backups
-- ✅ Store in different locations
-- ✅ Test your backup
-- ✅ Update if you create new key
-- ✅ Tell trusted person where backup is
+**The rule:** never give your nsec to a person, or to a website someone sent you. Type it only into an app you installed yourself, or a well-known Nostr site you typed in yourself. Better still, use a signer.
 
-### Don'ts
+## Signers: fewer copies of your key
 
-- ❌ Store only on one device
-- ❌ Share with strangers
-- ❌ Enter on suspicious websites
-- ❌ Post anywhere online
-- ❌ Store unencrypted digitally
+Every app you paste your nsec into holds your whole identity. A **signer** keeps your key in one trusted place and approves actions for other apps, so they never see it.
 
-## If You Haven't Backed Up Yet
+| Device | Signer |
+|---|---|
+| Android | [Amber](https://github.com/greenart7c3/Amber) |
+| Computer | [Alby](https://getalby.com), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) |
+| iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta, via TestFlight) |
+| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd) |
 
-Do it now! Here's the quick version:
+**You still need to back up the key inside your signer.** See [Multiple Clients](./multiple-clients.md) for how to log in with one.
 
-1. Open your Nostr app
-2. Find your nsec in settings
-3. Write it on paper
-4. Store paper safely
-5. Test by importing elsewhere
+## More than one account
 
-## What If You Lose Your Key?
+Some people keep separate accounts, for example personal and work. Back up each key separately, and label each entry clearly with its npub.
 
-If you lose your nsec with no backup:
+## Wallets have their own backup
 
-1. **Create a new account** - new keys
-2. **Post about the change** - let followers know
-3. **Update your profiles** - website, etc.
-4. **Accept the loss** - old posts stay, but you can't manage them
+If you use a wallet for zaps, it may have its own **recovery phrase** (12 to 24 words). For example, the wallet inside the Primal phone apps has one that's separate from your Nostr key. Saving your nsec does **not** save your sats, so write those words down too. See [Zaps](../using-nostr/zaps.md).
 
-Learn from it: Always backup your new key!
+## Checklist
 
-## Backup Checklist
+- [ ] Found my nsec in the app's settings
+- [ ] Saved it in a password manager, with my npub
+- [ ] Written it on paper and stored it safely
+- [ ] *(If offered)* Saved an ncryptsec as well, with its password kept separately
+- [ ] Tested it by logging into a **second** app
+- [ ] *(If I use one)* Backed up my wallet's recovery phrase
 
-- [ ] Found my nsec in app settings
-- [ ] Written on paper (carefully!)
-- [ ] Stored paper in safe location
-- [ ] Made second copy in different location
-- [ ] Tested by importing to another client
-- [ ] Told trusted person where backup is
+## Next steps
 
-## Using Signers (Alternative)
-
-Instead of backing up nsec directly, consider a signer:
-
-### What's a Signer?
-
-An app that holds your key and signs on your behalf:
-- Key stays in one secure place
-- Apps never see your actual key
-- More secure day-to-day
-
-### Popular Signers
-
-| Platform | Signer |
-|----------|--------|
-| Browser | Alby, nos2x |
-| Android | Amber |
-| Web | nsec.app |
-
-**You still need to backup the signer's key!**
-
-## Advanced: Multiple Keys
-
-Some users have multiple identities:
-- Main identity
-- Anonymous identity
-- Work identity
-
-**Backup each key separately** with clear labels.
-
-## Summary
-
-| Priority | Action |
-|----------|--------|
-| 🔴 Critical | Write nsec on paper |
-| 🔴 Critical | Store paper safely |
-| 🟠 Important | Make second backup |
-| 🟠 Important | Test your backup |
-| 🟢 Good | Consider signer app |
-
-## Next Steps
-
-- [Multiple Clients](/account/multiple-clients) - Use your backup
-- [Your Identity](/getting-started/your-identity) - Understand keys
-- [Verification](/account/verification) - Add trust layer
+- [Multiple Clients](./multiple-clients.md): use your key in other apps
+- [Your Identity](../getting-started/your-identity.md): how keys work
+- [Verification](./verification.md): get a readable handle

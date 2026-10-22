@@ -6,59 +6,61 @@ description: Nostr apps for iPhone and Android
 
 # Mobile Clients
 
-Mobile apps are the most popular way to use Nostr. Here are the best options for your phone.
+Phone apps are the most popular way to use Nostr. All of them are free, and the same account works in every one.
 
-## iPhone / iOS
+## Start here
+
+| Your phone | Pick either one |
+|---|---|
+| **iPhone** | [Damus](https://damus.io) or [Primal](https://primal.net) |
+| **Android** | [Amethyst](https://amethyst.social) or [Primal](https://primal.net) |
+
+Not sure? Install one, and try the other later with the same account.
+
+## iPhone
 
 ### Damus
 
-The most popular iOS client, known for its beautiful design.
+The original iPhone app: simple and clean.
 
-- **Download:** [App Store](https://apps.apple.com/app/damus/id1628663131)
-- **Cost:** Free
+- **Get it:** [App Store](https://apps.apple.com/app/damus/id1628663131) · [damus.io](https://damus.io)
+- **Also on:** Mac and Android
 
-**Features:**
-- Clean, Twitter-like interface
-- Zaps (Lightning payments)
-- Direct messages
-- Media sharing
-- Push notifications
-
-**Best for:** General use, beginners
+**Good at:** a calm timeline, zaps, private messages. Damus is switching its messages to the newer, more private NIP-17 standard in its next update.
 
 ---
 
 ### Primal
 
-A sleek client with a built-in Lightning wallet.
+Fast and polished, with discovery feeds and a built-in wallet.
 
-- **Download:** [App Store](https://apps.apple.com/app/primal/id1673134518)
-- **Cost:** Free
+- **Get it:** [App Store](https://apps.apple.com/app/primal/id1673134518) · [primal.net](https://primal.net)
+- **Also on:** Android and the web
 
-**Features:**
-- Built-in Bitcoin wallet
-- Trending content discovery
-- Premium caching (faster loading)
-- Clean interface
+**Good at:** finding interesting people quickly, and zapping without setting up a separate wallet.
 
-**Best for:** Users who want integrated Bitcoin wallet
+:::caution Primal's wallet has its own backup
+The wallet in the Primal phone apps has its own recovery phrase (12 to 24 words), separate from your Nostr key. Saving your nsec does **not** save your sats, so write those words down too. See [Zaps](../using-nostr/zaps.md).
+:::
 
 ---
 
 ### Nostur
 
-A powerful iOS client with unique features.
+A power-user app for iPhone and Mac with lots of options.
 
-- **Download:** [App Store](https://apps.apple.com/app/nostur/id1672780508)
-- **Cost:** Free
+- **Get it:** [nostur.com](https://nostur.com)
 
-**Features:**
-- Multiple account support
-- Customizable feeds
-- Advanced filtering
-- Gallery view for images
+**Good at:** multiple accounts, custom feeds and fine-grained settings.
 
-**Best for:** Power users on iOS
+---
+
+### Ditto
+
+A friendly all-rounder made for people new to Nostr.
+
+- **Get it:** [ditto.pub](https://ditto.pub)
+- **Also on:** Android and the web
 
 ---
 
@@ -66,186 +68,104 @@ A powerful iOS client with unique features.
 
 ### Amethyst
 
-The most feature-rich Android client.
+The most feature-packed Android app. It supports almost everything Nostr can do.
 
-- **Download:** [Play Store](https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst)
-- **Cost:** Free
+- **Get it:** [Google Play](https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst) · [amethyst.social](https://amethyst.social) · [Zapstore](https://zapstore.dev)
+- **Also on:** Desktop
 
-**Features:**
-- Highly customizable
-- Zaps and Lightning
-- Live activities
-- Communities support
-- Advanced relay management
-
-**Best for:** Users who want full control
+**Good at:** private messages (NIP-17), relay settings, live streams, communities, and working with the Amber signer.
 
 ---
 
 ### Primal
 
-Same great experience as iOS, now on Android.
+The same app as on iPhone, with the built-in wallet.
 
-- **Download:** [Play Store](https://play.google.com/store/apps/details?id=net.primal.android)
-- **Cost:** Free
+- **Get it:** [Google Play](https://play.google.com/store/apps/details?id=net.primal.android) · [primal.net](https://primal.net)
 
-**Features:**
-- Built-in Bitcoin wallet
-- Fast, cached experience
-- Clean interface
-- Cross-platform consistency
-
-**Best for:** Beginners, integrated wallet
+Primal still sends private messages with the older NIP-04 standard (as of October 2026). Some newer apps may hide those messages.
 
 ---
 
-### 0xchat
+### Damus, Ditto and YakiHonne
 
-A messaging-focused client for private communication.
-
-- **Download:** [0xchat.com](https://0xchat.com)
-- **Cost:** Free
-
-**Features:**
-- Encrypted direct messages (NIP-17/NIP-44)
-- Group chats
-- Voice messages
-- Media sharing
-
-**Best for:** Private messaging, group conversations
+- [**Damus**](https://damus.io) is now on Android too.
+- [**Ditto**](https://ditto.pub): a friendly all-rounder for newcomers.
+- [**YakiHonne**](https://yakihonne.com): a social feed plus long-form articles and creator tools.
 
 ---
 
-## Specialized Mobile Apps
+## Chat apps for your phone
 
-### Fountain
+If private messages matter most to you:
 
-Lightning-powered podcast app with Nostr integration.
+- [**0xchat**](https://0xchat.com) (iPhone, Android, Desktop): Telegram-style private messages, group chats and calls.
+- [**White Noise**](https://whitenoise.chat) (Android, iPhone): strongly encrypted messenger, like Signal, with no phone number needed. In beta.
+- [**Keychat**](https://keychat.io) (iPhone, Android, Desktop): private chat with a bitcoin wallet built in.
+- [**Flotilla**](https://flotilla.social) (iPhone, Android, Web): Discord-style community spaces.
 
-- **Download:** [App Store](https://apps.apple.com/app/fountain-podcasts/id1514638905) / [Play Store](https://play.google.com/store/apps/details?id=fm.fountain.apps)
-- **Cost:** Free
+See [Direct messages](../using-nostr/messaging.md) for which apps can read which messages.
 
-**Features:**
-- Stream sats to podcasters
-- Nostr profile sync
-- Audio clips appear in Nostr feeds
-- Value-for-value podcasting
+## Other phone apps
 
-**Best for:** Podcast listeners who want to support creators
+- [**Divine**](https://divine.video) (iPhone, Android): six-second looping videos, the Vine reboot.
+- [**Fountain**](https://fountain.fm) (iPhone, Android): a podcast app with Nostr comments, profiles and tips.
+- [**Wavlake**](https://wavlake.com) (iPhone, Android, Web): stream music, and artists get paid directly.
+- [**Zapstore**](https://zapstore.dev) (Android): an app store full of Nostr apps, where developers sign every release.
 
----
+## Keep your key safe on your phone
 
-### Amber (Android Signer)
+### Android: Amber
 
-Keep your keys secure with this dedicated signing app.
+[**Amber**](https://github.com/greenart7c3/Amber) is a signer. It holds your key, and other apps ask it for permission, as in *"Allow Primal to post this note?"* Amethyst, Primal and many other apps have a *Log in with Amber* button. Get it from [Zapstore](https://zapstore.dev) or GitHub.
 
-- **Download:** [F-Droid](https://f-droid.org/en/packages/com.greenart7c3.nostrsigner/) / [GitHub](https://github.com/greenart7c3/Amber)
-- **Cost:** Free
+### iPhone: Aegis
 
-**Features:**
-- NIP-46 signing device
-- Works with Amethyst, 0xchat, Fountain, and web apps
-- Granular permission controls
-- Multiple account support
-- No servers required
+[**Aegis**](https://github.com/ZharlieW/Aegis) is a signer in beta, installed through TestFlight. An Android version is on its GitHub page too. iPhone apps can't talk to each other directly, so it works as a *bunker*: the app connects with a `bunker://…` or `nostrconnect://…` link or QR code. Fewer iPhone apps support this so far.
 
-**Best for:** Security-conscious users who want to protect their keys
+See [Your identity](../getting-started/your-identity.md) for more on signers.
 
----
+## Comparison
 
-### Citrine
+| App | Phone | Built-in wallet | Private messages | Difficulty |
+|---|---|---|---|---|
+| Damus | iPhone, Android | No | Yes (moving to NIP-17) | Easy |
+| Primal | iPhone, Android | Yes | Yes (older NIP-04) | Easy |
+| Ditto | iPhone, Android | No | Not checked | Easy |
+| Amethyst | Android | No | Yes (NIP-17) | Medium |
+| Nostur | iPhone | No | Yes | Medium |
 
-Run a Nostr relay on your phone.
+## First-time setup
 
-- **Download:** [GitHub](https://github.com/nickkatsios/Citrine)
-- **Cost:** Free
+1. **Install** your chosen app from the official store or website.
+2. **Create an account.** Many apps offer ready-made topic lists of people to follow during sign-up.
+3. **Back up your private key (nsec).** In most apps it's in *Settings → Keys*. Save it in a password manager and on paper. If the app offers an encrypted backup (`ncryptsec1…`), save that **as well**, not instead: Primal and Damus can't log in with ncryptsec yet.
+4. **Set up your profile:** name, picture, bio. See [Profile setup](../account/profile-setup.md).
 
-**Features:**
-- Personal relay in your pocket
-- Backup your notes locally
-- Works offline
-
-**Best for:** Advanced users wanting relay independence
-
----
-
-## Comparison Table
-
-| App | Platform | Wallet | DMs | Difficulty |
-|-----|----------|--------|-----|------------|
-| Damus | iOS | External | ✅ | Easy |
-| Primal | Both | Built-in | ✅ | Easy |
-| Nostur | iOS | External | ✅ | Medium |
-| Amethyst | Android | External | ✅ | Medium |
-| Plebstr | Android | Built-in | ✅ | Easy |
-
-## Getting Started
-
-### First Time Setup
-
-1. **Download** your chosen app
-2. **Create account** or import existing keys
-3. **Save your private key** - This is crucial!
-4. **Set up your profile** - Name, picture, bio
-5. **Find people to follow** - Check suggestions
-
-### Importing an Existing Account
-
-If you already have a Nostr account:
-
-1. Open the app
-2. Choose "Login" or "I have an account"
-3. Enter your **nsec** (private key)
-4. Your account loads automatically
-
-:::tip Use a Signer on Android
-Android users can use [Amber](https://github.com/greenart7c3/Amber) as a signer. This means you never have to paste your private key into apps directly.
+:::caution Don't test your backup by logging out
+If you pasted your nsec into an app, logging out erases it from that phone. Test your backup by logging into a **second** app instead, for example [jumble.social](https://jumble.social) in a browser. If your profile appears, you're safe.
 :::
+
+### Logging in with an existing account
+
+1. Open the app and choose *Log in* or *I have an account*.
+2. On Android, tap *Log in with Amber* if you use it. Otherwise paste your nsec.
+3. Your profile and follows load.
+
+Only paste your nsec into an app you installed yourself. Never give it to a person or a website someone sent you.
 
 ## Notifications
 
-### Push Notifications
+Most phone apps can notify you about new followers, mentions, replies and zaps. Turn them on in the app's *Settings → Notifications*. Many apps run their own notification service so alerts arrive reliably.
 
-Most mobile apps support push notifications for:
-- New followers
-- Mentions
-- Replies to your posts
-- Zaps received
+## Tips
 
-**To enable:** Check Settings → Notifications in your app
+- **Battery and data:** images and videos use the most data. Use Wi-Fi for media-heavy browsing.
+- **Multiple accounts:** Nostur and Amethyst make switching accounts easy.
+- **Media uploads:** apps upload your pictures to media servers for you. Some let you add a backup server in *Settings → Media*.
 
-### How They Work
+## Next steps
 
-Unlike traditional apps, Nostr notifications work through relay subscriptions. Some apps use their own notification servers for reliability.
-
-## Tips for Mobile Users
-
-### Battery Life
-- Reduce number of relays (fewer connections)
-- Disable auto-refresh if not needed
-- Use push notifications instead of constant polling
-
-### Data Usage
-- Most apps cache content efficiently
-- Images/videos use the most data
-- Consider using WiFi for media-heavy browsing
-
-### Multiple Accounts
-Some apps support multiple accounts:
-- **Nostur** - Full multi-account support
-- **Amethyst** - Account switching
-
-## Recommended Starting Point
-
-| If you have... | Start with... |
-|----------------|---------------|
-| iPhone, new to Nostr | Damus |
-| iPhone, want wallet | Primal |
-| Android, new to Nostr | Primal |
-| Android, want features | Amethyst |
-
-## Next Steps
-
-- [Web Clients](/clients/web) - Browser options
-- [Desktop Clients](/clients/desktop) - Computer apps
-- [Set Up Your Profile](/account/profile-setup)
+- [Web clients](./web.md): use Nostr in a browser
+- [Desktop clients](./desktop.md): apps for your computer
+- [Set up your profile](../account/profile-setup.md)

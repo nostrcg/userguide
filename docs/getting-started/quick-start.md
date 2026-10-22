@@ -1,129 +1,104 @@
 ---
 sidebar_position: 3
 title: Quick Start
-description: Get started with Nostr in 5 minutes
+description: Your first Nostr post in about 10 minutes
 ---
 
-# Quick Start Guide
+# Quick Start
 
-Get on Nostr in just a few minutes. This guide will walk you through everything.
+No email, no phone number, no ID. Just an app and about **10 minutes**.
 
-## Step 1: Choose an App
+**The one idea you need:** your account is a **key** that *you* hold. Any Nostr app can open it, so you can switch apps whenever you like and keep your name, posts and followers.
 
-Pick an app based on your device:
+## Step 1: Get an app
 
-### Mobile (Recommended for Beginners)
+Pick either app for your device. The same account works in both, and in every other Nostr app.
 
-| Platform | App | Why It's Great |
-|----------|-----|----------------|
-| **iPhone** | [Damus](https://apps.apple.com/app/damus/id1628663131) | Beautiful, easy to use |
-| **Android** | [Amethyst](https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst) | Feature-rich, customizable |
-| **Both** | [Primal](https://primal.net) | Sleek, built-in wallet |
+| On… | Pick either one |
+|---|---|
+| **iPhone** | [Damus](https://apps.apple.com/app/damus/id1628663131) or [Primal](https://apps.apple.com/app/primal/id1673134518) |
+| **Android** | [Amethyst](https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst) or [Primal](https://play.google.com/store/apps/details?id=net.primal.android) |
+| **Computer** | [jumble.social](https://jumble.social) or [primal.net](https://primal.net), right in your browser |
 
-### Web (No Download Required)
+More choices, such as Ditto, YakiHonne and Nostur, are in [Clients](../clients/overview.md).
 
-- [Primal.net](https://primal.net) - Clean interface, works great
-- [Snort.social](https://snort.social) - Simple and fast
-- [Coracle.social](https://coracle.social) - Privacy-focused
+## Step 2: Create your account
 
-### Desktop
+Tap **Create account**, pick a name and a picture, and you're in. Behind the scenes, the app has made your two keys:
 
-- [Damus (macOS)](https://apps.apple.com/app/damus/id1628663131)
-- [Gossip](https://github.com/mikedilger/gossip) - Privacy-focused
+- **npub** (public key): like your **username**. Share it freely.
+- **nsec** (private key): like your **password**, except it can **never be reset**. Keep it secret.
 
-## Step 2: Create Your Account
-
-:::tip Easier Than You Think
-Most apps make this incredibly simple. Just tap "Create Account" and you're done!
+:::tip Optional, for extra safety
+Create your key at [nstart.me](https://nstart.me) instead. It walks you through a safe backup, then you log into your app with it.
 :::
 
-### What Happens When You Create an Account
+## Step 3: Save your key (2 minutes)
 
-1. The app generates two **keys** for you:
-   - **Public key (npub)** - Like your username, share freely
-   - **Private key (nsec)** - Like your password, keep secret!
+This is the one step you can't skip. In the app, open **Settings → Keys** (sometimes *Account* or *Backup*), copy your **nsec**, and save it in **two places**:
 
-2. You can optionally add:
-   - Display name
-   - Profile picture
-   - Bio
+1. A **password manager** (Bitwarden, 1Password, Proton Pass, your phone's built-in one…)
+2. **On paper**, kept somewhere safe
 
-### Important: Back Up Your Private Key!
+If your app also offers an *encrypted backup* (starts `ncryptsec1…`), save that too, but keep your plain nsec backup as well. Some apps, including Primal and Damus, can't log in with the encrypted one yet.
 
-Your private key is the **only** way to access your account. The app should show you this key when you create your account.
+:::danger Don't log out yet
+Never log out (or "sign out"), delete the app or reset your phone until you've saved your nsec. If you pasted your key into an app, logging out erases it from that device, and nobody can recover it for you.
+:::
 
-**Write it down and store it safely!**
+More detail: [Backup Your Keys](../account/backup-keys.md).
 
-If you lose it:
-- No company can reset it
-- You'll lose access to your account forever
+## Step 4: Fill in your profile
 
-→ Learn more in [Backup Your Keys](/account/backup-keys)
+In **Edit profile**, add:
 
-## Step 3: Set Up Your Profile
+- **A picture and a short bio.** Accounts without a picture look like spam bots, and fewer people follow them back.
+- **A Lightning address** *(optional)* so people can send you tips. See [Zaps](../using-nostr/zaps.md).
+- **A readable handle** *(optional)* like `you@example.com` (techies call this NIP-05). See [Verification](../account/verification.md).
 
-1. **Add a name** - Can be a nickname, real name, anything you want
-2. **Add a profile picture** - Optional but helps people recognize you
-3. **Write a short bio** - Tell people about yourself
-4. **Add a Lightning address** - So people can tip you (optional)
+More detail: [Profile Setup](../account/profile-setup.md).
 
-## Step 4: Find People to Follow
+## Step 5: Follow at least 20 people
 
-### In the App
-Most apps have:
-- Suggested users to follow
-- Global feeds to discover content
-- Search to find specific people
+An empty feed is the main reason people give up. Fix it fast:
 
-### Popular Accounts to Start
+- **Accept your app's suggestions** during sign-up. Many apps offer ready-made lists of people by topic, which you can follow in one tap.
+- **Search for things you love**, such as `#photography`, `#books`, `#gardening` or `#music`.
+- **Bring your friends.** Search their name, look for an `npub…` in their X, Bluesky or Instagram bio, or just ask them for it. Post *your* npub on your old accounts so people can find you.
 
-Here are some friendly accounts to follow:
-- Search for "Nostr" to find community accounts
-- Look for people posting about topics you enjoy
-- Check out who others are following
+## Step 6: Say hello
 
-### Find Friends
-If friends are already on Nostr, they can share their **public key (npub)** with you. Just paste it into the search!
+Write a first post introducing yourself and add **`#introductions`**. People really do welcome newcomers, and some will send a small tip to say hi. Have a question? Add **`#asknostr`**.
 
-## Step 5: Make Your First Post
+## What it's like
 
-That's it! Just start typing and hit post. Your message will go out to the relays and be visible to others.
+- **No algorithm by default.** The people you follow *are* your feed, in time order. It's quiet until you follow 20 to 50 people.
+- **Strangers reply.** That's normal and usually friendly.
+- **Lots of ⚡ numbers.** Those are tips, used like applause. You can ignore them completely.
+- **A strong bitcoin crowd.** You'll see plenty of bitcoin talk and "GM" (good morning) posts. Follow what you like and mute what you don't.
+- **Some rough edges.** If something's broken, try another app with the same account.
 
-### Ideas for Your First Post
+## Using a second app or device
 
-- Introduce yourself
-- Say hello to the community
-- Share why you joined
-- Ask a question
+In the new app, choose **Log in** (not *Create account*), then pick the safest option it offers:
 
-The Nostr community is known for being welcoming to newcomers!
+1. **Log in with a signer** (Amber on Android, a browser extension on a computer). Best, because the app never sees your key.
+2. **Paste your nsec.** Fine in well-known apps you installed yourself, or well-known sites like jumble.social or primal.net that you typed in yourself. Never on a site someone sent you a link to.
 
-## Quick Tips
+See [Multiple Clients](../account/multiple-clients.md).
 
-### Do's
-- ✅ Back up your private key immediately
-- ✅ Follow people who post content you enjoy
-- ✅ Engage with the community
-- ✅ Try different apps to find your favorite
+## First-week checklist
 
-### Don'ts
-- ❌ Share your private key (nsec) with anyone
-- ❌ Enter your private key on websites you don't trust
-- ❌ Worry about doing things "wrong" - explore!
+- [ ] nsec saved in **two** places
+- [ ] Picture, name and bio set
+- [ ] Following 20+ accounts
+- [ ] Posted an `#introductions` note
+- [ ] Replied to 5 posts (replies get you noticed far more than posts)
+- [ ] Logged in on a second device or app with your saved key
+- [ ] *(Optional)* Sent your first zap
 
-## What's Next?
+## Need help?
 
-Now that you're set up, explore these topics:
-
-- [Understanding Your Identity](/getting-started/your-identity) - Learn about keys
-- [Mobile Clients](/clients/mobile) - Explore more app options
-- [Following & Discovery](/using-nostr/following) - Find great content
-- [Zaps & Lightning](/using-nostr/zaps) - Send and receive tips
-
-## Need Help?
-
-- Check the [FAQ](/help/faq)
-- Visit [Troubleshooting](/help/troubleshooting)
-- Ask in the community - use the hashtag #asknostr
-
-Welcome to Nostr! 🎉
+- [FAQ](../help/faq.md)
+- [Troubleshooting](../help/troubleshooting.md)
+- Ask on Nostr with **#asknostr**

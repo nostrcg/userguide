@@ -1,155 +1,137 @@
 ---
 sidebar_position: 4
 title: Your Identity
-description: Understanding keys and identity on Nostr
+description: How keys work as your Nostr account
 ---
 
-# Understanding Your Nostr Identity
+# Your Identity
 
-Your identity on Nostr is based on **cryptographic keys**. This might sound technical, but it's actually a simpler and more secure system than traditional usernames and passwords.
+On Nostr there's no "Forgot password?" button. Your account **is** a pair of keys, and you hold them. That's the whole point: no company can lock you out. It also means nobody can let you back in.
 
-## The Two Keys
+## The two keys
 
-When you create a Nostr account, you get two keys:
-
-### Public Key (npub)
+### Public key (npub)
 
 ```
 npub1abc123def456...
 ```
 
-- **What it is:** Your public identity/address
-- **Share it:** Yes! Give it to anyone
-- **Like:** Your email address or phone number
-- **Format:** Starts with `npub1`
+- **What it is:** your public identity, like a **username**
+- **Share it?** Yes, freely
+- **Starts with:** `npub1`
 
-### Private Key (nsec)
+### Private key (nsec)
 
 ```
 nsec1xyz789ghi012...
 ```
 
-- **What it is:** Your secret password
-- **Share it:** NEVER!
-- **Like:** The password to your bank account
-- **Format:** Starts with `nsec1`
+- **What it is:** like a **password that can never be reset**
+- **Share it?** Never, with anyone
+- **Starts with:** `nsec1`
 
-:::danger Protect Your Private Key
-Anyone with your private key can:
+:::danger Your nsec is your account
+Anyone who has your nsec can:
+
 - Post as you
 - Read your private messages
-- Send zaps from your account
-- Take over your identity completely
+- Change your profile and follow list
+- Possibly spend from wallets connected to your account
 
-There is no "forgot password" - if someone gets your key, they have it forever.
+A Nostr key can't be changed. If someone gets it, they have it for good.
 :::
 
-## How Keys Work
+## How keys work
 
-Think of it like a special lock and key:
+![Your private key signs posts; anyone can use your public key to check the signature](/img/diagrams/keys-explained.svg)
 
-![How Nostr Keys Work](/img/diagrams/keys-explained.svg)
+1. You write a post.
+2. Your private key **signs** it.
+3. Anyone can use your public key to check that you wrote it.
+4. Nobody can forge your signature without your private key.
 
-1. You write a post
-2. Your private key "signs" the post
-3. Anyone can use your public key to verify you wrote it
-4. No one can forge your signature without your private key
+## Finding your keys
 
-## Finding Your Keys
+In most apps:
 
-### In Most Apps
+1. Open **Settings** (or your profile).
+2. Look for **Keys**, **Account** or **Backup**.
+3. Your npub is usually shown openly.
+4. Your nsec is usually hidden until you tap to reveal or copy it.
 
-1. Go to Settings or Profile
-2. Look for "Keys" or "Account"
-3. Your public key is usually visible
-4. Private key may be hidden (tap to reveal)
+If you logged in with a signer, the app doesn't have your nsec at all. Look in the signer instead.
 
-### Key Formats
+### Other formats you might see
 
-You might see keys in different formats:
+| Format | Looks like | Used for |
+|---|---|---|
+| **npub / nsec** | `npub1…` / `nsec1…` | The usual way to show keys |
+| **Hex** | 64 characters of 0–9 and a–f | The same key in a technical format |
+| **nprofile** | `nprofile1…` | A shareable link to a profile |
+| **ncryptsec** | `ncryptsec1…` | Your nsec locked with a password, for backups |
 
-| Format | Example | Use |
-|--------|---------|-----|
-| **npub/nsec** | `npub1abc...` | Most common, easy to share |
-| **Hex** | `a1b2c3d4e5...` | Technical, 64 characters |
-| **nprofile** | `nprofile1...` | Includes relay hints |
+Most apps convert between these for you.
 
-Most apps convert between these automatically.
+## Keeping your key safe
 
-## Key Management Best Practices
+**Do:**
 
-### Do's ✅
+- Save your nsec in a **password manager** and **on paper**. See [Backup Your Keys](../account/backup-keys.md).
+- Use a **signer** so fewer apps ever hold your key (see below).
 
-- **Write down your nsec** on paper and store safely
-- **Use a password manager** for digital backup
-- **Verify your npub** before sharing it
-- **Use a signer app** for extra security (advanced)
+**Don't:**
 
-### Don'ts ❌
+- Give your nsec to anyone. No real app, person or "support team" needs it.
+- Paste it into a website someone sent you a link to.
+- Keep it in screenshots or unencrypted notes that sync to the cloud.
 
-- **Never share your nsec** with anyone
-- **Never enter nsec** on untrusted websites
-- **Never store nsec** in plain text on your computer
-- **Never screenshot** your private key
+:::tip The rule
+Never give your nsec to a person, or to a website someone sent you. Type it only into an app you installed yourself, or a well-known Nostr site you typed in yourself. Better still, use a signer.
+:::
 
-## What if I Lose My Private Key?
+## What if I lose my private key?
 
-There is no recovery option. This is by design:
-- No company has access to reset it
-- No email verification
-- No customer support
+First, check everywhere: your password manager, phone notes, screenshots, emails to yourself, and the settings of **every** app or device that's still logged in. Any logged-in app can show you the key.
 
-**This is why backup is so important!**
+If it's truly gone, the account can't be recovered. There's no company and no support desk that can reset it. You'll need to:
 
-If you lose your key:
-- You'll need to create a new account
-- You'll lose your follower connections
-- Old posts will still exist but you can't manage them
+- Create a new account
+- Follow your friends again
+- Tell people it's your new account
 
-→ See [Backup Your Keys](/account/backup-keys) for detailed backup strategies
+Your old posts stay up, and you can no longer delete them.
 
-## Signer Apps (Advanced)
+## Signers
 
-For extra security, you can use a separate app to manage your keys:
+Every time you paste your nsec into an app, that app holds your whole identity. A **signer** fixes this. Your key lives in **one** trusted place, and other apps ask it for permission, as in *"Allow Primal to post this note?"* If one of those apps is ever hacked, your key isn't in it.
 
-### What is a Signer?
+![Apps ask the signer to sign; the signer holds your key and only returns a signature](/img/diagrams/signer-flow.svg)
 
-Instead of entering your private key into every app, a signer:
-- Stores your key securely
-- Approves actions on your behalf
-- Never shares the actual key with apps
+| Device | Signer |
+|---|---|
+| **Android** | [Amber](https://github.com/greenart7c3/Amber). Many apps, including Amethyst and Primal, have a *Log in with Amber* button. Get it from [Zapstore](https://zapstore.dev) or GitHub. |
+| **Computer** | Browser extensions: [Alby](https://getalby.com) (also connects a wallet), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox). Click *Log in with extension* on a Nostr website. |
+| **iPhone** | [Aegis](https://github.com/ZharlieW/Aegis) (beta, via TestFlight; an Android version is on its GitHub page too). It works as a *bunker*: apps connect with a `bunker://…` or `nostrconnect://…` link or QR code. Fewer apps support this on iPhone so far. |
+| **Power users** | Run your own always-on remote signer with [nsecBunker](https://github.com/kind-0/nsecbunkerd). |
 
-### Popular Signers
+Starting from scratch? [nstart.me](https://nstart.me) creates your key, saves an encrypted backup, and can set up a bunker login.
 
-| Platform | App |
-|----------|-----|
-| Browser | [nos2x](https://github.com/fiatjaf/nos2x), [Alby](https://getalby.com) |
-| Mobile | [Amber](https://github.com/greenart7c3/Amber) (Android) |
-| Desktop | [nsec.app](https://nsec.app) |
+You still need to back up the key that's inside your signer.
 
-### How It Works
+## Readable handles (NIP-05)
 
-![How Signers Protect Your Keys](/img/diagrams/signer-flow.svg)
-
-1. App asks signer to sign something
-2. Signer shows you what it's signing
-3. You approve
-4. Signer signs without exposing your key to the app
-
-## Verification (NIP-05)
-
-You can link your Nostr identity to a domain name:
+You can link your account to a domain name, so people see something like:
 
 ```
 alice@example.com
 ```
 
-This is NOT an email address! It's a way to verify your identity.
+It looks like an email address, but it isn't one. It shows that the account controls that domain. It does **not** prove who someone is.
 
-→ Learn more in [Verification](/account/verification)
+→ [Verification](../account/verification.md)
 
-## Next Steps
+## Next steps
 
-- [Back Up Your Keys](/account/backup-keys) - Essential security
-- [Choose a Client](/clients/overview) - Find your favorite app
-- [Set Up Your Profile](/account/profile-setup) - Complete your identity
+- [Backup Your Keys](../account/backup-keys.md): do this today
+- [Clients](../clients/overview.md): find more apps
+- [Profile Setup](../account/profile-setup.md): finish your profile

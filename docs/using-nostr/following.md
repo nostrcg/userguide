@@ -1,234 +1,108 @@
 ---
 sidebar_position: 2
 title: Following
-description: Discover and follow users on Nostr
+description: Find people to follow, shape your feed and keep spam out
 ---
 
 # Following & Discovery
 
-Find interesting people and curate your Nostr experience.
+An empty feed is the number one reason people give up on Nostr. Nostr has no algorithm by default: the people you follow *are* your feed, in time order. It stays quiet until you follow 20 to 50 people, so start there.
 
-## How Following Works
+## How following works
 
-When you follow someone:
-- Their posts appear in your feed
-- Your client fetches their content from relays
-- They may get notified (depends on client)
-- Your follow list is public (stored on relays)
+- When you follow someone, your app adds them to your **follow list** and fetches their posts from relays.
+- Your follow list is saved on relays, not in the app. Follow someone in Damus, open Primal with the same account, and they're already in your feed.
+- Your follow list is **public**. Anyone can see who you follow.
 
-```
-You → Follow → Alice
-              ↓
-Your Client ← Fetches posts ← Relays storing Alice's content
-```
+Modern apps find out which relays each person posts to (this is called the *outbox model*) and fetch from there automatically. You don't need to add relays to see someone's posts.
 
-## Finding People to Follow
+## Finding people to follow
 
-### In-App Discovery
+### During sign-up
 
-Most clients offer:
-- **Suggested users** - Popular accounts
-- **Global feed** - All public posts
-- **Trending** - Popular content
-- **Who to follow** - Recommendations
+Many apps show ready-made lists of people by topic while you set up your account. Follow a whole topic in one tap, and unfollow anyone later.
 
 ### Search
 
-Find specific people:
-- Search by name
-- Search by npub (public key)
-- Search by NIP-05 (verified address)
+Search in your app for:
 
-Example searches:
-```
-jack                    (name)
-npub1sg6plzptd64u62a878...  (public key)
-jack@cash.app           (NIP-05)
-```
+- a **name**
+- an **npub** (their public key, starting `npub1…`)
+- a **readable handle** such as `alice@example.com` (NIP-05)
+- a **hashtag** such as `#photography`, `#books`, `#gardening` or `#music`
 
-### Hashtags
+To search across all of Nostr from a browser, try [nos.today](https://nos.today) or [ants.sh](https://ants.sh).
 
-Discover through topics:
-- Browse hashtag feeds
-- Follow people posting about interests
-- Use #introductions to find new users
+### Your friends
 
-### Cross-Following
+- Ask them for their **npub** and paste it into search.
+- Look for an `npub…` in their X, Bluesky or Instagram bio.
+- Post *your* npub on your other accounts so people can find you.
 
-See who others follow:
-1. Visit someone's profile
-2. Look for "Following" section
-3. Browse their follows
-4. Follow interesting accounts
+### Other people's follows
 
-## Follow Lists
+Open the profile of someone you like and browse who they follow. Their follows often turn out to be your people too.
 
-### Your Main Follow List
+### People on Mastodon and Bluesky
 
-Your primary list of people you follow:
-- Appears in your home feed
-- Synced across clients
-- Public on relays
+- **Mastodon and the fediverse:** you can follow them through [Mostr](https://mostr.pub). Fediverse accounts show up as Nostr profiles you can follow and reply to. Some Mastodon servers block the bridge, so not every account will appear.
+- **Bluesky:** not right now. There's no maintained bridge.
 
-### Managing Follows
+### Introduce yourself
 
-Most clients let you:
-- View all follows in one place
-- Unfollow easily
-- See follower/following counts
+Post an introduction with `#introductions`. People really do say hello, and it's a quick way to find others who are new.
 
-### Importing Follows
+## Feeds beyond "Following"
 
-If you're new or switching clients:
-1. Log in with your nsec
-2. Your follows load automatically
-3. May take a moment to sync
+Most apps have tabs besides your *Following* feed:
 
-## Feed Curation
+| Feed | What it shows |
+|---|---|
+| **Trending / popular** | What lots of people are reacting to right now |
+| **Popular with your follows** | Posts your follows liked or reposted |
+| **Topic or hashtag** | Posts with a particular tag |
+| **Relay feed** | Everything posted to one relay, often a community |
 
-### Home Feed
+Primal, Jumble and Coracle are especially good at this. Some apps also let you make your own lists of people and use each list as a feed.
 
-Shows posts from people you follow:
-- Most recent posts
-- Algorithm-free (usually)
-- Your curated experience
+## Muting and spam
 
-### Other Feeds
+Moderation on Nostr is lighter than on X, and it's more in your hands. Spend two minutes on it and your feed gets much calmer.
 
-| Feed Type | Shows |
-|-----------|-------|
-| Global | All public posts |
-| Trending | Popular content |
-| Hashtag | Posts with specific tag |
-| Media | Posts with images/video |
+- **Mute a person:** open their profile, tap **⋯**, then *Mute*. You won't see them anywhere in that app, and many apps share your mute list with your other Nostr apps.
+- **Mute words, hashtags or threads:** look in **Settings → Muted** (or *Content filters*).
+- **Report:** use **⋯** then *Report* on a post or profile. Apps and relays use reports to filter spam and illegal content.
+- **Turn on spam filtering:** look in settings for *web of trust* or *trusted network*. It hides accounts that nobody you follow is connected to.
+- **Still too much spam?** A paid relay such as [nostr.wine](https://nostr.wine) only accepts posts from members, so it's much cleaner.
 
-### Tips for a Great Feed
-
-1. **Follow quality over quantity** - Better content
-2. **Mute accounts you don't like** - Clean up feed
-3. **Use hashtag feeds** - Topic discovery
-4. **Try different clients** - Different feed algorithms
-
-## Followers
-
-### Getting Followers
-
-Grow your audience:
-- Post interesting content
-- Engage with others
-- Use the #introductions hashtag
-- Be authentic and consistent
-
-### Follower Visibility
-
-- Your follower count is public
-- Some clients show who follows you
-- Follower lists are on relays
-
-## Muting & Blocking
-
-### Muting
-
-Hide content from specific users:
-- They won't know
-- Their posts disappear from your feed
-- You can unmute anytime
-
-### Blocking
-
-Stronger action:
-- Blocks direct messages
-- May hide all content
-- Client-specific implementation
-
-:::note
-Muting/blocking is handled by your client, not enforced network-wide. Others may still see the content.
+:::note Muting isn't blocking
+Posts are public, so a muted person can still see your posts and reply to them. You just won't see them.
 :::
 
-## Lists (Advanced)
+## Following etiquette
 
-Some clients support custom lists:
+- Follow people whose posts you enjoy, and reply to them.
+- Don't expect everyone to follow back.
+- **Don't follow back strangers who zap you tiny amounts.** That's a common bot trick to get attention.
+- Anyone can copy a name and photo. Check the **npub** or readable handle before trusting an account, never just the display name.
 
-### Types of Lists
+## Getting followers
 
-- **Mute lists** - People to ignore
-- **Follow lists** - Custom groups
-- **Topic lists** - Curated feeds
+- Add a picture and a short bio. Accounts without a picture look like spam bots, and fewer people follow them back. See [Profile Setup](../account/profile-setup.md).
+- Reply to others more than you post.
+- Use a few relevant hashtags.
+- Be patient. Nostr is small enough that conversations turn into friendships.
 
-### Creating Lists
+## Troubleshooting
 
-1. Look for "Lists" in your client
-2. Create new list
-3. Add users
-4. Use list as a feed
+**I can't see someone's posts.**
+Each app talks to its own mix of relays and has its own spam filters. Try another app, or open their profile at [njump.me](https://njump.me). If you turned on web-of-trust filtering, it may be hiding them.
 
-## Relay Strategy for Following
+**My follows disappeared in a new app.**
+Make sure you logged in with the same key (check that the npub matches). Give the app a moment to load your follow list from relays.
 
-### How Relays Affect Following
+## Next steps
 
-You only see posts from relays you're connected to:
-
-```
-You ← Relay A ← Alice (seen)
-You    ----    Bob on Relay B (not seen)
-```
-
-### Tips
-
-- Use common relays to see more people
-- Check if followed accounts list their relays
-- Add relays where your follows post
-
-→ See [Understanding Relays](/using-nostr/relays)
-
-## Following Etiquette
-
-### Do's
-
-- ✅ Follow people whose content you enjoy
-- ✅ Engage with people you follow
-- ✅ Give new follows a chance
-- ✅ Curate your experience
-
-### Don'ts
-
-- ❌ Follow just to get follow-backs
-- ❌ Spam follow hundreds at once
-- ❌ Expect everyone to follow back
-- ❌ Unfollow immediately if not followed
-
-## Tools for Discovery
-
-### nostr.band
-
-- [nostr.band](https://nostr.band)
-- Search for users
-- See trending accounts
-- Explore topics
-
-### Nostr Apps Directory
-
-- [nostrapps.com](https://nostrapps.com)
-- Find apps
-- Discover features
-
-### Community Resources
-
-- Ask in #asknostr
-- Check community lists
-- Look at who others follow
-
-## Syncing Across Clients
-
-Your follow list syncs automatically:
-1. Follow someone on Damus
-2. Open Primal
-3. They're in your feed!
-
-This works because follow lists are stored on relays, not in apps.
-
-## Next Steps
-
-- [Messaging](/using-nostr/messaging) - Direct communication
-- [Zaps & Lightning](/using-nostr/zaps) - Support creators
-- [Understanding Relays](/using-nostr/relays)
+- [Messaging](./messaging.md)
+- [Zaps & Lightning](./zaps.md)
+- [Relays](./relays.md)

@@ -1,233 +1,90 @@
 ---
 sidebar_position: 6
 title: Wallet Connect (NWC)
-description: Connect your Lightning wallet to any Nostr app
+description: Link one Lightning wallet to every Nostr app, with a spending budget
 ---
 
 # Nostr Wallet Connect (NWC)
 
-Nostr Wallet Connect (NWC) is an open protocol that connects your Lightning wallet to apps. Think of it as **USB-C for Bitcoin wallets** — one connection standard that works everywhere.
+**Nostr Wallet Connect (NWC)** links a Lightning wallet to a Nostr app so that zapping takes one tap. You connect once per app, set a spending budget, and the app can then ask your wallet to pay. The app never holds your money.
 
-## What is NWC?
+## How it works
 
-NWC allows any app to request payments from your wallet:
+![How Nostr Wallet Connect works](/img/diagrams/nwc-flow.svg)
 
-![NWC Flow](/img/diagrams/nwc-flow.svg)
+1. Your wallet creates a **connection link** (it starts with `nostr+walletconnect://`).
+2. You paste that link into your Nostr app.
+3. When you zap, the app sends an encrypted payment request through a relay.
+4. Your wallet pays, as long as the payment fits the budget you set.
 
-1. You connect your wallet once using a connection string
-2. Apps send encrypted payment requests through Nostr relays
-3. Your wallet pays automatically (within limits you set)
-4. You never share your wallet credentials with apps
-
-## Why Use NWC?
+## Why use it
 
 | Without NWC | With NWC |
-|-------------|----------|
-| Copy invoice, switch to wallet, paste, pay, switch back | One-click zaps |
-| Enter wallet credentials in every app | Connect once, use everywhere |
-| Trust apps with your wallet access | Wallet controls spending limits |
-| Manual confirmation for each payment | Automatic payments within limits |
+|---|---|
+| Copy an invoice, switch to your wallet, pay, switch back | One tap on ⚡ |
+| The app has no limits on what you approve | Your wallet enforces a spending budget |
+| Hard to stop an app later | Revoke one app's connection at any time |
 
-## Key Benefits
+## Set it up
 
-### For Users
+1. **Get a wallet that supports NWC.** Good choices:
+   - [Alby Hub](https://getalby.com/alby-hub) (self-custody, the reference wallet for Nostr apps; run it yourself or let Alby host it for a monthly fee), with [Alby Go](https://getalby.com/alby-go) on your phone
+   - [Coinos](https://coinos.io) (custodial, web-based, set up in a minute; it disclosed a credential leak in August 2026, so pocket money only)
+   - [Zeus](https://zeusln.com) (self-custody, more control)
 
-- **One-click zaps** — No more switching apps
-- **Your keys, your funds** — Wallet stays in your control
-- **Spending limits** — Set maximum amounts per app
-- **Works everywhere** — Same wallet in all NWC apps
+   More wallets are listed at [nwc.dev](https://nwc.dev).
+2. **Create a connection.** In your wallet, find **Connections**, **Apps** or **Nostr Wallet Connect** and create a new one. Set a **spending budget**, for example 10,000 sats a month, so a hacked app can't drain you.
+3. **Copy the connection link**, or show its QR code.
+4. **Paste it into your Nostr app.** Open **Settings → Wallet** (or *Zaps*) **→ Connect wallet**, then paste the link or scan the code.
+5. **Test it.** Zap a post. In most apps you can long-press ⚡ to choose a custom amount.
 
-### Security
+:::tip
+If you use the Primal phone app, its wallet is built in and needs no NWC setup. It has its own recovery phrase, separate from your nsec, so write that down. See [Zaps & Lightning](./zaps.md).
+:::
 
-- **Zero custody** — Apps never hold your funds
-- **Encrypted** — All communication is end-to-end encrypted
-- **Revocable** — Disconnect any app anytime
-- **Configurable** — Set spending limits and frequency caps
+## Apps that support NWC
 
-## How to Set Up NWC
+Damus, Amethyst, Primal, Nostur, noStrudel, YakiHonne, Snort and zap.stream all support NWC. [See the full list at nwc.dev](https://nwc.dev).
 
-### Step 1: Get an NWC-Compatible Wallet
+## Keep it safe
 
-| Wallet | Type | Best For |
-|--------|------|----------|
-| [Alby Hub](https://albyhub.com) | Self-custodial | Power users, own node |
-| [Alby Account](https://getalby.com) | Custodial | Easy setup |
-| [Primal](https://primal.net) | Built-in | Primal users |
-| [Coinos](https://coinos.io) | Custodial | Web-based |
+:::caution Treat the connection link like a password
+Anyone who has your `nostr+walletconnect://` link can spend from your wallet, up to its budget. Paste it only into apps you trust, and never share it.
+:::
 
-### Step 2: Create a Connection
+- **Make one connection per app.** Then you can switch off a single app without touching the others.
+- **Always set a budget.** Start small. You can raise it later.
+- **Keep only pocket money** in a custodial wallet.
+- **Check your connections now and then.** Your wallet shows which apps are connected. Delete any you no longer use.
 
-In your wallet:
-1. Find "Nostr Wallet Connect" or "App Connections"
-2. Click "Create Connection" or "Add App"
-3. Set spending limits (e.g., 1000 sats/day)
-4. Copy the connection string (starts with `nostr+walletconnect://`)
+:::danger If your nsec leaks
+Revoke **every** NWC connection in your wallet straight away, then follow the steps in [Backup Your Keys](../account/backup-keys.md) to move to a new account.
+:::
 
-### Step 3: Connect to an App
+## Revoking a connection
 
-In the Nostr app:
-1. Go to Settings → Wallet
-2. Choose "Nostr Wallet Connect"
-3. Paste your connection string
-4. Done! Start zapping
+1. Open your wallet's **Connections** (or *Apps*) page.
+2. Find the app.
+3. Tap **Revoke**, **Disconnect** or **Delete**.
 
-## Supported Apps
-
-### Nostr Clients
-
-| App | Platform | NWC Support |
-|-----|----------|-------------|
-| Damus | iOS | ✅ |
-| Amethyst | Android | ✅ |
-| Primal | All | ✅ Built-in |
-| Snort | Web | ✅ |
-| Coracle | Web | ✅ |
-| Nostrudel | Web | ✅ |
-
-### Other Apps
-
-- **Wavlake** — Music streaming
-- **Fountain** — Podcasts
-- **Stacker News** — Bitcoin forum
-- **Zap.stream** — Live streaming
-
-## Wallet Options
-
-### Alby Hub (Recommended for Power Users)
-
-Self-custodial wallet that runs on your own hardware:
-- Full control of your funds
-- Connect multiple apps
-- Detailed spending analytics
-- Run on Umbrel, Start9, or cloud
-
-**Get started:** [albyhub.com](https://albyhub.com)
-
-### Alby Account
-
-Easy custodial option:
-- Quick setup
-- Browser extension included
-- Lightning address included
-- Good for beginners
-
-**Get started:** [getalby.com](https://getalby.com)
-
-### Primal Wallet
-
-Built into the Primal app:
-- Zero configuration needed
-- Works across Primal web/mobile
-- Easy onboarding
-- NWC for other apps too
-
-### Connecting Your Own Node
-
-Have an Umbrel, Start9, or LND node? Connect it via NWC:
-1. Install Alby Hub or NWC plugin
-2. Create connection strings
-3. Use your node from any app
-
-## Setting Spending Limits
-
-Protect yourself with limits:
-
-| Setting | Description |
-|---------|-------------|
-| **Max per payment** | Largest single payment allowed |
-| **Daily budget** | Maximum spend per day |
-| **Monthly budget** | Maximum spend per month |
-| **Expiration** | Connection auto-expires after date |
-
-### Recommended Limits
-
-| Use Case | Suggested Limit |
-|----------|-----------------|
-| Casual zapping | 500-1000 sats/day |
-| Active user | 5000-10000 sats/day |
-| Creator support | 20000+ sats/day |
-
-## Managing Connections
-
-### View Active Connections
-
-In your wallet, see:
-- Which apps are connected
-- Spending per app
-- Last activity
-- Remaining budget
-
-### Revoke Access
-
-If you want to disconnect an app:
-1. Open wallet settings
-2. Find the app connection
-3. Click "Revoke" or "Delete"
-4. App can no longer request payments
+The app can no longer ask your wallet to pay.
 
 ## Troubleshooting
 
-### Zaps Not Working?
+| Problem | Try |
+|---|---|
+| Zap fails | Check your wallet balance and whether you've used up the budget. |
+| App says the link is invalid | Copy the whole link again. It must start with `nostr+walletconnect://`. Or create a new connection. |
+| Zaps stopped working after a while | The connection may have been revoked or expired. Create a new one. |
+| Nothing happens with a self-hosted wallet | Make sure your Alby Hub (or node) is online. |
 
-1. **Check connection** — Is the connection string still valid?
-2. **Check balance** — Do you have enough sats?
-3. **Check limits** — Have you hit your daily limit?
-4. **Check wallet** — Is your wallet online?
+## Learn more
 
-### Connection String Invalid?
+- [nwc.dev](https://nwc.dev): wallets and apps that support NWC
+- [NIPs](https://github.com/nostr-protocol/nips): the technical specs (NWC is NIP-47)
 
-- Make sure you copied the full string
-- Check it starts with `nostr+walletconnect://`
-- Try creating a new connection
+## Next steps
 
-### Wallet Offline?
-
-Some wallets need to be online to process payments:
-- **Alby Hub** — Must be running
-- **Mobile wallets** — App should be open/backgrounded
-- **Primal** — Always available
-
-## Privacy Considerations
-
-### What's Private
-
-- Payment amounts (encrypted)
-- Payment destinations (encrypted)
-- Your wallet details
-
-### What's Visible
-
-- That you're using NWC (connection to relay)
-- Timing of payments (metadata)
-
-## Advanced: Multiple Connections
-
-Create different connections for different purposes:
-
-| Connection | Use | Limit |
-|------------|-----|-------|
-| Social apps | Damus, Primal | 500 sats/day |
-| Music/Podcasts | Wavlake, Fountain | 2000 sats/day |
-| Testing | New apps | 100 sats/day |
-
-## NWC vs Other Methods
-
-| Method | Convenience | Security | Setup |
-|--------|-------------|----------|-------|
-| **NWC** | ⭐⭐⭐ | ⭐⭐⭐ | Medium |
-| Built-in wallet | ⭐⭐⭐ | ⭐⭐ | Easy |
-| Manual invoices | ⭐ | ⭐⭐⭐ | None |
-| Sharing credentials | ⭐⭐ | ⭐ | Easy |
-
-## Resources
-
-- [NWC Documentation](https://docs.nwc.dev) — Official docs
-- [NWC.dev](https://nwc.dev) — Protocol info
-- [Alby NWC](https://nwc.getalby.com) — Alby's implementation
-- [NIP-47](https://nips.nostr.com/47) — Technical specification
-
-## Next Steps
-
-- [Zaps & Lightning](/using-nostr/zaps) — Understand zapping
-- [Mobile Clients](/clients/mobile) — Find NWC-compatible apps
-- [Resources](/help/resources) — More wallet options
+- [Zaps & Lightning](./zaps.md)
+- [Profile Setup](../account/profile-setup.md): add your Lightning address
+- [Resources](../help/resources.md)

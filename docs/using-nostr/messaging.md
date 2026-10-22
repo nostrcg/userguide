@@ -1,230 +1,81 @@
 ---
 sidebar_position: 3
 title: Messaging
-description: Private and direct messaging on Nostr
+description: Private messages on Nostr, which apps to use, and what stays private
 ---
 
 # Direct Messaging
 
-Nostr supports private messaging between users. Here's how it works and how to use it securely.
+You can send private messages on Nostr without a phone number or email. There's one thing to know up front: **there are two message standards, and apps using different ones may not see each other's messages.**
 
-## How DMs Work
+## The two standards
 
-Direct messages on Nostr are:
-- **Encrypted** - Only sender and recipient can read
-- **Stored on relays** - Like other events
-- **Linked to your identity** - Uses your keys
+| | Modern private messages (NIP-17) | Older DMs (NIP-04) |
+|---|---|---|
+| **Message content** | Encrypted | Encrypted |
+| **Who sent it** | Hidden | Visible to anyone |
+| **Who it's for, and when** | Only the relay that stores it can see this, roughly | Visible to anyone |
+| **Apps** | Amethyst, 0xchat, Keychat, Coracle, Flotilla. Damus is switching over in its next update. | Primal (as of October 2026) |
 
-```
-┌─────────┐     Encrypted     ┌─────────┐
-│   You   │ ────────────────▶ │ Relays  │
-│ (send)  │                   │ (store) │
-└─────────┘                   └────┬────┘
-                                   │
-                              Encrypted
-                                   │
-                                   ▼
-                             ┌─────────┐
-                             │ Friend  │
-                             │(receive)│
-                             └─────────┘
-```
+With older DMs, anyone can see **who messaged whom, and when**, even though they can't read the words. Newer apps may hide these older messages by default, which is a common reason a message "never arrived".
 
-## Encryption Versions
-
-### NIP-04 (Legacy)
-
-The original DM encryption:
-- Widely supported
-- Has known limitations
-- Being phased out
-
-### NIP-44 (Modern)
-
-The newer, more secure version:
-- Stronger encryption
-- Better privacy
-- Not all clients support yet
-
-:::tip Check Your Client
-Look for "NIP-44" or "Encrypted DMs" in your client's features to know which version it uses.
+:::tip
+For anything sensitive, use a NIP-17 app, or [White Noise](https://whitenoise.chat), a strongly encrypted messenger like Signal (still in beta).
 :::
 
-## Sending Messages
+## Sending a message
 
-### Basic Steps
+1. Open the person's profile.
+2. Tap the message or chat icon.
+3. Write your message and send.
 
-1. Open someone's profile
-2. Look for the message/DM icon
-3. Write your message
-4. Send!
+Your messages live under a chat or envelope icon in the app. Many apps keep messages from people you don't follow in a separate *requests* folder, so check there if you're expecting something.
 
-### In Different Clients
+## Apps for chatting
 
-| Client | How to DM |
-|--------|-----------|
-| Damus | Profile → Message icon |
-| Primal | Profile → Message |
-| Amethyst | Profile → Message |
-| 0xchat | Built for messaging |
+| App | Good for | Devices |
+|---|---|---|
+| [0xchat](https://0xchat.com) | Telegram-style private messages, group chats and calls | iPhone, Android, desktop |
+| [White Noise](https://whitenoise.chat) | Strongly encrypted chat, like Signal (beta) | Android, iPhone |
+| [Keychat](https://keychat.io) | Private chat with a bitcoin wallet built in | iPhone, Android, desktop |
+| [Flotilla](https://flotilla.social) | Discord-style community spaces with channels and chat | Web, iPhone, Android |
+| [Amethyst](https://amethyst.social) | Messages inside a full social app | Android |
+| [Coracle](https://coracle.social) | Messages inside a web social app | Web |
 
-## Reading Messages
+You can use a chat app alongside your main social app. It's the same account.
 
-### Inbox
+## What stays private
 
-Most clients have a messages section:
-- Look for envelope or chat icon
-- May show unread count
-- Organized by conversation
+- **Your words:** encrypted in both standards.
+- **Who you're talking to:** hidden with NIP-17, public with NIP-04.
+- **Your IP address:** visible to the relays you connect to, like any website. Use a VPN or Tor if that matters to you.
+- **Your messages depend on your key.** They're encrypted to your key, so if you lose your nsec you lose access to your messages too. [Back up your key](../account/backup-keys.md).
 
-### Notifications
+## Your DM inbox relays
 
-Get notified of new messages:
-- Push notifications (mobile)
-- In-app badges
-- Depends on client settings
+Modern apps publish a short list of relays where private messages should reach you, often called a **DM inbox**. Most apps set it up automatically. If people say their messages to you don't arrive, look in **Settings → Relays** and check the DM inbox list isn't empty. If it is, add a big public relay such as `wss://relay.damus.io`. See [Relays](./relays.md).
 
-## Group Messaging
+## Staying safe
 
-### Encrypted Groups
-
-Some clients support group DMs:
-- Multiple participants
-- Encrypted for all members
-- Features vary by client
-
-### 0xchat
-
-Specialized for messaging:
-- Group chats
-- Voice messages
-- Media sharing
-- Mobile-first design
-
-## Privacy Considerations
-
-### What's Encrypted
-
-✅ Message content
-✅ Media in messages (usually)
-
-### What's Visible
-
-⚠️ That you messaged someone (metadata)
-⚠️ When you messaged (timestamp)
-⚠️ Size of messages
-
-### Metadata Privacy
-
-Even though content is encrypted:
-- Relays know who's talking to whom
-- Timestamps are visible
-- This is a trade-off for decentralization
-
-## Security Tips
-
-### Do's
-
-- ✅ Verify who you're messaging (check npub)
-- ✅ Use clients that support NIP-44
-- ✅ Be cautious with sensitive info
-- ✅ Use specialized messaging apps for more privacy
-
-### Don'ts
-
-- ❌ Send sensitive credentials via DM
-- ❌ Trust unverified contacts
-- ❌ Assume total anonymity
-
-## Message Requests
-
-### From Unknown Contacts
-
-Some clients filter messages from:
-- People you don't follow
-- New accounts
-- Potential spam
-
-### Managing Requests
-
-Look for:
-- Message requests folder
-- Filter settings
-- Spam controls
+- **Check the npub** of the person you're talking to. Anyone can copy a name and photo.
+- **Never send your nsec**, in a message or anywhere else. No real app, person or "support team" needs it. Nostr has no support desk.
+- **Be wary of strangers who quickly ask to move to Telegram or WhatsApp.** That's a classic setup for investment and romance scams.
+- **Ignore "you've been zapped, claim your sats here" links and giveaway DMs.** They're always scams.
+- Be suspicious of anyone selling a "Nostr token". Nostr has no token.
 
 ## Troubleshooting
 
-### Messages Not Sending?
+**My message didn't arrive, or theirs didn't reach me.**
+Ask the other person which app they use. If one of you is on a NIP-04 app (such as Primal) and the other on a NIP-17 app, you may not see each other's messages. Try both using a NIP-17 app.
 
-1. Check relay connections
-2. Verify recipient's npub
-3. Try refreshing
-4. Check internet connection
+**I can't find a message someone says they sent.**
+Check the *requests* or *other* folder, and check whether your app hides older-style DMs.
 
-### Not Receiving Messages?
+**Messages don't load in a new app.**
+Make sure you logged in with the same key. If your old messages used a different standard from the new app, they may not show.
 
-1. Check your DM inbox
-2. Look in requests/filtered
-3. Verify relay settings
-4. Other person might be on different relays
+## Next steps
 
-### Can't Read Old Messages?
-
-If you've lost access to old messages:
-- Encryption keys may have changed
-- Relay may have deleted old data
-- Try other relays
-
-## Specialized Messaging Clients
-
-### 0xchat
-
-- **Best for:** Messaging-focused experience
-- **Features:** Groups, voice, media
-- **Platform:** Mobile
-
-### Blowater
-
-- **Best for:** Clean chat interface
-- **Features:** Focused on conversation
-- **Platform:** Web/Desktop
-
-## DMs vs. Other Communication
-
-| Feature | Nostr DM | Signal | Email |
-|---------|----------|--------|-------|
-| Encrypted | ✅ | ✅ | ❌* |
-| Decentralized | ✅ | ❌ | ❌ |
-| Linked to identity | ✅ | Phone # | Email |
-| Metadata protection | ⚠️ | ✅ | ❌ |
-
-*Unless using PGP
-
-## Best Practices
-
-### For Casual Chat
-
-- Use any Nostr client
-- Standard DM features work well
-- Enjoy the convenience
-
-### For Sensitive Communication
-
-- Use NIP-44 compatible clients
-- Consider specialized messaging apps
-- Be aware of metadata limitations
-- For very sensitive: use Signal, etc.
-
-## Future Improvements
-
-The Nostr community is working on:
-- Better group messaging
-- Improved privacy
-- Voice and video
-- Better relay privacy
-
-## Next Steps
-
-- [Zaps & Lightning](/using-nostr/zaps) - Send payments
-- [Understanding Relays](/using-nostr/relays)
-- [FAQ](/help/faq)
+- [Zaps & Lightning](./zaps.md)
+- [Relays](./relays.md)
+- [FAQ](../help/faq.md)

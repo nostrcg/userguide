@@ -6,222 +6,165 @@ description: Browser-based Nostr clients
 
 # Web Clients
 
-Web clients let you access Nostr from any browser without downloading an app. They're perfect for quick access or when using shared computers.
+Web clients let you use Nostr in any browser without installing anything. They're handy at work, on a borrowed laptop, or just to try Nostr out.
 
-## Popular Web Clients
+## Start here
 
-### Primal
+Pick either one:
 
-The most polished web experience.
+- [**Jumble**](https://jumble.social): a clean, fast web app that can also show feeds from individual relays.
+- [**primal.net**](https://primal.net): fast and polished, with good discovery feeds.
 
-- **URL:** [primal.net](https://primal.net)
-- **Cost:** Free
+Primal's built-in wallet is in the Primal **phone apps**, not on primal.net.
 
-**Features:**
-- Beautiful, responsive design
-- Built-in Lightning wallet
-- Advanced search
-- Trending content
-- Caching for faster loads
+## More web clients
 
-**Best for:** Everyone, especially beginners
+### Ditto
+
+A friendly all-rounder made for people new to Nostr.
+
+- **URL:** [ditto.pub](https://ditto.pub)
+
+---
+
+### Nostria
+
+"Social without the noise": calm, focused feeds. Also available as a desktop and Android app.
+
+- **URL:** [nostria.app](https://nostria.app)
 
 ---
 
 ### Snort
 
-A fast, lightweight client.
+A tidy, quick web app.
 
 - **URL:** [snort.social](https://snort.social)
-- **Cost:** Free
-
-**Features:**
-- Fast and responsive
-- Clean interface
-- Good for microblogging
-- Supports most NIPs
-
-**Best for:** Quick, no-frills experience
 
 ---
 
 ### Coracle
 
-A privacy-focused client with advanced features.
+Smart about relays, and good for custom feeds. Coracle also uses the newer, more private NIP-17 standard for messages.
 
 - **URL:** [coracle.social](https://coracle.social)
-- **Cost:** Free
-
-**Features:**
-- Privacy-conscious design
-- Advanced relay management
-- Group features (NIP-29)
-- Customizable feeds
-
-**Best for:** Privacy-focused users
 
 ---
 
-### Nostrudel
+### noStrudel
 
-A feature-rich, community-focused client.
+A kitchen-sink explorer that shows everything Nostr can do. Great for power users and the curious.
 
 - **URL:** [nostrudel.ninja](https://nostrudel.ninja)
-- **Cost:** Free
-
-**Features:**
-- All the features
-- Community support
-- Advanced tools
-- Open development
-
-**Best for:** Power users
 
 ---
 
 ### Iris
 
-An experimental client with unique features.
+Simple, works offline, and has a built-in ecash wallet. Also available as a desktop app.
 
 - **URL:** [iris.to](https://iris.to)
-- **Cost:** Free
-
-**Features:**
-- Unique social graph features
-- Offline support
-- Peer-to-peer connections
-
-**Best for:** Trying something different
 
 ---
 
-## Long-Form Content
+### YakiHonne
 
-For blog posts and articles:
-
-### Habla
-
-- **URL:** [habla.news](https://habla.news)
-- Write and read long-form content (NIP-23)
-- Clean reading experience
-- Markdown support
-
-### Yakihonne
+A social feed plus long-form articles and creator tools.
 
 - **URL:** [yakihonne.com](https://yakihonne.com)
-- Beautiful article layouts
-- Publication features
-- Newsletter-style content
 
----
+## Writing and reading articles
 
-## Comparison Table
+- [**YakiHonne**](https://yakihonne.com): write and read long-form articles.
+- [**Pareto**](https://pareto.space): blogs and newsletters for independent journalists.
+- [**Wikifreedia**](https://wikifreedia.xyz): a wiki where anyone can write their own version of an article.
 
-| Client | Speed | Features | Privacy | Best For |
-|--------|-------|----------|---------|----------|
-| Primal | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | General use |
-| Snort | ⭐⭐⭐ | ⭐⭐ | ⭐⭐ | Quick access |
-| Coracle | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Privacy |
-| Nostrudel | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | Power users |
+## Comparison
 
-## Browser Extensions
+| Client | Feel | Best for |
+|---|---|---|
+| Jumble | Clean, fast | Everyday use, browsing relay feeds |
+| primal.net | Polished | Discovery, beginners |
+| Ditto | Friendly | Newcomers |
+| Nostria | Calm | Focused reading |
+| Snort | Quick | No-frills posting |
+| Coracle | Relay-aware | Custom feeds |
+| noStrudel | Everything | Power users |
 
-Using a browser extension keeps your keys more secure:
+## Browser extensions (signers)
 
-### Nos2x
+A browser extension keeps your key in one place. Websites ask the extension to sign, and never see the key itself.
 
-- **Browser:** Chrome, Firefox
-- **Get it:** [GitHub](https://github.com/fiatjaf/nos2x)
-- Simple key storage
-- Signs events for web clients
+| Extension | Browser | Notes |
+|---|---|---|
+| [Alby](https://getalby.com) | Chrome, Firefox and others | Also connects a wallet for zaps |
+| [nos2x](https://github.com/fiatjaf/nos2x) | Chrome | Simple key storage |
+| [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) | Firefox | Firefox version of nos2x |
 
-### Alby
+### How extensions work
 
-- **Browser:** Chrome, Firefox, Safari
-- **Get it:** [getalby.com](https://getalby.com)
-- Key storage
-- Lightning wallet
-- One-click zaps
+![How a signer works](/img/diagrams/signer-flow.svg)
 
-### How Extensions Work
+1. The website asks to sign something, like a new post.
+2. The extension shows you the request.
+3. You approve.
+4. The extension signs it. Your key never leaves the extension.
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│ Web Client  │────▶│  Extension  │────▶│   Relay     │
-│ (primal.net)│ ask │ (nos2x/Alby)│sign │  (Server)   │
-└─────────────┘     └─────────────┘     └─────────────┘
-```
-
-1. Web client asks to sign something
-2. Extension shows you what it wants to sign
-3. You approve
-4. Extension signs without exposing your key
-
-:::tip Recommended Setup
-Use a web client + browser extension (Alby or nos2x) for the best balance of convenience and security.
+:::tip Recommended setup
+Use a web client together with a browser extension. It is the best balance of convenience and safety on a computer.
 :::
 
-## Logging In
+## Logging in
 
-### With Extension (Recommended)
+### With an extension (recommended)
 
-1. Install nos2x or Alby
-2. Add your private key to the extension
-3. Visit a web client
-4. Click "Login with Extension"
-5. Approve the connection
+1. Install Alby, nos2x or nos2x-fox.
+2. Add your key to the extension.
+3. Visit a web client and click *Log in with extension*.
+4. Approve the connection.
 
-### Without Extension
+### With a remote signer (bunker)
 
-1. Visit the web client
-2. Click "Login" or "I have an account"
-3. Enter your nsec (private key)
+Some web clients accept a `bunker://…` link from a remote signer such as [nsecBunker](https://github.com/kind-0/nsecbunkerd), or one set up through [nstart.me](https://nstart.me). Your key stays with the signer.
 
-:::warning Security Note
-When entering your nsec directly into a website:
-- Make sure you're on the official URL
-- Check for https (secure connection)
-- Don't use on shared/public computers
+### Pasting your nsec
+
+1. Type the client's address yourself.
+2. Click *Log in* and paste your nsec.
+
+:::danger Only on sites you typed in yourself
+Never paste your nsec into a website someone sent you, and never give it to a person. Only use well-known Nostr sites you typed in yourself, like the ones on this page. Avoid it on shared or public computers. Better still, use an extension.
 :::
 
-## Tips for Web Users
+:::caution Logging out deletes the key
+If you pasted your nsec, logging out erases it from that browser. Make sure your [backup](../account/backup-keys.md) is saved first.
+:::
 
-### Bookmarks
-Save your favorite clients for quick access:
-- primal.net
-- snort.social
-- coracle.social
+## Tips for web users
 
-### Private Browsing
-- Use incognito/private mode on shared computers
-- Consider using an extension for key storage
-- Log out when done
+- **Bookmark** the clients you use, and always open them from your bookmark. That way you won't land on a fake copy.
+- **Shared computers:** use a private window, and don't paste your nsec there at all if you can avoid it.
+- **Multiple accounts:** extensions like Alby can hold more than one key.
+- **Share with people not on Nostr:** [njump.me](https://njump.me) opens any Nostr post or profile as a normal web page.
+- **Search:** [nos.today](https://nos.today) and [ants.sh](https://ants.sh) search across Nostr.
 
-### Multiple Accounts
-Most web clients support account switching:
-1. Log out of current account
-2. Log in with different nsec
-3. Or use extension with multiple keys
+## On your phone's browser
 
-## Mobile Web
+These clients also work in a phone browser. That's fine for a quick look, but you may miss push notifications. For regular use, see [Mobile clients](./mobile.md).
 
-All these clients work on mobile browsers too:
-- Good for quick checks
-- May lack push notifications
-- Consider native app for regular use
-
-## Recommended Starting Point
+## Which should I use?
 
 | Situation | Use |
-|-----------|-----|
-| General browsing | Primal |
-| Privacy important | Coracle |
-| Want all features | Nostrudel |
+|---|---|
+| General browsing | Jumble or primal.net |
+| New to Nostr | Ditto |
+| Custom feeds | Coracle |
+| Want every feature | noStrudel |
 | Quick check | Snort |
-| Writing articles | Habla |
+| Writing articles | YakiHonne or Pareto |
 
-## Next Steps
+## Next steps
 
-- [Desktop Clients](/clients/desktop) - Computer applications
-- [Mobile Clients](/clients/mobile) - Phone apps
-- [Understanding Relays](/using-nostr/relays)
+- [Desktop clients](./desktop.md): apps for your computer
+- [Mobile clients](./mobile.md): phone apps
+- [Understanding relays](../using-nostr/relays.md)

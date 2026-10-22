@@ -6,274 +6,213 @@ description: Solving common Nostr issues
 
 # Troubleshooting
 
-Having issues? Here are solutions to common problems.
+Something not working? Start here. Most problems are fixed by one of three things: waiting a moment, checking your relay settings, or trying the same account in a different app.
 
-## Connection Issues
+:::danger Before you try anything else
+**Don't log out, uninstall the app or reset your phone until your nsec is saved.** If you pasted your key into an app, logging out erases it from that device, and nobody can recover it for you. See [Backup Your Keys](../account/backup-keys.md).
+:::
 
-### "Can't connect to relay"
-
-**Symptoms:** Error messages about relay connections, posts not loading.
-
-**Solutions:**
-1. **Check internet connection** - Try loading other websites
-2. **Wait and retry** - Relays sometimes have temporary issues
-3. **Remove problematic relay** - In settings, remove the failing relay
-4. **Check relay URL** - Make sure it starts with `wss://`
-
-### "Relay refused connection"
-
-**Possible causes:**
-- Relay is down for maintenance
-- You're rate-limited (too many requests)
-- Relay requires authentication or payment
-
-**Solutions:**
-1. Wait and try again later
-2. Try a different relay
-3. Check if relay requires signup
-
-### App is very slow
-
-**Solutions:**
-1. **Reduce relays** - Too many relays slow things down
-2. **Clear cache** - Look in app settings
-3. **Check internet speed** - Test your connection
-4. **Try different client** - Some are faster than others
-5. **Disable media auto-load** - If available in settings
+:::tip The quickest test
+Every Nostr app works with the same account. If something looks broken, log into a **second** app with your saved key (for example [jumble.social](https://jumble.social) or [primal.net](https://primal.net) in a browser). If it works there, the problem is the first app, not your account.
+:::
 
 ---
 
-## Account Issues
+## Account and login
 
-### Can't log in with private key
+### Can't log in with my key
 
-**Check:**
-1. Using **nsec** (not npub) - must start with `nsec1`
-2. No extra spaces before/after
-3. Complete key (63 characters after nsec1)
-4. Correct app (is it a real Nostr app?)
+Check that:
 
-### Profile not loading
+1. You're using your **nsec** (starts `nsec1`), not your npub. The npub is public and can't log you in.
+2. There are no extra spaces before or after the key.
+3. You copied the whole key.
+4. You chose **Log in**, not *Create account*.
+5. The app or website is real. Type well-known addresses yourself; never paste your nsec into a site someone sent you a link to.
 
-**Solutions:**
-1. Wait for relay sync (can take a minute)
-2. Refresh or pull-to-refresh
-3. Check relay connections
-4. Verify using correct key
+**Trying to log in with an encrypted backup (`ncryptsec1…`)?** Some apps, including Primal and Damus, can't log in with an ncryptsec yet. Use your plain nsec backup in those apps, or use a signer.
 
-### Lost my private key
+### My profile is blank in a new app
 
-**Unfortunately:** There's no recovery. You'll need to create a new account.
+1. Wait a minute and pull to refresh. The app is fetching your profile from relays.
+2. Check you logged in with the right key. Compare the npub shown in the new app with the one in your old app.
+3. If it's still blank, open your profile in an app where it does show, edit any field and save. This publishes your profile again to that app's relays.
 
-**For next time:** Back up immediately after creating account.
-→ See [Backup Your Keys](/account/backup-keys)
+### My profile shows in some apps but not others
 
-### Profile shows on some apps but not others
+Different apps talk to different relays. Open *Settings → Relays* in the app that works and make sure you have a **write/outbox** list. Then re-save your profile from that app. If the list is empty, add a big public relay such as `wss://relay.damus.io`.
 
-**Cause:** Different apps may use different relays.
+### I lost my private key
 
-**Solution:**
-1. Ensure both apps are connected to common relays
-2. Re-publish your profile (edit and save in working app)
-3. Wait for sync
+Look everywhere first: your password manager, phone notes, screenshots, emails to yourself, and the settings of **every** app or device that's still logged in. Any logged-in app can show you the key, usually under *Settings → Keys*.
+
+If it's truly gone, the account can't be recovered. Create a new one, follow your friends again, and tell people it's your new account.
+
+→ For next time: [Backup Your Keys](../account/backup-keys.md)
+
+### I think my key leaked
+
+A Nostr key can't be changed. Make a new account (ideally with a signer), **revoke every Nostr Wallet Connect connection** in your wallet, and post from the old account pointing to your new npub before an attacker does. Full steps are in the [FAQ](./faq.md).
+
+### Someone is impersonating me
+
+1. Report and mute the impersonator.
+2. Post from your real account so followers know which npub is yours.
+3. Set up a readable handle (NIP-05) so people can tell you apart. See [Verification](../account/verification.md).
+4. Turn on *web of trust* filtering in settings. It hides accounts that nobody you follow is connected to.
 
 ---
 
-## Content Issues
+## Posts and feeds
 
-### Posts not appearing
+### My feed is empty or boring
 
-**After posting:**
-1. Wait a moment (not instant)
-2. Pull to refresh
-3. Check relay connections
-4. Try posting from different client
+This is the most common problem, and it isn't a bug. Nostr has no algorithm by default: the people you follow *are* your feed. Follow at least 20 people, using the topic lists your app offers during sign-up or hashtags such as `#photography`, `#books` or `#music`. Most apps also have other feed tabs, like trending or popular with your follows.
 
-**Your posts invisible to others:**
-1. Check you're connected to public relays
-2. Verify posts are actually being sent (check relay logs if technical)
-3. Ask someone to check specific relays
+### My posts don't show up for other people
 
-### Can't see someone's posts
+1. Wait a moment and refresh.
+2. Open *Settings → Relays* and check you have a **write/outbox** list (where your posts go). If it's empty, add `wss://relay.damus.io`.
+3. Log into a second app and see if your post is there.
+4. Ask a friend to look for it, or open it on [njump.me](https://njump.me).
 
-**Solutions:**
-1. **Check relay overlap** - You need common relays
-2. **Add their relays** - Look at their profile for relay hints
-3. **Search by npub** - Directly search for their public key
-4. **They may have blocked you** - Check with mutual friends
+### I can't see someone's posts
 
-### Missing direct messages
+1. **Check you're following the right account.** Compare the npub, not just the name and picture.
+2. **Try another app.** Each app uses different relays and spam filters, so they don't always see the same things.
+3. **Check your mute list and spam filters.** A strict web-of-trust filter can hide people nobody you follow is connected to.
 
-**Possible causes:**
-- DMs take time to sync
-- On different relays
-- Client-specific issues
+### A post looks different, or is missing, in different apps
 
-**Solutions:**
-1. Wait for sync
-2. Check DM inbox (not filtered/requests)
-3. Ensure connected to common relays
-4. Try different client
+That's normal. Each app talks to its own mix of relays and has its own filters. Try another app, or open the post on [njump.me](https://njump.me).
 
 ### Old posts disappeared
 
-**Possible causes:**
-- Relay deleted old data
-- Relay went offline
-- Client cache cleared
+Relays are run by many different people. A relay may drop old data or shut down, and an app may clear its cache. Modern apps find posts through your relay list automatically, so try another app before assuming a post is gone.
 
-**Notes:** This is normal in a decentralized system. Important posts should be on multiple relays.
+### I deleted a post but people can still see it
 
----
-
-## Zap Issues
-
-### Can't send zaps
-
-**Check:**
-1. **Wallet connected?** - Check app settings
-2. **Balance?** - Ensure you have sats
-3. **Lightning address valid?** - Check recipient's profile
-4. **Invoice expired?** - Try again quickly
-
-### Not receiving zaps
-
-**Check:**
-1. **Lightning address in profile?** - Must be set
-2. **Address working?** - Test by sending to yourself
-3. **Wallet active?** - Some require app open
-
-### Zaps showing as failed
-
-**Common causes:**
-- Network timeout
-- Recipient's node offline
-- Route not found
-
-**Solutions:**
-1. Try again
-2. Try smaller amount
-3. Check if recipient's wallet is active
+Deleting sends a *request* (NIP-09). Most apps and relays honour it, but some don't, and someone may already have a copy. Treat every post as permanent.
 
 ---
 
-## Media Issues
+## Private messages
 
-### Can't upload images
+### My message didn't arrive, or I can't see a message someone sent
 
-**Solutions:**
-1. **Check file size** - Most have limits (1-5MB typical)
-2. **Try different format** - JPG usually works
-3. **Use external host** - [nostr.build](https://nostr.build)
-4. **Check permissions** - App may need camera/gallery access
+The most likely cause: **you're using apps with different message standards.**
 
-### Images not loading
+| Standard | Apps | Notes |
+|---|---|---|
+| **NIP-17** (modern) | Amethyst, 0xchat, Keychat, Coracle, Flotilla | Damus is switching over in its next update. Hides the content and the sender. |
+| **NIP-04** (older) | Primal still uses this as of October 2026 | Content is encrypted, but anyone can see who messaged whom, and when. Newer apps may hide these messages. |
 
-**Solutions:**
-1. Check internet connection
-2. Image host may be down
-3. Enable image loading in settings
-4. Try different client
+What to do:
 
-### Profile picture not updating
+1. Ask the other person which app they use, and both use apps with the same standard.
+2. If your app has a separate *requests* tab, check it. Some apps put messages from people you don't follow there.
+3. Open *Settings → Relays* and check you have a **DM inbox** list. Many apps set this up automatically. If it's empty, add a big public relay.
 
-**Solutions:**
-1. Clear cache
-2. Wait for propagation
-3. Re-save profile
-4. Try different image host
+→ More: [Messaging](../using-nostr/messaging.md)
 
 ---
 
-## Verification Issues
+## Zaps and wallets
 
-### NIP-05 not showing
+### I can't send zaps
 
-**Check:**
-1. Correct format: `name@domain.com`
-2. JSON file accessible
-3. CORS headers configured
-4. Public key matches
+1. **Is a wallet connected?** Open *Settings → Wallet* (or *Zaps*). If you use Primal, its phone apps have a built-in wallet. Otherwise connect a wallet with Nostr Wallet Connect. See [Wallet Connect](../using-nostr/wallet-connect.md).
+2. **Do you have a balance?**
+3. **Have you hit your spending budget?** NWC connections often have a monthly limit. Raise it in your wallet if needed.
+4. **Does the person have a Lightning address?** No ⚡ button usually means they haven't added one.
+5. **Try again, or try a smaller amount.** Lightning payments sometimes fail to find a route.
 
-**Test:** Visit `https://yourdomain.com/.well-known/nostr.json?name=yourname`
+### I'm not receiving zaps
 
-### NIP-05 says invalid
+1. Check your profile has a **Lightning address** (sometimes labelled *LN address*) and that it's typed correctly.
+2. Make sure the wallet behind that address is still working. Wallet services change often; if yours closed, get a new address and update your profile.
 
-**Common issues:**
-1. JSON syntax error
-2. Wrong public key format (should be hex, not npub)
-3. Server not responding
-4. CORS blocking requests
+### My Primal wallet balance is gone after reinstalling
 
----
+The Primal wallet has **its own recovery phrase (12–24 words), separate from your nsec**. Your nsec restores your account, not your sats. Restore the wallet with its recovery phrase. If you never saved it, the funds can't be recovered.
 
-## Client-Specific Issues
+### I connected a wallet to an app I no longer trust
 
-### Damus (iOS)
-
-| Issue | Solution |
-|-------|----------|
-| Notifications not working | Check Settings → Notifications → Damus |
-| Posts duplicating | Clear cache, update app |
-| Crash on open | Reinstall, restore from nsec |
-
-### Amethyst (Android)
-
-| Issue | Solution |
-|-------|----------|
-| Battery drain | Reduce relays, disable background refresh |
-| Slow loading | Clear cache in settings |
-| No notifications | Check Android notification settings |
-
-### Primal (Web)
-
-| Issue | Solution |
-|-------|----------|
-| Doesn't load | Try different browser, clear cache |
-| Extension not working | Reinstall extension, check permissions |
-| Slow | Try at different time, cache warming |
+Open your wallet, find **Connections** (or *Apps* / *Nostr Wallet Connect*) and revoke that connection. Do the same for **every** connection if your nsec ever leaks.
 
 ---
 
-## When All Else Fails
+## Media
 
-### General Reset Steps
+### I can't upload images
 
-1. **Clear app cache** (if option exists)
-2. **Force close and reopen** app
-3. **Log out and log back in** (with your nsec!)
-4. **Try a different client** to isolate the issue
-5. **Check relay status** at [nostr.watch](https://nostr.watch)
+1. **Check the app has permission** to use your camera or photo library.
+2. **Try a smaller file** or a common format like JPG.
+3. **Change your media server** in *Settings → Media*, if your app lets you. Or upload directly at [nostr.build](https://nostr.build) or [nostrcheck.me](https://nostrcheck.me) and paste the link into your post.
 
-### Get Help
+### Images aren't loading
 
-1. **#asknostr hashtag** - Community support
-2. **App's GitHub** - File an issue
-3. **Nostr communities** - Many helpful groups
+The media server hosting that image may be down, or your app may have image loading turned off to save data. Check your settings, or try another app. Some apps let you add a backup media server (the standard is called *Blossom*) so your own pictures survive if one shuts down.
 
-### Reporting Bugs
+### My profile picture isn't updating
 
-When reporting issues, include:
-- Client name and version
-- Device and OS
-- Steps to reproduce
-- Error messages (if any)
-- What you expected vs what happened
+Re-save your profile, wait a minute, then refresh. If one app still shows the old picture, it's usually a cache. Check in a second app.
 
 ---
 
-## Prevention Tips
+## Readable handle (NIP-05)
 
-### Avoid Future Issues
+### My handle isn't showing, or shows as invalid
 
-1. **Back up your keys** - Can't stress this enough
-2. **Use reputable clients** - Stick to well-known apps
-3. **Keep apps updated** - Bugs get fixed
-4. **Use moderate relay count** - 5-10 is usually good
-5. **Don't ignore errors** - They often indicate real problems
+If you use a provider like nostrplebs.com, nostrcheck.me, iris.to or Primal Premium, check you typed the handle exactly as they gave it, and that it's linked to your current npub.
 
-## Next Steps
+If you host it on your own domain, check:
 
-- [FAQ](/help/faq) - More answers
-- [Glossary](/help/glossary) - Understand terms
-- [Resources](/help/resources) - More help
+1. The file is at `https://yourdomain.com/.well-known/nostr.json`.
+2. It's valid JSON, and the key inside it is in **hex** format, not npub.
+3. The server sends the header `Access-Control-Allow-Origin: *`, so web apps can read it.
+4. Test it: visit `https://yourdomain.com/.well-known/nostr.json?name=yourname` in a browser.
+
+→ Full guide: [Verification](../account/verification.md)
+
+---
+
+## Apps and performance
+
+### The app is slow or drains my battery
+
+1. **Use fewer relays.** Three to six is plenty. More just slows your app down.
+2. **Turn off media auto-play or auto-load**, if your app has the option.
+3. **Update the app.** Bugs get fixed often.
+4. **Try a different app** with the same account.
+
+### The app I used has closed, or an old guide links to a dead app
+
+Your account isn't stored in the app. Install another one and log in with your key. Many early Nostr apps have closed, and some of their old web addresses now host spam or gambling sites, so don't follow old links.
+
+→ Current picks: [Clients Overview](../clients/overview.md)
+
+---
+
+## When all else fails
+
+1. **Force close and reopen** the app.
+2. **Update** the app.
+3. **Log into a second app** with your saved key to see whether the problem is the app or your account.
+4. **Check relay status** at [nostr.watch](https://nostr.watch).
+
+### Get help
+
+- Post with **#asknostr**. People are quick to help.
+- Report bugs on the app's own website or GitHub page.
+- Found a problem with this guide? [Open an issue](https://github.com/nostrcg/userguide/issues).
+
+When reporting a bug, include the app name and version, your device, what you did, and what you expected to happen. **Never include your nsec**, and never send it to anyone offering "support". Nostr has no support desk, and anyone who asks for your key is a scammer.
+
+---
+
+## Next steps
+
+- [FAQ](./faq.md): more answers
+- [Glossary](./glossary.md): what the words mean
+- [Resources](./resources.md): more guides

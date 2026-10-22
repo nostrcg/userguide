@@ -4,215 +4,140 @@ title: Profile Setup
 description: Setting up your Nostr profile
 ---
 
-# Setting Up Your Profile
+# Profile Setup
 
-Your profile is how others see you on Nostr. A complete profile helps people find and connect with you.
+Your profile is how others see you on Nostr. A picture and a short bio make a big difference: accounts without a picture look like spam bots, and fewer people follow them back.
 
-## Profile Components
+## What you can fill in
 
-| Field | Purpose | Required? |
-|-------|---------|-----------|
-| Name | Display name | Recommended |
-| Username | @handle (name) | Recommended |
-| Picture | Profile photo | Recommended |
-| Banner | Header image | Optional |
-| Bio | About you | Recommended |
-| Website | Your link | Optional |
-| Lightning Address | Receive zaps | Recommended |
-| NIP-05 | Verification | Optional |
+| Field | What it's for | Needed? |
+|---|---|---|
+| Display name | The name shown on your posts | Recommended |
+| Username | A short name some apps show as @name | Optional |
+| Picture | Your profile photo | Recommended |
+| Banner | The wide header image on your profile | Optional |
+| Bio (About) | A few lines about you | Recommended |
+| Website | A link to your site or other profiles | Optional |
+| Lightning address | Lets people send you zaps (tips) | Optional |
+| Readable handle (NIP-05) | Shows `you@example.com` instead of your npub | Optional |
 
-## Step-by-Step Setup
+Different apps label these slightly differently.
 
-### 1. Access Profile Settings
+## Step by step
 
-In your client:
-- Look for your profile icon
-- Find "Edit Profile" or settings icon
-- Open profile editor
+### 1. Open the profile editor
 
-### 2. Add a Display Name
+Tap your profile picture or open your profile, then look for **Edit profile**.
 
-Your main name shown on posts:
-- Can be your real name
-- Can be a nickname
-- Can include emoji
-- Example: "Alice", "Satoshi", "🚀 Space Fan"
+### 2. Display name
 
-### 3. Set a Username
+The name shown on your posts. It can be your real name, a nickname or include emoji. You can change it any time.
 
-Your @handle:
-- Lowercase letters and numbers
-- Used for mentions
-- Example: "alice", "satoshi21"
+:::note Names aren't unique
+Anyone can use any display name. People tell accounts apart by the **npub** or the readable handle, not the display name.
+:::
 
-### 4. Upload Profile Picture
+### 3. Picture
 
-A good profile picture:
-- Square format works best
-- Clear and recognizable
-- Under 1MB typically
+- Square images work best.
+- Use something clear and recognisable, even at a small size.
+- Most apps upload the image for you.
 
-**Hosting options:**
-- Upload through client
-- Use [nostr.build](https://nostr.build)
-- Use any image URL
+Images you post live on media servers (the standard is called *Blossom*). If your app can't upload, you can use [nostr.build](https://nostr.build) or [nostrcheck.me](https://nostrcheck.me) and paste the image link. Some apps let you add a backup media server in *Settings → Media*, so your pictures survive if one shuts down.
 
-### 5. Add a Banner (Optional)
+### 4. Banner (optional)
 
-The header image on your profile:
-- Wide format (3:1 ratio common)
-- Shows personality
-- Not essential
+A wide header image. Nice to have, not essential.
 
-### 6. Write Your Bio
+### 5. Bio
 
-Tell people about yourself:
-- Keep it brief
-- Mention interests
-- Add personality
-- 160-300 characters is good
-
-**Example:**
-```
-Building things on Nostr. Coffee enthusiast.
-Helping newbies get started. #bitcoin #nostr
-```
-
-### 7. Add Website
-
-Link to your:
-- Personal website
-- Blog
-- Other social media
-- Portfolio
-
-### 8. Add Lightning Address
-
-So people can zap you:
-- Format: `name@wallet.com`
-- Get from your wallet provider
-- Essential for receiving tips
-
-→ See [Zaps & Lightning](/using-nostr/zaps) for setup
-
-### 9. Add NIP-05 Verification (Optional)
-
-Adds a checkmark/verification:
-- Format: `name@domain.com`
-- Requires domain ownership
-- Builds trust
-
-→ See [Verification](/account/verification)
-
-## Profile Tips
-
-### Do's
-
-- ✅ Use a recognizable profile picture
-- ✅ Fill in the essentials
-- ✅ Add a Lightning address
-- ✅ Keep bio updated
-- ✅ Be authentic
-
-### Don'ts
-
-- ❌ Leave it completely blank
-- ❌ Use offensive content
-- ❌ Impersonate others
-- ❌ Forget to save!
-
-## Profile Visibility
-
-### Public Information
-
-Everything in your profile is public:
-- Visible to anyone
-- Stored on relays
-- Searchable
-
-### Privacy Considerations
-
-If you want privacy:
-- Use a pseudonym
-- Don't include personal details
-- Use anonymous avatar
-- Skip location info
-
-## Syncing Across Clients
-
-Your profile syncs everywhere:
+Keep it short. Say what you're into, so people with the same interests follow you.
 
 ```
-Edit on Damus → Saved to Relays → Visible on Primal, Amethyst, etc.
+Gardener, film photographer and bad guitarist.
+Here for #photography and #gardening.
 ```
 
-Changes may take a moment to propagate.
+### 6. Website (optional)
+
+Your own site, blog or portfolio.
+
+### 7. Lightning address (optional)
+
+An email-style address, such as `you@coinos.io`, that your wallet gives you. Paste it into **Lightning address** (sometimes *LN address*), and a ⚡ button appears on your posts so people can zap you.
+
+→ [Zaps](../using-nostr/zaps.md)
+
+### 8. Readable handle (optional)
+
+A handle like `you@example.com` (techies call it NIP-05) that most apps show next to your name.
+
+→ [Verification](./verification.md)
+
+### 9. Save
+
+Tap **Save**. Your app publishes the profile to your relays.
+
+## Everything is public
+
+Your profile is public, permanent and visible in every Nostr app. If you'd like more privacy:
+
+- Use a nickname
+- Leave out your location and other personal details
+- Use an avatar instead of a photo
+
+## One profile, every app
+
+Edit your profile in one app, and it shows up in all the others:
+
+```
+Edit in Damus  →  saved to your relays  →  shows in Primal, Amethyst, Jumble…
+```
+
+Other apps may take a moment to pick up the change.
 
 ## Troubleshooting
 
-### Changes Not Saving?
+### Changes don't seem to save
 
-1. Check internet connection
-2. Verify relay connections
-3. Try saving again
-4. Restart the app
+1. Check your internet connection.
+2. Save again, then refresh.
+3. Check *Settings → Relays* has at least one relay you write to.
 
-### Picture Not Uploading?
+### Picture won't upload
 
-1. Check file size (try smaller)
-2. Try different format (JPG, PNG)
-3. Use external host
-4. Paste direct URL
+1. Try a smaller image, or JPG or PNG.
+2. Upload it at [nostr.build](https://nostr.build) or [nostrcheck.me](https://nostrcheck.me) and paste the link instead.
 
-### Profile Blank in Other Clients?
+### Profile looks blank in another app
 
-1. Give it time to sync
-2. Check relay overlap
-3. Try refreshing
+1. Wait a moment and refresh.
+2. Make sure you chose **Log in** in the other app, not *Create account*, which makes a new, empty account.
 
-## Example Profiles
+## Examples
 
-### Minimal but Effective
+### Simple
 
 ```
 Name: Alice
 Picture: [friendly photo]
-Bio: Exploring Nostr. Bitcoin curious.
-Lightning: alice@getalby.com
+Bio: New to Nostr. Into books and hiking.
 ```
 
-### Complete Profile
+### Complete
 
 ```
 Name: Alice Anderson
-Username: alice
-Picture: [professional photo]
-Banner: [branded image]
-Bio: Nostr educator | Bitcoin enthusiast | Building the future
-     of social media. Ask me anything about getting started!
+Picture: [clear headshot]
+Banner: [mountain photo]
+Bio: Writer and hiker. Posting about #books and the outdoors.
 Website: https://alice.example.com
-Lightning: alice@getalby.com
-NIP-05: alice@example.com
+Lightning address: alice@coinos.io
+Readable handle: alice@example.com
 ```
 
-## Updating Your Profile
+## Next steps
 
-### When to Update
-
-- Changed interests
-- New Lightning address
-- Want a new look
-- Added verification
-
-### How to Update
-
-Same process as setup:
-1. Go to profile settings
-2. Make changes
-3. Save
-
-## Next Steps
-
-- [Verification](/account/verification) - Get verified
-- [Backup Your Keys](/account/backup-keys) - Essential security
-- [Zaps & Lightning](/using-nostr/zaps) - Set up payments
+- [Verification](./verification.md): get a readable handle
+- [Backup Your Keys](./backup-keys.md): if you haven't yet
+- [Zaps](../using-nostr/zaps.md): receive tips

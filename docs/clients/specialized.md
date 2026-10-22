@@ -6,382 +6,163 @@ description: Nostr apps for specific use cases
 
 # Specialized Clients
 
-Beyond general social media, Nostr powers many specialized applications. Here's what's available.
+Nostr isn't only for short posts. The same account works in apps for chat, video, music, writing, shopping and more.
 
-## Long-Form Content
+![One identity, many apps](/img/diagrams/one-identity-many-apps.svg)
 
-For writers, bloggers, and journalists.
-
-### Habla
-
-- **URL:** [habla.news](https://habla.news)
-- Write and publish articles (NIP-23)
-- Markdown support
-- Clean reading experience
-- Comments via Nostr
-
-### Yakihonne
-
-- **URL:** [yakihonne.com](https://yakihonne.com)
-- Beautiful article layouts
-- Newsletter features
-- Curated content
-- Publication tools
-
-**Best for:** Writers who want a Medium-like experience
-
----
-
-## Media & Photography
-
-For visual content.
-
-### Olas
-
-- **URL:** [olas.app](https://olas.app)
-- Instagram-style photo sharing
-- Gallery views
-- Photo stories
-- Mobile-first design
-
-### Nostragram
-
-- Photo sharing focused
-- Grid layouts
-- Visual discovery
-
-**Best for:** Photographers, visual creators
-
----
-
-## Live Streaming
-
-For content creators who stream.
-
-### Zap.stream
-
-- **URL:** [zap.stream](https://zap.stream)
-- Live video streaming
-- Zaps during streams
-- Chat integration
-- VOD (video on demand)
-
-**Best for:** Streamers, live content creators
-
----
-
-## Audio & Podcasts
-
-For listeners and audio creators.
-
-### Fountain
-
-- **URL:** [fountain.fm](https://fountain.fm)
-- Podcast app with Nostr integration
-- Zap clips to podcasters
-- Social features
-- Episode comments
-
-### Wavlake
-
-- **URL:** [wavlake.com](https://wavlake.com)
-- Music streaming
-- Artist payments via Lightning
-- Nostr comments and discovery
-
-**Best for:** Podcast listeners, music fans
-
----
-
-## Chat & Messaging
-
-For private and group conversations.
+## Chat and groups
 
 ### 0xchat
 
-- **Download:** [0xchat.com](https://0xchat.com)
-- Encrypted private messaging
-- Group chats
-- Voice messages
-- Mobile-first
+Telegram-style private messages, group chats and calls.
 
-### Blowater
+- **Platforms:** iPhone, Android, Desktop
+- **Get it:** [0xchat.com](https://0xchat.com)
 
-- Private messaging
-- Clean interface
-- Focus on conversation
+### White Noise
 
-**Best for:** Direct messaging, group chats
+A strongly encrypted messenger, like Signal, with no phone number needed. Still in beta.
 
----
+- **Platforms:** Android, iPhone
+- **Get it:** [whitenoise.chat](https://whitenoise.chat)
 
-## Communities & Forums
+### Keychat
 
-For group discussions.
+Private chat with a bitcoin wallet built in.
+
+- **Platforms:** iPhone, Android, Desktop
+- **Get it:** [keychat.io](https://keychat.io)
 
 ### Flotilla
 
-- **URL:** [flotilla.social](https://flotilla.social)
-- Discord-like experience on Nostr
-- "Relays as groups" concept
-- Rooms, channels, and chat
-- DM alerts and notifications
+Discord-style community spaces with channels, chat and events.
 
-### Satellite
+- **Platforms:** Web, iPhone, Android
+- **Get it:** [flotilla.social](https://flotilla.social)
 
-- **URL:** [satellite.earth](https://satellite.earth)
-- Reddit-style communities (NIP-72)
-- Topic-based discussions
-- Moderated spaces
+Flotilla treats a relay as a community "space". Inside a space you get rooms (channels) for chat, plus events. Because the group lives on a relay rather than inside one company's app, its members aren't locked into a single client.
 
-### Chachi
+**Getting started with Flotilla:**
 
-Chachi is a **relay-based group chat client** implementing NIP-29, built by [Verbiricha](https://njump.me/npub107jk7htfv243u0x5ynn43scq9wrxtaasmrwwa8lfu2ydwag6cx2quqncxg) (creator of Habla.news). It's designed to be mobile-friendly, bandwidth efficient, and interoperable with all kinds of content.
+1. Visit [flotilla.social](https://flotilla.social) or install the phone app.
+2. Log in with a browser extension, a signer or your key.
+3. Join a space someone has shared with you.
+4. Pick a room and start chatting.
 
-- **URL:** [chachi.chat](https://chachi.chat)
-- **Source:** [git.v0l.io/verbiricha/chachi](https://git.v0l.io/verbiricha/chachi)
-- **License:** MIT (Open Source)
+**Good for:** open source projects, local meetups, topic communities and small teams.
 
-#### What Makes Chachi Different
-
-Unlike traditional chat apps, Chachi uses **NIP-29 relay-based groups**:
-
-| Traditional Chat | Chachi (NIP-29) |
-|-----------------|-----------------|
-| Company controls your data | Community chooses where data lives |
-| Locked to one platform | Interoperable with other NIP-29 clients |
-| Lose access if banned | Move groups to different relays |
-| Centralized servers | Decentralized relay infrastructure |
-
-#### Core Features
-
-**Group Management:**
-- Create, edit, join, and leave groups
-- Bookmark favorite groups
-- Accept/reject membership requests (for admins)
-- Delete events and moderate content
-- Role-based administration
-
-**Chat & Content:**
-- Real-time messaging with threading
-- Posts with NIP-22 comment support
-- Unread message counters
-- Support for text notes, polls, highlights
-- Custom emoji support
-
-**Planned Features (OpenSats Grant):**
-- Long-form content, video, audio, wikis
-- Calendar events for group scheduling
-- NIP-17 direct messages
-- PWA for mobile installation
-- Zaps integration
-- NIP-46/NIP-55 login methods
-
-#### How NIP-29 Groups Work
-
-Groups are hosted on relays and identified like: `groups.0xchat.com'groupname`
-
-**Group Types:**
-- **Public/Open** — Anyone can read and join freely
-- **Public/Closed** — Anyone can read, but joining requires approval
-- **Private/Open** — Members only read, anyone can request to join
-- **Private/Closed** — Members only, admin approval required
-
-#### Getting Started with Chachi
-
-1. Visit [chachi.chat](https://chachi.chat)
-2. Login with your Nostr key (or browser extension)
-3. Browse available groups or create your own
-4. Join the official Chachi group: `chachi.chat/groups.0xchat.com/chachi`
-
-#### Use Cases
-
-- **Open source projects** — Coordinate development
-- **Local meetups** — Organize events and discussions
-- **Topic communities** — Create spaces around interests
-- **Private teams** — Secure team communication
-- **Study groups** — Collaborative learning
-
-:::tip Blossom Integration
-Chachi uses [Blossom](/clients/specialized#blossom) for file hosting, so your media is also decentralized and censorship-resistant.
+:::tip Which apps keep messages most private?
+Amethyst, 0xchat, Keychat, Coracle and Flotilla use the newer NIP-17 standard, which hides who is talking to whom. Damus is switching over in its next update. Primal still uses the older NIP-04 (as of October 2026), which leaks who messaged whom, and when. For anything sensitive, use a NIP-17 app or White Noise. See [Direct messages](../using-nostr/messaging.md).
 :::
 
-### Zapddit
+---
 
-- Reddit-style client for Nostr
-- Follow topics like subreddits
-- Upzap/downzap with sats
-- Mute topics you don't like
+## Video and live
 
-**Best for:** Group discussions, forums, team chat
+- [**Divine**](https://divine.video) (iPhone, Android): six-second looping videos, the Vine reboot.
+- [**zap.stream**](https://zap.stream) (Web): live video streaming where viewers tip with zaps.
+- [**Nostr Nests**](https://nostrnests.com) and [**Corny Chat**](https://cornychat.com) (Web): live audio rooms, like Twitter Spaces.
 
 ---
 
-## Marketplaces
+## Music and podcasts
 
-For buying and selling.
-
-### Shopstr
-
-- **URL:** [shopstr.store](https://shopstr.store)
-- Peer-to-peer marketplace
-- Bitcoin/Lightning payments
-- Direct seller contact
-
-### Plebeian Market
-
-- Decentralized marketplace
-- Auction support
-- Escrow features
-
-**Best for:** Buying/selling goods
+- [**Wavlake**](https://wavlake.com) (Web, iPhone, Android): stream music, and artists get paid directly.
+- [**Fountain**](https://fountain.fm) (iPhone, Android): a podcast app with Nostr comments, profiles and tips.
 
 ---
 
-## Games & Entertainment
+## Writing and reading
 
-### Jester (Chess)
-
-- **URL:** [jesterui.github.io](https://jesterui.github.io)
-- Play chess with anyone over Nostr
-- No account needed - just share a link
-- Decentralized game state
-
-### POGN (Poker)
-
-- **URL:** [GitHub](https://github.com/jalToorey/pogn)
-- Poker and other games on Nostr
-- Peer-to-peer card games
-- Mental poker implementation
-
-### Nostr Nests
-
-- Audio spaces (like Twitter Spaces/Clubhouse)
-- Live audio conversations
-- Zap speakers in real-time
-
-**Best for:** Gaming and social audio
+- [**YakiHonne**](https://yakihonne.com) (Web, iPhone, Android): write and read long-form articles, plus a social feed and creator tools.
+- [**Pareto**](https://pareto.space) (Web): blogs and newsletters for independent journalists.
+- [**Wikifreedia**](https://wikifreedia.xyz) (Web): a wiki where anyone can write their own version of an article.
 
 ---
 
-## P2P Exchange
+## Buy and sell
 
-### Mostro
-
-- **URL:** [mostro.network](https://mostro.network)
-- Lightning Network P2P exchange
-- No KYC required
-- Censorship-resistant trading
-- Escrow protection
-- Buy/sell Bitcoin for any currency
-
-**Best for:** Private, decentralized Bitcoin trading
+- [**Shopstr**](https://shopstr.market), [**Plebeian Market**](https://plebeian.market) and [**Conduit**](https://conduit.market) (Web): marketplaces paid in bitcoin.
 
 ---
 
-## Media Hosting
+## Get things done
 
-### Blossom
-
-Blossom is a protocol for decentralized media hosting on Nostr.
-
-**How it works:**
-- Upload images/videos to Blossom-compatible servers
-- Files are addressed by sha256 hash
-- Mirror to multiple servers for redundancy
-- If one server censors you, switch to another
-
-**Blossom Servers:**
-- [nostr.build](https://nostr.build) - Popular, free hosting
-- [blosstr.com](https://blosstr.com) - Enterprise-grade hosting
-- [nostrmedia.com](https://nostrmedia.com) - Image & video hosting
-
-**Best for:** Censorship-resistant media storage
+- [**Formstr**](https://formstr.app) (Web): forms and surveys, like Google Forms. The same team makes [Pages](https://pages.formstr.app) (shared docs) and [Calendar](https://calendar.formstr.app).
 
 ---
 
-## Code Collaboration
+## Developers
 
-### GitWorkshop
-
-- **URL:** [gitworkshop.dev](https://gitworkshop.dev)
-- Decentralized GitHub alternative
-- Issues and pull requests over Nostr
-- Repository discovery
-- NIP-34 compliant
-
-### Gitstr
-
-- **URL:** [GitHub](https://github.com/fiatjaf/gitstr)
-- Send and receive git patches over Nostr
-- No central server needed
-- Announce repos to relays
-
-**Best for:** Developers wanting decentralized code collaboration
+- [**gitworkshop.dev**](https://gitworkshop.dev) (Web): Git repositories, issues and patches over Nostr.
 
 ---
 
-## Developer Tools
+## Also useful
 
-### Njump
-
-- **URL:** [njump.me](https://njump.me)
-- View any Nostr event
-- Share links to non-Nostr users
-- Event inspector
-
-### Nostr.band
-
-- **URL:** [nostr.band](https://nostr.band)
-- Search engine for Nostr
-- Statistics and trends
-- API access
+- [**Zapstore**](https://zapstore.dev) (Android): an app store full of Nostr apps, where developers sign every release.
+- [**Stacker News**](https://stacker.news) (Web): a Bitcoin forum that pays in sats. It isn't a Nostr app, but you can log in with Nostr and cross-post.
 
 ---
 
-## Client Directory
+## Handy tools
 
-For a complete list of Nostr apps:
+- [**nstart.me**](https://nstart.me): guided account creation with a safe backup. Great for helping a friend join.
+- [**njump.me**](https://njump.me): opens any Nostr post or profile as a normal web page, so you can share it with people who aren't on Nostr.
+- [**nos.today**](https://nos.today) and [**ants.sh**](https://ants.sh): search across Nostr.
+- [**Mostr**](https://mostr.pub): a bridge to the fediverse (Mastodon and friends). There is no maintained bridge to Bluesky.
 
-- **Nostr Apps:** [nostrapps.com](https://nostrapps.com)
-- **Nostr.net:** [nostr.net](https://nostr.net)
+### Media hosting
+
+Images and videos you post live on media servers. The standard for these is called **Blossom**, so your files aren't tied to one app. Most apps pick a server for you. Some let you add a backup server in *Settings → Media*, so your pictures survive if one shuts down.
+
+- [**nostr.build**](https://nostr.build) and [**nostrcheck.me**](https://nostrcheck.me): upload images and video.
 
 ---
 
-## Summary Table
+## Find more apps
 
-| Category | App | Platform |
-|----------|-----|----------|
-| Long-form | Habla, Yakihonne | Web |
-| Photos | Olas | Mobile/Web |
-| Streaming | Zap.stream | Web |
-| Podcasts | Fountain | Mobile |
-| Music | Wavlake | Web |
-| Chat | 0xchat, Flotilla | Mobile/Web |
-| Group Chat | Chachi (NIP-29) | Web/PWA |
-| Communities | Satellite, Zapddit | Web |
-| Marketplace | Shopstr, Mostro | Web |
-| Gaming | Jester, POGN | Web |
-| Media Hosting | Blossom servers | Web |
-| Code | GitWorkshop | Web |
+- [**nostrapps.com**](https://nostrapps.com): a much bigger directory of apps.
+- [**nostr.net**](https://nostr.net): another list of Nostr projects.
 
-## One Account for Everything
+---
 
-Remember: your Nostr keys work in **all** these apps!
+## Summary
 
-![One Identity, Many Apps](/img/diagrams/one-identity-many-apps.svg)
+| Category | Apps | Platforms |
+|---|---|---|
+| Chat | 0xchat, White Noise, Keychat | Phone, Desktop |
+| Communities | Flotilla | Web, Phone |
+| Short video | Divine | Phone |
+| Live video and audio | zap.stream, Nostr Nests, Corny Chat | Web |
+| Music | Wavlake | Web, Phone |
+| Podcasts | Fountain | Phone |
+| Writing | YakiHonne, Pareto, Wikifreedia | Web (YakiHonne also Phone) |
+| Marketplaces | Shopstr, Plebeian Market, Conduit | Web |
+| Forms and docs | Formstr | Web |
+| Code | gitworkshop.dev | Web |
 
-- Post on Damus
-- Write on Habla
-- Share photos on Olas
-- Chat on 0xchat
-- Stream on Zap.stream
-- Listen on Fountain
+## Apps from older guides that have closed or gone quiet
 
-**All with the same identity!**
+If an old tutorial sends you to one of these, pick an alternative instead.
 
-## Next Steps
+:::danger Don't visit their old addresses
+Several of these apps' old web addresses now host gambling or spam sites.
+:::
 
-- [Using Zaps](/using-nostr/zaps) - Lightning payments
-- [Direct Messages](/using-nostr/messaging) - Private communication
-- [Understanding Relays](/using-nostr/relays)
+| Closed or stalled | Try instead |
+|---|---|
+| Habla, Blogstack, Flycat, Highlighter | YakiHonne, Pareto |
+| Olas, Pinstr, Memestr | Divine, Primal |
+| Chachi, Satellite, Zapddit, nostr.kiwi | Flotilla |
+| Nostr Chat, Blowater, Anigma, Nostrgram | 0xchat, White Noise |
+| Stemstr, Vida | Wavlake, zap.stream |
+| Docstr, Sheetstr, Flockstr | Formstr |
+| nostr.band (search) | nos.today, ants.sh |
+| void.cat (uploads) | nostr.build, nostrcheck.me |
+
+## Next steps
+
+- [Using zaps](../using-nostr/zaps.md): tip with bitcoin
+- [Direct messages](../using-nostr/messaging.md): private conversations
+- [Understanding relays](../using-nostr/relays.md)

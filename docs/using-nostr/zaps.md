@@ -1,249 +1,111 @@
 ---
 sidebar_position: 4
 title: Zaps & Lightning
-description: Sending and receiving Bitcoin tips on Nostr
+description: Sending and receiving small bitcoin tips on Nostr
 ---
 
 # Zaps & Lightning
 
-Zaps are instant Bitcoin tips sent over the Lightning Network. They're one of Nostr's most unique features.
+:::note Zaps are optional
+You can use Nostr for years without touching bitcoin. Nostr itself has no coin or token. Skip this page if it's not for you.
+:::
 
-## What are Zaps?
+A **zap** is a small tip in bitcoin that you send to a post or a person. It travels over the Lightning Network, arrives in seconds and works worldwide. Zaps are usually tiny: 21 sats (a couple of cents) is the classic "nice post". They're how many writers, artists and developers on Nostr get paid directly, with no ads and no platform taking a cut.
 
-Zaps let you:
-- **Tip content creators** directly
-- **Show appreciation** more meaningfully than likes
-- **Get paid** for your content
-- **Send any amount** - from 1 sat to millions
+*Sats* (satoshis) are the smallest unit of bitcoin. 100,000,000 sats make one bitcoin.
 
-```
-You ──Zap (21 sats)──▶ Creator
-    └── Instant! ──┘
-```
+## How a zap works
 
-## How Zaps Work
+![How a zap works](/img/diagrams/zap-flow.svg)
 
-![How Zaps Work](/img/diagrams/zap-flow.svg)
+1. You tap the ⚡ button on a post.
+2. Your connected wallet pays.
+3. The sats arrive at the creator's **Lightning address** in seconds.
+4. The zap shows up on the post, with the amount and your comment.
 
-1. You click the zap button on a post
-2. Choose an amount
-3. Your wallet pays via Lightning Network
-4. Creator receives sats instantly
-5. The zap appears on the post
+## Pick your path
 
-## Setting Up to Receive Zaps
+| You want to… | Do this |
+|---|---|
+| **Zap with the least setup** | Use the wallet built into the **Primal** phone app. |
+| **Use one wallet in every app** | Get a wallet that supports **Nostr Wallet Connect (NWC)** and link it to each app. See [Wallet Connect](./wallet-connect.md). |
+| **Only receive** | Get any wallet with a **Lightning address** and paste it into your profile. |
 
-### Step 1: Get a Lightning Address
+:::caution Primal wallet has its own recovery phrase
+Primal's wallet lives in the Primal **phone apps** (not on the primal.net website). It has its own recovery phrase of 12 to 24 words, separate from your Nostr key. Saving your nsec does *not* save your sats, so write those words down too.
+:::
 
-A Lightning address looks like an email:
-```
-yourname@wallet.com
-```
+## Wallets that work well with Nostr
 
-Popular options:
+| Wallet | Devices | Type | Notes |
+|---|---|---|---|
+| [Alby Hub](https://getalby.com/alby-hub) + [Alby Go](https://getalby.com/alby-go) | Web, iPhone, Android | Self-custody | The reference wallet for connecting to Nostr apps. Run it yourself, or let Alby host it for a monthly fee. |
+| [Primal wallet](https://primal.net) | iPhone, Android | Self-custody | Built on Spark. Zero setup if you already use Primal. Back up its recovery phrase. |
+| [Coinos](https://coinos.io) | Web | Custodial | Free and web-based. Gives you a Lightning address and NWC in a minute. It disclosed a credential leak in August 2026, so pocket money only. |
+| [Zeus](https://zeusln.com) | iPhone, Android | Self-custody | More control, with a bit more to learn. |
+| [Minibits](https://minibits.cash) · [Cashu.me](https://cashu.me) | Android, iPhone · Web | Ecash | Private, lightweight wallets using Cashu tokens. Pocket money only. |
 
-| Wallet | Address Format | Notes |
-|--------|---------------|-------|
-| [Wallet of Satoshi](https://www.walletofsatoshi.com) | you@walletofsatoshi.com | Easy, custodial |
-| [Alby](https://getalby.com) | you@getalby.com | Browser extension |
-| [Primal](https://primal.net) | you@primal.net | Built into app |
-| [Zeus](https://zeusln.app) | Self-hosted | Non-custodial |
+**What those types mean:**
 
-### Step 2: Add to Profile
+- **Self-custody:** only you control the money. Lose your recovery words and it's gone, just like your nsec.
+- **Custodial:** a company holds it for you. Easy, but they can freeze it, block your country or shut down.
+- **Ecash:** tokens issued by a "mint" you choose. Private and simple, but the mint holds the actual bitcoin, so it's custodial too. A zap paid in ecash is sometimes called a *nutzap*.
 
-1. Open your Nostr client
-2. Go to profile settings
-3. Find "Lightning Address" or "LN Address"
-4. Paste your address
-5. Save!
+:::caution
+Keep only pocket money in custodial or ecash wallets. Wallet services change often, so if an older guide names a wallet that isn't listed here, it may have closed or changed how it works.
+:::
 
-### Step 3: Start Receiving
+## Receiving zaps
 
-That's it! Anyone can now zap you.
+1. Get a wallet that gives you a **Lightning address**. It looks like an email, such as `you@coinos.io`.
+2. In your Nostr app, open **Edit profile** and paste it into **Lightning address** (sometimes labelled *LN address*).
+3. Save. A ⚡ button now appears on your posts and profile, and anyone can zap you.
 
-## Setting Up to Send Zaps
+See [Profile Setup](../account/profile-setup.md) for the rest of your profile.
 
-### Option 1: Wallet Connection
+## Sending zaps
 
-Some clients connect to wallets:
-- **Alby** - Browser extension
-- **Zeus** - Mobile wallet
-- **Built-in** - Primal has integrated wallet
+1. Connect a wallet to your app with NWC, or set up Primal's built-in wallet. See [Wallet Connect](./wallet-connect.md).
+2. Tap ⚡ on a post to send your default amount.
+3. **Long-press** ⚡ in most apps to pick a custom amount and add a comment.
+4. Set a **default zap amount** in settings. 21 sats is the classic.
 
-### Option 2: External Wallet
+Without a connected wallet, many apps show a Lightning invoice or QR code instead, which you can pay from any Lightning wallet.
 
-1. Click zap button
-2. Client generates invoice
-3. Copy to your wallet
-4. Pay the invoice
+To get sats in the first place, receive some zaps, or buy bitcoin from an exchange and send it to your wallet.
 
-### Option 3: Built-in Wallet
+## Zap etiquette
 
-Apps like Primal have built-in wallets:
-1. Fund your wallet
-2. Zap directly
-3. No external app needed
+- **21 sats** means "nice". **100 to 1,000** means "this made my day". There's no wrong amount.
+- **Add a comment.** It shows up publicly and creators love it.
+- **Zaps are public.** Everyone can see who zapped what, and how much.
+- Don't feel you have to zap everything, and don't expect zaps back.
+- **Don't follow back strangers who zap you tiny amounts.** That's a common bot trick.
 
-## Zap Amounts
+## Scams to ignore
 
-### Common Amounts
+- **"Double your money" offers and giveaway DMs.** Always scams.
+- **"You've been zapped! Claim your sats here" links.**
+- **Anything selling a "Nostr token".** Nostr has no token.
 
-| Sats | USD (approx*) | Used For |
-|------|---------------|----------|
-| 21 | $0.02 | Quick appreciation |
-| 100 | $0.10 | Nice tip |
-| 500 | $0.50 | Great content |
-| 1,000 | $1.00 | Really loved it |
-| 10,000 | $10.00 | Exceptional |
-| 21,000+ | $21.00+ | Generous support |
+## Zaps beyond tips
 
-*USD values vary with Bitcoin price
-
-### Custom Amounts
-
-Most clients let you choose any amount.
-
-## Zap Splits
-
-Some posts split zaps between multiple people:
-- Collaborators
-- Platforms
-- Charities
-
-The creator sets up splits in their client.
-
-## Visibility
-
-### Public Zaps
-
-- Appear on the post
-- Show amount and sender
-- Part of the social experience
-
-### Private Zaps
-
-Some clients support private zaps:
-- Amount hidden
-- Sender anonymous
-- Still reaches creator
-
-## Popular Wallets
-
-### Custodial (Easy)
-
-Someone else holds your Bitcoin:
-
-- **Wallet of Satoshi** - Simplest option
-- **Primal** - Built into the app
-- **Alby** - Browser-based
-
-### Non-Custodial (You control)
-
-You hold your own Bitcoin:
-
-- **Zeus** - Mobile, full control
-- **Breez** - Easy Lightning
-- **Phoenix** - Self-custodial Lightning
-
-### Choosing a Wallet
-
-| If you want... | Choose... |
-|----------------|-----------|
-| Easiest setup | Wallet of Satoshi |
-| Built into Nostr | Primal |
-| Browser integration | Alby |
-| Full control | Zeus or Phoenix |
-
-## Buying Bitcoin
-
-To send zaps, you need Bitcoin/sats:
-
-1. **In-app purchase** - Some wallets let you buy
-2. **Exchange** - Buy on Coinbase, Cash App, etc.
-3. **P2P** - Buy from individuals
-4. **Earn** - Receive zaps for your content!
-
-## Zap Etiquette
-
-### Do's
-
-- ✅ Zap content you genuinely appreciate
-- ✅ Any amount is meaningful
-- ✅ Zap new creators to encourage them
-- ✅ Reply with zaps to show support
-
-### Don'ts
-
-- ❌ Expect zaps back
-- ❌ Only zap for follow-backs
-- ❌ Feel obligated to zap everything
+- **Live streams:** viewers tip streamers with zaps on [zap.stream](https://zap.stream).
+- **Music and podcasts:** [Wavlake](https://wavlake.com) pays artists directly, and [Fountain](https://fountain.fm) is a podcast app with Nostr tips.
+- **Marketplaces:** [Shopstr](https://shopstr.market), [Plebeian Market](https://plebeian.market) and [Conduit](https://conduit.market) are paid in bitcoin.
 
 ## Troubleshooting
 
-### Zaps Not Working?
+| Problem | Try |
+|---|---|
+| No ⚡ button on my posts | Add a Lightning address to your profile and save. |
+| Zap button does nothing, or asks for an invoice | Connect a wallet in **Settings → Wallet** (or *Zaps*). |
+| Zap fails | Check your wallet balance and your NWC spending budget. |
+| My sats vanished after reinstalling Primal | Restore the Primal wallet with its **own** recovery phrase, not your nsec. |
+| Someone's zap didn't reach me | Check the Lightning address in your profile is spelled exactly right. |
 
-1. **Check Lightning address** - Is it set in your profile?
-2. **Wallet balance** - Do you have sats?
-3. **Connection** - Is wallet connected?
-4. **Invoice expired** - Try again quickly
+## Next steps
 
-### Not Receiving Zaps?
-
-1. **Verify Lightning address** - Test sending to yourself
-2. **Check profile** - Is address saved correctly?
-3. **Wallet active** - Is your wallet receiving?
-
-### Common Issues
-
-| Issue | Solution |
-|-------|----------|
-| Invoice expired | Pay faster or request new |
-| Wallet not connected | Reconnect in settings |
-| Wrong address | Double-check in profile |
-| No balance | Fund your wallet |
-
-## Beyond Tips
-
-### Paywalls
-
-Some creators gate content behind zaps:
-- Pay to unlock
-- Supports premium content
-- Built into some clients
-
-### Marketplace Payments
-
-Zaps work for buying/selling:
-- Pay for goods
-- Instant settlement
-- No payment processor
-
-### Streaming Tips
-
-Live streamers receive zaps:
-- Real-time support
-- Interactive streaming
-- On Zap.stream
-
-## Why Zaps Matter
-
-### For Creators
-
-- Direct monetization
-- No platform cut (usually)
-- Global payments
-- Instant settlement
-
-### For Users
-
-- Meaningful engagement
-- Direct support to creators
-- Better than ads
-- Fun to participate!
-
-## Next Steps
-
-- [Wallet Connect (NWC)](/using-nostr/wallet-connect) - One-click zaps from any app
-- [Understanding Relays](/using-nostr/relays)
-- [Profile Setup](/account/profile-setup) - Add your Lightning address
-- [FAQ](/help/faq)
+- [Wallet Connect (NWC)](./wallet-connect.md): link one wallet to every app
+- [Profile Setup](../account/profile-setup.md): add your Lightning address
+- [FAQ](../help/faq.md)

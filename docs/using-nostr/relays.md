@@ -1,235 +1,90 @@
 ---
 sidebar_position: 5
 title: Relays
-description: Understanding relays and how to use them
+description: What relays are, and the few times you might want to change them
 ---
 
 # Understanding Relays
 
-Relays are servers that store and share Nostr content. Understanding them helps you get the most out of Nostr.
+Relays are the servers that store and pass on posts. Your app sends each post to several relays, and your followers' apps read it from there.
 
-## What is a Relay?
+:::tip The short version
+Your app picks sensible relays, and modern apps find your friends' posts automatically. For most people, that's all you need. Only tinker if something isn't working.
+:::
 
-Think of relays like:
-- **Post offices** - They receive, store, and deliver messages
-- **Bulletin boards** - Places where content is posted
-- **Radio towers** - Broadcasting your signal
+![Relay network](/img/diagrams/relay-network.svg)
 
-![Relay Network](/img/diagrams/relay-network.svg)
+## Why several relays?
 
-## Why Multiple Relays?
+You use several relays at once, so no single one can silence you.
 
-Using several relays provides:
+| Benefit | Why |
+|---|---|
+| **Reliability** | If one relay goes down, the others still have your posts. |
+| **Reach** | Different people's apps read from different relays. |
+| **Choice** | Relays set their own rules. Some are free and open, some paid, some for one community. |
 
-| Benefit | Explanation |
-|---------|-------------|
-| **Reliability** | If one goes down, others work |
-| **Reach** | Different people use different relays |
-| **Speed** | Geographic distribution |
-| **Privacy** | Spread your data around |
-| **Features** | Some relays offer special capabilities |
+## How apps find posts: the outbox model
 
-## Types of Relays
+Your app publishes a small **relay list** saying which relays you write to (technically, a NIP-65 event). When someone follows you, their app reads that list and fetches your posts from those relays. This happens automatically, so you don't need to add someone's relays to see their posts.
 
-### Free/Public Relays
+Your relay settings usually have two lists that matter:
 
-- Open to everyone
-- No cost
-- May have limits
-- Good for starting out
+- **Write / outbox:** where your posts go.
+- **DM inbox:** where private messages reach you.
 
-**Examples:**
-- `wss://relay.damus.io`
-- `wss://nos.lol`
-- `wss://relay.nostr.band`
+Many apps set both up for you.
 
-### Paid Relays
+## Kinds of relays
 
-- Require payment
-- Usually less spam
-- Better performance
-- Support relay operators
+- **Free public relays:** open to everyone. Your app's defaults are usually these, such as `wss://relay.damus.io`.
+- **Paid relays:** only accept posts from paying members, so they're much cleaner. [nostr.wine](https://nostr.wine) is a long-running example.
+- **Community relays:** run for a group or topic. Some apps, such as Jumble and Coracle, can show a feed of everything on one relay.
 
-**Examples:**
-- `wss://nostr.wine`
-- `wss://relay.nostr.pro`
+## When to change your relays
 
-### Private Relays
+**Your posts or messages don't show up elsewhere.**
+In **Settings → Relays**, check you have a **write/outbox** list and a **DM inbox** list. If either is empty, add a big public relay such as `wss://relay.damus.io`.
 
-- Invite only
-- Community-specific
-- More controlled environment
+**You want less spam.**
+Add a paid relay such as [nostr.wine](https://nostr.wine).
 
-## Your Relay List
+**You're curious.**
+Browse relays and their status at [nostr.watch](https://nostr.watch).
 
-### What's in Your List
+:::note How many?
+Three to six relays is plenty. More just slows your app down.
+:::
 
-Your client maintains a list of relays:
-- **Read relays** - Where you get content
-- **Write relays** - Where you post content
-- **Both** - Most relays do both
+## Adding or removing a relay
 
-### Default Relays
+1. Open **Settings → Relays**.
+2. To add one, enter its address. Relay addresses start with `wss://`.
+3. To remove one, delete or switch it off.
 
-Most clients start with sensible defaults:
-```
-wss://relay.damus.io
-wss://nos.lol
-wss://relay.nostr.band
-wss://relay.primal.net
-wss://purplepag.es
-```
+Remove a relay if it's always offline, very slow, or full of spam.
 
-### Checking Your Relays
+## What relays can see
 
-In your client:
-1. Go to Settings
-2. Find "Relays" section
-3. See your connected relays
-
-## Managing Relays
-
-### Adding a Relay
-
-1. Find relay settings
-2. Click "Add Relay"
-3. Enter the URL (starts with `wss://`)
-4. Save
-
-### Removing a Relay
-
-1. Go to relay settings
-2. Find the relay
-3. Delete or disable
-
-### When to Add Relays
-
-- Following someone whose content you're missing
-- Joining a specific community
-- Wanting better performance
-- Adding backup options
-
-### When to Remove Relays
-
-- Relay is slow or unreliable
-- Too much spam
-- Don't use that community anymore
-
-## Popular Relays
-
-### General Purpose
-
-| Relay | Notes |
-|-------|-------|
-| `wss://relay.damus.io` | Popular, reliable |
-| `wss://nos.lol` | Fast, well-maintained |
-| `wss://relay.nostr.band` | Good search features |
-| `wss://relay.primal.net` | Primal's relay |
-| `wss://nostr.wine` | Paid, high quality |
-
-### Special Purpose
-
-| Relay | Purpose |
-|-------|---------|
-| `wss://purplepag.es` | Profile discovery |
-| `wss://relay.nostr.bg` | Media-focused |
-
-## How Relays Affect What You See
-
-### Following Someone
-
-When you follow someone:
-1. Your client checks where they post
-2. Adds those relays (or uses hints)
-3. Fetches their content
-
-### If You Don't See Someone's Posts
-
-They might be on relays you're not connected to:
-1. Check their profile for relay hints
-2. Add their relays
-3. Refresh your feed
-
-## Relay Tips for Users
-
-### Do's
-
-- ✅ Use 5-10 relays for balance
-- ✅ Include popular public relays
-- ✅ Check relay status occasionally
-- ✅ Support paid relays if you can
-
-### Don'ts
-
-- ❌ Use too many relays (slow)
-- ❌ Use only one relay (risky)
-- ❌ Ignore relay errors
-
-## Finding New Relays
-
-### Relay Directories
-
-- [nostr.watch](https://nostr.watch) - Status monitoring
-- [nostr.info/relays](https://nostr.info/relays/) - Relay list
-
-### From Others
-
-Check relay lists of people you follow in their profile.
-
-## Privacy Considerations
-
-### What Relays Know
-
-Relays can see:
-- Your IP address
-- Your posts
-- Who you follow (via REQ patterns)
-- When you're online
-
-### Privacy Tips
-
-- Use multiple relays (spread data)
-- Consider VPN for IP privacy
-- Some relays offer better privacy
+- **Your posts, profile and follow list:** these are public anyway.
+- **Your IP address:** like any website you visit. Use a VPN or Tor if that matters to you.
+- **Private messages:** relays can't read them. With older-style DMs (NIP-04), anyone can see who messaged whom and when. With modern NIP-17 messages, the relay that stores one can still see roughly who it's for and when. See [Messaging](./messaging.md).
 
 ## Troubleshooting
 
-### Relay Connection Issues
-
 | Problem | Try |
-|---------|-----|
-| Won't connect | Check URL is correct |
-| Keeps disconnecting | Internet may be unstable |
-| Very slow | Remove slow relays |
-| Missing content | Add more relays |
+|---|---|
+| A relay won't connect | Check the address is right and starts with `wss://`. It may be down; check [nostr.watch](https://nostr.watch). |
+| App is slow | Remove slow or offline relays. Keep three to six. |
+| A post is missing in one app | Apps use different relays and filters. Try another app, or open the post at [njump.me](https://njump.me). |
+| Friends don't get my messages | Make sure your DM inbox relay list isn't empty. |
 
-### Common Errors
+## Running your own relay
 
-- **Connection refused** - Relay might be down
-- **Rate limited** - Slow down or try later
-- **Not found** - Check the URL
+You can run your own relay, but you don't need to. It's a project for technical users. The [NIPs](https://github.com/nostr-protocol/nips) describe how relays work.
 
-## Advanced: NIP-65
+## Next steps
 
-NIP-65 is how your relay list is published:
-
-Your client publishes a "kind 10002" event listing your relays. This helps others find you.
-
-You don't need to manage this manually - clients handle it.
-
-## Running Your Own Relay
-
-For advanced users:
-
-If you want to run your own relay, check the [Developer Guide](https://nostrcg.github.io/devguide/relays/overview).
-
-Benefits:
-- Complete control
-- Guaranteed availability
-- Support the network
-
-## Next Steps
-
-- [Profile Setup](/account/profile-setup)
-- [Troubleshooting](/help/troubleshooting)
-- [FAQ](/help/faq)
+- [Profile Setup](../account/profile-setup.md)
+- [Troubleshooting](../help/troubleshooting.md)
+- [FAQ](../help/faq.md)

@@ -6,204 +6,119 @@ description: Nostr applications for Mac, Windows, and Linux
 
 # Desktop Clients
 
-Desktop clients offer a native experience on your computer with features optimized for larger screens.
+On a computer, most people simply use a web client. Our two picks are [**Jumble**](https://jumble.social) and [**primal.net**](https://primal.net), both in the browser with nothing to install. See [Web clients](./web.md).
 
-## Native Applications
+If you'd rather have an app with its own window, these are the options.
 
-### Gossip
+## Desktop apps
 
-A privacy-focused desktop client written in Rust.
+### Notedeck
 
-- **Platforms:** Windows, macOS, Linux
-- **Download:** [GitHub](https://github.com/mikedilger/gossip/releases)
-- **Cost:** Free, open source
+A multi-column desktop app from the Damus team, in the style of TweetDeck. Still in beta.
 
-**Features:**
-- Privacy-first design
-- Advanced relay management
-- Follows outbox model (NIP-65)
-- Local data storage
-- No tracking or analytics
+- **Platforms:** Desktop, Android
+- **Download:** [GitHub releases](https://github.com/damus-io/notedeck/releases)
 
-**Best for:** Privacy-conscious users, power users
+**Good for:** keeping several feeds, notifications and searches side by side.
 
 ---
 
-### Damus (macOS)
+### Amethyst Desktop
 
-The same great Damus experience on your Mac.
+The feature-packed Android app is also available on desktop.
 
-- **Platforms:** macOS
-- **Download:** [App Store](https://apps.apple.com/app/damus/id1628663131)
-- **Cost:** Free
-
-**Features:**
-- Native macOS design
-- Syncs with iOS version
-- Zaps and Lightning
-- Clean interface
-
-**Best for:** Mac users who also use Damus on iPhone
+- **Get it:** [amethyst.social](https://amethyst.social)
 
 ---
 
-### Lume
+### Nostria
 
-A modern, customizable desktop client.
+"Social without the noise": calm, focused feeds. Works in the browser, as a desktop app and on Android.
 
-- **Platforms:** Windows, macOS, Linux
-- **Download:** [lume.nu](https://lume.nu)
-- **Cost:** Free
-
-**Features:**
-- Column-based layout
-- Customizable workspaces
-- Built for productivity
-- Modern interface
-
-**Best for:** Power users who want TweetDeck-style experience
+- **Get it:** [nostria.app](https://nostria.app)
 
 ---
 
-## Web Apps as Desktop
+### Iris
 
-You can also use web clients as desktop apps:
+Simple and works offline, with a built-in ecash wallet. Available on the web and as a desktop app.
 
-### Using Primal as Desktop
+- **Get it:** [iris.to](https://iris.to)
 
-1. Visit [primal.net](https://primal.net)
-2. In Chrome: Menu → More tools → Create shortcut
-3. Check "Open as window"
-4. Now you have a desktop app!
+---
 
-### Progressive Web Apps (PWAs)
+### Damus and Nostur on the Mac
 
-Many web clients support PWA installation:
-- Works offline (partially)
-- Has its own window
-- Feels like a native app
+- [**Damus**](https://damus.io): the iPhone app also runs on Mac.
+- [**Nostur**](https://nostur.com): a power-user app for iPhone and Mac with lots of options.
+
+---
+
+### Chat apps on desktop
+
+- [**0xchat**](https://0xchat.com): Telegram-style private messages, group chats and calls.
+- [**Keychat**](https://keychat.io): private chat with a bitcoin wallet built in.
+
+:::note Older desktop apps
+Older guides recommend **Gossip** and **Lume**. Both are no longer maintained. Try Nostria, Amethyst or Notedeck instead.
+:::
+
+## Web apps as desktop apps
+
+Many web clients can be installed as an app with their own window (a "progressive web app").
+
+1. Open the client, for example [jumble.social](https://jumble.social), in Chrome or Edge.
+2. Look for the *Install* icon in the address bar, or open the browser menu and choose *Install* or *Create shortcut*.
+3. The app now opens in its own window, like a normal program.
 
 ## Comparison
 
-| App | Platform | Privacy | Features | Ease of Use |
-|-----|----------|---------|----------|-------------|
-| Gossip | All | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
-| Damus | macOS | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| Lume | All | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
-| Web PWA | All | ⭐⭐ | Varies | ⭐⭐⭐ |
+| App | Platforms | Style | Ease of use |
+|---|---|---|---|
+| Jumble / primal.net | Any browser | Single feed | Easy |
+| Notedeck | Desktop, Android (beta) | Multi-column | Medium |
+| Amethyst | Android, Desktop | Everything | Medium |
+| Nostria | Web, Desktop, Android | Calm feeds | Easy |
+| Iris | Web, Desktop | Simple | Easy |
+| Nostur | iPhone, Mac | Lots of settings | Medium |
 
-## Key Management on Desktop
+## Keeping your key safe on a computer
 
-### Option 1: Store in App
+### Use a signer (recommended)
 
-Most desktop apps store your key encrypted locally:
-- Convenient
-- Protected by your system login
-- Key stays on your computer
+- **Browser extension:** [Alby](https://getalby.com) (Chrome, Firefox and others), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome) or [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox). On a Nostr website, click *Log in with extension*.
+- **Remote signer (bunker):** apps that support it connect with a `bunker://…` or `nostrconnect://…` link. Power users can run [nsecBunker](https://github.com/kind-0/nsecbunkerd). [nstart.me](https://nstart.me) can set up a bunker login when you create an account.
 
-### Option 2: Use a Signer
+See [Your identity](../getting-started/your-identity.md) for how signers work.
 
-For enhanced security:
+### Or paste your key into the app
 
-#### nsec.app
-- **URL:** [nsec.app](https://nsec.app)
-- Web-based key management
-- Works with many clients
-- Bunker protocol support
+Desktop apps usually store a pasted key on your computer. That's convenient, but the app then holds your whole identity.
 
-#### Browser Extension
-- Alby or nos2x
-- Works with web clients
-- Convenient for web-based workflow
+:::danger The nsec rule
+Never give your nsec to a person, or to a website someone sent you. Type it only into an app you installed yourself, or a well-known Nostr site you typed in yourself. Better still, use a signer.
+:::
 
-## Setting Up
+## Setting up
 
-### First Time Installation
+1. **Download** only from the official website or store linked above.
+2. **Install** and open the app.
+3. **Create or log in** to your account. Use a signer if you can.
+4. **Relays** are usually set up for you.
 
-1. **Download** from official source
-2. **Verify** the download (if possible)
-3. **Install** following system prompts
-4. **Create or import** your account
-5. **Configure** relays (usually automatic)
+:::caution Logging out deletes the key
+If you pasted your nsec into an app, logging out erases it from that computer. Keep your [backup](../account/backup-keys.md) safe first, and test it by logging into a second app, not by logging out.
+:::
 
-### Importing Your Account
+### Security tips
 
-If you have an existing Nostr account:
+- Download only from official sources.
+- Keep your system and apps updated.
+- Use full-disk encryption and a screen lock.
+- Keep your key backup somewhere separate from the computer.
 
-1. Open the application
-2. Choose "Import" or "Existing Account"
-3. Enter your **nsec** (private key)
-4. Your profile and follows load automatically
+## Next steps
 
-### Security Tips
-
-- Download only from official sources
-- Keep your system updated
-- Use full-disk encryption
-- Back up your keys separately
-
-## Advanced Features
-
-### Multi-Column Layouts
-
-Desktop clients like Lume offer:
-- Multiple feeds side by side
-- Custom columns for hashtags
-- Notification column
-- DM column
-
-### Relay Management
-
-Desktop clients often provide better relay tools:
-- See connection status
-- Monitor bandwidth
-- Test relay speeds
-- Manage permissions
-
-### Data Export
-
-Some clients let you export:
-- Your posts
-- Your follows
-- Your messages (if stored locally)
-
-## Which Should You Choose?
-
-| If you want... | Choose... |
-|----------------|-----------|
-| Maximum privacy | Gossip |
-| Familiar iOS experience | Damus (macOS) |
-| Power user features | Lume |
-| No installation | Web client |
-| TweetDeck style | Lume |
-
-## Tips for Desktop Users
-
-### Keyboard Shortcuts
-
-Most desktop clients support:
-- `Ctrl/Cmd + N` - New post
-- `Ctrl/Cmd + Enter` - Send post
-- `Ctrl/Cmd + K` - Search
-
-Check each app's documentation for full shortcuts.
-
-### Notifications
-
-Desktop notifications may require:
-- System permission
-- App-specific setup
-- Browser permission (for web)
-
-### Multiple Monitors
-
-Desktop clients work great with multiple monitors:
-- Keep Nostr on secondary screen
-- Use columns across displays
-- Monitor feeds while working
-
-## Next Steps
-
-- [Specialized Clients](/clients/specialized) - Other types of apps
-- [Understanding Relays](/using-nostr/relays)
-- [Back Up Your Keys](/account/backup-keys)
+- [Specialized clients](./specialized.md): chat, video, music, writing and more
+- [Understanding relays](../using-nostr/relays.md)
+- [Back up your keys](../account/backup-keys.md)

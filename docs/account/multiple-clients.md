@@ -1,251 +1,154 @@
 ---
 sidebar_position: 4
 title: Multiple Clients
-description: Using your Nostr account across multiple apps
+description: Using your Nostr account across several apps and devices
 ---
 
-# Using Multiple Clients
+# Multiple Clients
 
-One of Nostr's best features is using the same account across different apps. Here's how.
+One of Nostr's best features is that the same account works in every Nostr app. Your profile, followers and posts come with you.
 
-## How It Works
+## How it works
 
-Your Nostr identity is your **key pair**, not an account on a server:
-
-```
-         ┌──────────────────────────┐
-         │      Your Keys          │
-         │  (Public + Private)     │
-         └───────────┬──────────────┘
-                     │
-     ┌───────────────┼───────────────┐
-     ▼               ▼               ▼
-┌─────────┐    ┌─────────┐    ┌─────────┐
-│  Damus  │    │  Primal │    │ Amethyst│
-│  (iOS)  │    │  (Web)  │    │(Android)│
-└─────────┘    └─────────┘    └─────────┘
-     │               │               │
-     └───────────────┴───────────────┘
-                     │
-              Same followers,
-              Same posts,
-              Same identity!
-```
-
-## Adding a New Client
-
-### Step 1: Get Your Private Key
-
-From your current client:
-1. Open Settings
-2. Find "Keys" or "Account"
-3. Reveal/copy your nsec
-
-### Step 2: Open New Client
-
-Download or visit the new client.
-
-### Step 3: Log In
-
-1. Choose "I have an account" or "Login"
-2. Paste your nsec (private key)
-3. Wait for your profile to load
-
-### Step 4: Done!
-
-Your profile, follows, and posts are all there.
-
-## What Syncs Automatically
-
-| Syncs Across Clients | Doesn't Sync |
-|---------------------|--------------|
-| Profile info | App settings |
-| Followers/Following | Notification preferences |
-| Posts | Drafts |
-| Likes/Reactions | UI customizations |
-| DMs | Cache/offline data |
-| Zaps | Wallet connections |
-
-## Common Client Combinations
-
-### Mobile + Web
+Your account is your **key**, not a login stored inside one app:
 
 ```
-Phone: Damus or Amethyst
-Web: Primal or Snort
-```
-Use mobile for on-the-go, web at desk.
-
-### General + Specialized
-
-```
-Main: Primal
-Articles: Habla
-Photos: Olas
-Chat: 0xchat
-```
-Different apps for different content types.
-
-### Multi-Platform
-
-```
-iPhone: Damus
-Android tablet: Amethyst
-Computer: Primal web
-```
-Same account everywhere.
-
-## Using Signers (Safer Method)
-
-Instead of pasting your nsec everywhere, use a signer:
-
-### How Signers Work
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Client    │────▶│   Signer    │────▶│   Relay     │
-│  (Primal)   │ ask │  (Has Key)  │sign │  (Server)   │
-└─────────────┘     └─────────────┘     └─────────────┘
+              ┌──────────────┐
+              │   Your key   │
+              └──────┬───────┘
+      ┌──────────────┼──────────────┐
+      ▼              ▼              ▼
+ ┌─────────┐   ┌──────────┐   ┌──────────┐
+ │  Damus  │   │  Jumble  │   │ Amethyst │
+ │ (iPhone)│   │  (web)   │   │ (Android)│
+ └─────────┘   └──────────┘   └──────────┘
+      │              │              │
+      └──────────────┴──────────────┘
+           Same profile, followers
+               and posts
 ```
 
-1. Client asks to sign something
-2. Signer shows you what it's signing
-3. You approve
-4. Signer signs without exposing key
+## Adding a new app
 
-### Benefits
+In the new app, choose **Log in** (not *Create account*), then pick the safest option it offers:
 
-- ✅ Never paste nsec into apps
-- ✅ Review what you're signing
-- ✅ Key stays in one secure place
-- ✅ Easy to revoke app access
+1. **Log in with a signer** (Amber on Android, a browser extension on a computer, a bunker link on iPhone). Best, because the app never sees your key.
+2. **Paste your nsec.** Fine in well-known apps you installed yourself, or well-known sites like jumble.social or primal.net that you typed in yourself. Never on a site someone sent you a link to.
 
-### Popular Signers
+Your profile and follows should appear within a few moments.
 
-| Platform | Signer | Notes |
-|----------|--------|-------|
-| Browser | [Alby](https://getalby.com) | Also a wallet |
-| Browser | [nos2x](https://github.com/fiatjaf/nos2x) | Simple, focused |
-| Android | [Amber](https://github.com/greenart7c3/Amber) | Mobile signing |
-| Web | [nsec.app](https://nsec.app) | Web-based |
+:::caution Don't create a second account by mistake
+If you tap *Create account* instead of *Log in*, the app makes a brand-new key, with no followers. If that happens, just log in again with your existing key.
+:::
 
-### Setting Up a Signer
+## What carries over
 
-#### Browser Extension (nos2x/Alby)
+| Comes with you | Stays in each app |
+|---|---|
+| Profile (name, picture, bio, handle, Lightning address) | App settings and layout |
+| Who you follow | Notification settings |
+| Your posts, replies, likes and reposts | Drafts |
+| Mute list (in many apps) | Wallet connections (NWC) |
+| Private messages, if both apps use the same message standard | |
 
-1. Install extension
-2. Add your private key to extension
-3. Visit web client
-4. Click "Login with extension"
-5. Approve connection
+### A note on private messages
 
-#### Mobile (Amber)
+Apps use two different standards for private messages, and they don't always see each other's messages:
 
-1. Install Amber
-2. Import your nsec
-3. When apps ask to sign, Amber handles it
+- **Modern (NIP-17):** Amethyst, 0xchat, Keychat, Coracle and Flotilla. Damus is switching over in its next update.
+- **Older (NIP-04):** Primal still uses these as of October 2026. Newer apps may hide these older messages by default. They also let anyone see who messaged whom, and when.
 
-## Switching Between Clients
+If a message seems to vanish, ask the other person which app they use. See [Messaging](../using-nostr/messaging.md).
 
-### Same Device
+## Good combinations
 
-Just open the other app! Your identity is already there.
+Two good picks per device:
 
-### Different Devices
+| Device | Pick either one |
+|---|---|
+| iPhone | Damus or Primal |
+| Android | Amethyst or Primal |
+| Computer | Jumble (jumble.social) or primal.net |
 
-Log in with your nsec or connect your signer.
+Then mix in specialist apps for different jobs:
 
-## Syncing Issues
+- **Phone + computer:** Damus or Amethyst on your phone for scrolling, Jumble or primal.net at your desk.
+- **Social + writing + chat:** your usual social app, YakiHonne on your computer for long-form writing, and 0xchat for private messages.
+- **Creator:** your usual social app for posts, zap.stream for live video, YakiHonne for articles, Divine for short videos.
 
-### Profile Not Showing?
+See [Clients](../clients/overview.md) for more choices.
 
-1. Wait a moment - relays need time
-2. Pull to refresh
-3. Check relay connections
-4. Both clients on same relays?
+## Using a signer (the safer way)
 
-### Missing Follows?
+Every time you paste your nsec into an app, that app holds your whole identity. A **signer** keeps your key in one place, and other apps ask it for permission, as in *"Allow Primal to post this note?"* If one of those apps is ever hacked, your key isn't in it.
 
-1. Check if relays synced
-2. Follow list takes time to sync
-3. Try refreshing the list
+![Apps ask the signer to sign; the signer holds your key and only returns a signature](/img/diagrams/signer-flow.svg)
 
-### DMs Not Visible?
+### Why it's better
 
-1. DMs are encrypted per-key
-2. Should sync if same key
-3. May take time to load
+- You never paste your nsec into each app.
+- Your key lives in one place.
+- You can switch off any single app later, without changing your key.
 
-## Security Considerations
+### Signers by device
 
-### When Using Multiple Clients
+| Device | Signer | How apps connect |
+|---|---|---|
+| Android | [Amber](https://github.com/greenart7c3/Amber) | *Log in with Amber* button in Amethyst, Primal and many others. Get it from [Zapstore](https://zapstore.dev) or GitHub. |
+| Computer | [Alby](https://getalby.com) (also a wallet), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome), [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) | *Log in with extension* on Nostr websites |
+| iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta, via TestFlight; Android version on GitHub too) | A `bunker://…` or `nostrconnect://…` link or QR code. Fewer iPhone apps support this so far. |
+| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd) | Your own always-on remote signer |
 
-- ✅ Only use trusted clients
-- ✅ Verify official sources
-- ✅ Keep apps updated
-- ✅ Consider using a signer
+Starting from scratch? [nstart.me](https://nstart.me) creates your key, saves an encrypted backup, and can set up a bunker login.
 
-### Revoking Access
+### Setting one up
 
-With raw nsec: You can't revoke access (key is known).
+**Browser extension:**
 
-With signer: You can stop approving requests from specific apps.
+1. Install the extension from your browser's official store.
+2. Add your key to it (or create one there).
+3. On a Nostr website, click **Log in with extension** and approve.
 
-## Tips for Multiple Clients
+**Amber (Android):**
 
-### Do's
+1. Install Amber and add your key.
+2. In your Nostr app, choose **Log in with Amber**.
+3. Approve requests in Amber when the app asks.
 
-- ✅ Use a signer when possible
-- ✅ Keep one "main" client
-- ✅ Try different clients for their strengths
-- ✅ Keep clients updated
+You still need to back up the key inside your signer. See [Backup Your Keys](./backup-keys.md).
 
-### Don'ts
+## Switching off an app
 
-- ❌ Use sketchy clients
-- ❌ Log in on public computers
-- ❌ Enter nsec on unfamiliar sites
-- ❌ Forget which clients have your key
+- **If you logged in with a signer:** remove that app's permission in the signer. Your key never left it.
+- **If you pasted your nsec:** you can't take the key back from that app. Logging out removes it from that device, but if you think the app or site was malicious, treat your key as leaked. See [If your key leaks](./backup-keys.md).
 
-## Example Workflows
+:::danger Logging out erases a pasted key
+If you pasted your nsec into an app, logging out deletes it from that device. Make sure your key is backed up and tested in another app before you log out of anything.
+:::
 
-### The Casual User
+## When things don't match
 
-```
-Primary: Damus (iPhone)
-Secondary: Primal web (occasionally)
-```
+Each app talks to its own mix of relays and has its own spam filters, so apps don't always show exactly the same things.
 
-### The Power User
+| Problem | Try this |
+|---|---|
+| Can't log in | Check you copied the whole nsec, starting `nsec1`. Primal and Damus can't use an `ncryptsec` yet. |
+| Profile looks blank | Wait a moment and refresh. Check you used *Log in*, not *Create account*. |
+| Fewer follows than expected | Refresh. If it persists, check *Settings → Relays* has a write/outbox list. |
+| Private messages missing | The other app may use a different message standard (see above). |
+| A post shows in one app but not another | Try another app, or open it on [njump.me](https://njump.me). |
 
-```
-Desktop: Gossip (privacy-focused)
-Mobile: Amethyst (features)
-Writing: Habla (articles)
-Signer: Amber (security)
-```
+More in [Troubleshooting](../help/troubleshooting.md) and [Relays](../using-nostr/relays.md).
 
-### The Creator
+## Tips
 
-```
-Posting: Primal (clean interface)
-Streaming: Zap.stream
-Articles: Habla
-Photos: Olas
-```
+- Use a signer when you can.
+- Only use apps you installed yourself from an official store, or well-known sites you typed in yourself.
+- Don't log in on shared or public computers.
+- Keep track of which apps hold your nsec.
 
-## Troubleshooting
+## Next steps
 
-| Issue | Solution |
-|-------|----------|
-| Can't log in | Check nsec is correct |
-| Profile blank | Wait for sync, check relays |
-| Different followers | Force refresh follow list |
-| DMs missing | Takes time to decrypt/load |
-| Posts not appearing | Check relay connections |
-
-## Next Steps
-
-- [Backup Your Keys](/account/backup-keys) - Essential
-- [Profile Setup](/account/profile-setup) - Optimize your profile
-- [Clients Overview](/clients/overview) - Find more clients
+- [Backup Your Keys](./backup-keys.md)
+- [Profile Setup](./profile-setup.md)
+- [Clients](../clients/overview.md)

@@ -6,260 +6,128 @@ description: Helpful resources for learning and using Nostr
 
 # Resources
 
-Helpful resources for learning more about Nostr.
+Places to learn more, find apps and get help.
 
-## Official Resources
+:::note Checked 22 October 2026
+Every link on this page was checked on 22 October 2026. We removed many links from the older version of this page because they had died, and several old Nostr web addresses now lead to spam or gambling sites. If an old tutorial sends you somewhere not listed here, be careful.
+:::
 
-### Protocol
+## Beginner guides
 
-- [Nostr Protocol](https://github.com/nostr-protocol/nostr) - Official protocol repository
-- [NIPs](https://github.com/nostr-protocol/nips) - Nostr Implementation Possibilities
-- [W3C Nostr Community Group](https://www.w3.org/community/nostr/) - Web standardization
+| Resource | What it's for |
+|---|---|
+| [nostr.how](https://nostr.how/en/get-started) | Clear, illustrated guides in many languages |
+| [usenostr.org](https://usenostr.org) | A simple explainer to send a friend |
+| [nostr.com](https://nostr.com) | The protocol's home page |
+| [whynostr.com](https://whynostr.com) | The case for Nostr in plain language |
+| [nstart.me](https://nstart.me) | Guided account creation with a safe backup. Great for helping a friend join. |
 
-### For Developers
+## Find apps
 
-- [Nostr Developer Guide](https://nostrcg.github.io/devguide/) - Comprehensive development documentation
-- [nostr-tools](https://github.com/nbd-wtf/nostr-tools) - JavaScript library
-- [awesome-nostr](https://github.com/aljazceru/awesome-nostr) - Curated list of Nostr projects
+| Resource | What it's for |
+|---|---|
+| [nostrapps.com](https://nostrapps.com) | A catalogue of Nostr apps by category |
+| [Zapstore](https://zapstore.dev) | An Android app store full of Nostr apps, where developers sign every release |
 
-## Learning Resources
+Our own picks are in [Clients Overview](../clients/overview.md). In short: **iPhone** [Damus](https://damus.io) or [Primal](https://primal.net); **Android** [Amethyst](https://amethyst.social) or [Primal](https://primal.net); **computer** [Jumble](https://jumble.social) or [primal.net](https://primal.net).
 
-### Beginner Guides
+## Find people and posts
 
-| Resource | Description |
-|----------|-------------|
-| [Nostr.how](https://nostr.how) | Beginner-friendly tutorials |
-| [Nostr.guide](https://nostr.guide) | Step-by-step getting started |
-| [UseNostr.org](https://usenostr.org) | Simple introduction |
+| Tool | What it's for |
+|---|---|
+| [nos.today](https://nos.today) | Search across Nostr |
+| [ants.sh](https://ants.sh) | Search across Nostr |
+| [njump.me](https://njump.me) | Opens any Nostr post or profile as a normal web page, so you can share it with people who aren't on Nostr |
 
-### Video Tutorials
+The easiest way to find people is still inside your app: accept the topic lists it offers during sign-up, and search hashtags you care about.
 
-- Search "Nostr tutorial" on YouTube
-- Many creators share getting started videos
-- Look for recent videos (protocol evolves)
+## Keep your key safe
 
-### Articles
+| Device | Signer |
+|---|---|
+| Android | [Amber](https://github.com/greenart7c3/Amber) (also on [Zapstore](https://zapstore.dev)) |
+| Computer | [Alby](https://getalby.com), [nos2x](https://github.com/fiatjaf/nos2x) (Chrome), [nos2x-fox](https://github.com/diegogurpegui/nos2x-fox) (Firefox) |
+| iPhone | [Aegis](https://github.com/ZharlieW/Aegis) (beta via TestFlight; Android version on GitHub too) |
+| Power users | [nsecBunker](https://github.com/kind-0/nsecbunkerd), a self-hosted remote signer |
 
-- Search "getting started with Nostr" for blog posts
-- Many community members write helpful guides
-- Medium, Substack, and Habla have Nostr content
+For backups, use a password manager (Bitwarden, 1Password, Proton Pass or your phone's built-in one) plus a paper copy. See [Backup Your Keys](../account/backup-keys.md).
 
-## Discovery Tools
+## Wallets for zaps
 
-### Find People
+Zaps are optional. If you want them:
 
-| Tool | Use |
-|------|-----|
-| [nostr.band](https://nostr.band) | Search for users and content |
-| [nosta.me](https://nosta.me) | Profile lookup |
-| [njump.me](https://njump.me) | View any Nostr event |
+| Wallet | Type | Notes |
+|---|---|---|
+| [Alby Hub](https://getalby.com/alby-hub) + [Alby Go](https://getalby.com/alby-go) | Self-custody | The reference wallet for connecting to Nostr apps |
+| Primal wallet | Self-custody | Built into the Primal phone apps (not the website). Has its own recovery phrase, separate from your nsec. |
+| [Zeus](https://zeusln.com) | Self-custody | More control, a bit more to learn |
+| [Coinos](https://coinos.io) | Custodial | Free and web-based. Disclosed a credential leak in August 2026, so pocket money only. |
+| [Minibits](https://minibits.cash), [Cashu.me](https://cashu.me) | Ecash (custodial) | The mint holds the funds. Pocket money only. |
 
-### Find Relays
+[nwc.dev](https://nwc.dev) lists the wallets and apps that support Nostr Wallet Connect. More in [Zaps & Lightning](../using-nostr/zaps.md).
 
-| Tool | Use |
-|------|-----|
-| [nostr.watch](https://nostr.watch) | Relay status and monitoring |
-| [Relay Registry](https://nostr.info/relays/) | Relay directory |
+## Readable handles (NIP-05)
 
-### Find Apps
+| Option | Notes |
+|---|---|
+| Your own domain | Free if you already own one, and nobody can take it away. See [Verification](../account/verification.md). |
+| [nostrplebs.com](https://nostrplebs.com) | Paid, long-running provider |
+| [nostrcheck.me](https://nostrcheck.me) | Free and paid options |
+| [iris.to](https://iris.to) | Free `you@iris.to` |
+| [Primal Premium](https://primal.net) | Paid, gives you `you@primal.net` |
 
-| Directory | Description |
-|-----------|-------------|
-| [NostrApps.com](https://nostrapps.com) | Comprehensive app directory |
-| [Nostr.net](https://nostr.net) | Client and tool listings |
+## Media hosting
+
+Most apps upload pictures for you. If you need to upload directly, use [nostr.build](https://nostr.build) or [nostrcheck.me](https://nostrcheck.me). The standard for Nostr media servers is called *Blossom*.
+
+## Relays
+
+| Resource | What it's for |
+|---|---|
+| [nostr.watch](https://nostr.watch) | Live relay status |
+| [nostr.wine](https://nostr.wine) | A paid relay that only accepts posts from members, so it's much cleaner |
+
+Most people never need to change relays. See [Understanding Relays](../using-nostr/relays.md).
+
+## Other networks
+
+- [Mostr](https://mostr.pub) bridges Nostr and the fediverse (Mastodon and friends).
+- There is no maintained bridge to Bluesky.
+
+## Stay up to date
+
+- [Nostr Compass](https://nostrcompass.org): a newsletter on what's new across Nostr.
+- Follow `#nostr` and `#asknostr` in any app.
 
 ## Community
 
-### Where to Connect
+| Hashtag | For |
+|---|---|
+| `#introductions` | Saying hi when you're new |
+| `#asknostr` | Asking anything |
+| `#nostr` | News and talk about Nostr itself |
+| `#photography` `#art` `#music` `#books` | Finding your people |
 
-- **#asknostr** - Ask questions in your posts
-- **#introductions** - Introduce yourself
-- **#nostr** - General Nostr discussion
-- **#plebchain** - Bitcoin community
+:::caution Scams
+Nostr has no token, so any "Nostr token" offer is a scam. Nostr also has no support desk: nobody legitimate will ever ask for your nsec.
+:::
 
-### Notable Communities
+## Going deeper (technical)
 
-Many topic-specific groups exist. Search for your interests!
-
-## Wallets for Zaps
-
-### Custodial (Easy)
-
-| Wallet | Notes |
-|--------|-------|
-| [Wallet of Satoshi](https://walletofsatoshi.com) | Simplest setup |
-| [Primal](https://primal.net) | Built into the app |
-| [Alby](https://getalby.com) | Browser extension |
-
-### Non-Custodial (Self-custody)
-
-| Wallet | Notes |
-|--------|-------|
-| [Zeus](https://zeusln.app) | Mobile, full control |
-| [Phoenix](https://phoenix.acinq.co) | Easy Lightning |
-| [Breez](https://breez.technology) | User-friendly |
-
-## Key Management
-
-### Signers
-
-| Platform | Tool |
-|----------|------|
-| Browser | [nos2x](https://github.com/fiatjaf/nos2x), [Alby](https://getalby.com) |
-| Android | [Amber](https://github.com/greenart7c3/Amber) |
-| Web | [nsec.app](https://nsec.app) |
-
-### Backup Tools
-
-- Use a password manager (Bitwarden, 1Password)
-- Paper backup in secure location
-- Consider hardware wallet integration (advanced)
-
-## Clients by Platform
-
-### Mobile
-
-| Platform | Clients |
-|----------|---------|
-| iOS | Damus, Primal, Nostur |
-| Android | Amethyst, Primal, Plebstr |
-
-### Web
-
-| Client | Focus |
-|--------|-------|
-| [Primal](https://primal.net) | General use |
-| [Snort](https://snort.social) | Fast, simple |
-| [Coracle](https://coracle.social) | Privacy |
-| [Habla](https://habla.news) | Long-form |
-
-### Desktop
-
-| Client | Platform |
-|--------|----------|
-| Damus | macOS |
-| Gossip | All platforms |
-| Lume | All platforms |
-
-## NIP-05 Verification
-
-### Free Services
-
-| Service | URL |
-|---------|-----|
-| nostrcheck.me | [nostrcheck.me](https://nostrcheck.me) |
-| nostrplebs.com | [nostrplebs.com](https://nostrplebs.com) |
-| verified-nostr.com | [verified-nostr.com](https://verified-nostr.com) |
-
-### Self-Hosting
-
-Set up on your own domain - see [Verification guide](/account/verification).
-
-## Data & Statistics
-
-### Analytics
-
-| Tool | Purpose |
-|------|---------|
-| [nostr.band/stats](https://nostr.band/stats) | Network statistics |
-| [nostr.watch](https://nostr.watch) | Relay metrics |
-
-### Event Explorers
-
-| Tool | Purpose |
-|------|---------|
-| [njump.me](https://njump.me) | View any event |
-| [nostr.band](https://nostr.band) | Search and explore |
-
-## Specialized Apps
-
-### Content & Media
-
-| Category | Apps |
-|----------|------|
-| Long-form | Habla, Yakihonne |
-| Photos | Olas |
-| Video | Zap.stream |
-| Podcasts | Fountain |
-| Music | Wavlake |
-| Media Hosting | nostr.build, Blossom servers |
-
-### Communication
-
-| Category | Apps |
-|----------|------|
-| Chat | 0xchat, Flotilla |
-| Communities | Satellite, Zapddit, Chachi |
-| Audio Spaces | Nostr Nests |
-
-### Commerce & Exchange
-
-| Category | Apps |
-|----------|------|
-| Marketplace | Shopstr |
-| P2P Exchange | [Mostro](https://mostro.network) |
-
-### Developer & Tools
-
-| Category | Apps |
-|----------|------|
-| Code Collaboration | [GitWorkshop](https://gitworkshop.dev) |
-| Event Explorer | [njump.me](https://njump.me) |
-| Search | [nostr.band](https://nostr.band) |
-
-### Games
-
-| Category | Apps |
-|----------|------|
-| Chess | [Jester](https://jesterui.github.io) |
-| Poker | POGN |
-
-## Stay Updated
-
-### Following Nostr Development
-
-- Follow developers and builders on Nostr
-- Watch the [NIPs repository](https://github.com/nostr-protocol/nips)
-- Join community discussions
-- Subscribe to [nips.nostr.com](https://nips.nostr.com)
-
-### Hashtags to Follow
-
-- **#nostr** - General discussion
-- **#nostrdev** - Development updates
-- **#grownostr** - Community growth
-- **#asknostr** - Get help
-- **#introductions** - Meet new people
-- **#plebchain** - Bitcoin community
+| Resource | What it's for |
+|---|---|
+| [NIPs](https://github.com/nostr-protocol/nips) | The official specs. How everything actually works. |
+| [nips.nostr.com](https://nips.nostr.com) | The NIPs in an easier-to-read format |
+| [Nostr protocol repository](https://github.com/nostr-protocol/nostr) | The original protocol description |
+| [Nostr Developer Guide](https://nostrcg.github.io/devguide/) | Our companion guide for building apps and running relays |
+| [nostr-tools](https://github.com/nbd-wtf/nostr-tools) | A popular JavaScript library |
+| [awesome-nostr](https://github.com/aljazceru/awesome-nostr) | A huge list of projects, libraries and tools |
+| [nostr.net](https://nostr.net) | Another large index of resources |
+| [gitworkshop.dev](https://gitworkshop.dev) | Git repositories, issues and patches over Nostr |
+| [W3C Nostr Community Group](https://www.w3.org/community/nostr/) | Web standards work around Nostr |
 
 ## Contribute
 
-### Ways to Help
-
-1. **Use Nostr** - The network grows with users
-2. **Help newcomers** - Answer #asknostr questions
-3. **Report bugs** - Help improve clients
-4. **Run a relay** - Support infrastructure
-5. **Build apps** - Create new experiences
-6. **Write content** - Help document Nostr
-
-### Development
-
-Check the [Developer Guide](https://nostrcg.github.io/devguide/) for:
-- Building clients
-- Running relays
-- Contributing to the protocol
-
-## Quick Links Summary
-
-| Category | Best Starting Point |
-|----------|---------------------|
-| Learn | [nostr.how](https://nostr.how) |
-| Search | [nostr.band](https://nostr.band) |
-| Apps | [nostrapps.com](https://nostrapps.com) |
-| Relays | [nostr.watch](https://nostr.watch) |
-| Develop | [Developer Guide](https://nostrcg.github.io/devguide/) |
-
----
-
-**Questions?** Use the **#asknostr** hashtag - the community loves to help!
+- **Help newcomers.** Answer `#asknostr` questions.
+- **Report bugs** to the apps you use.
+- **Improve this guide.** Know a great resource we're missing, or found a dead link? [Open an issue](https://github.com/nostrcg/userguide/issues).

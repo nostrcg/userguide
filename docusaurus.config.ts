@@ -123,13 +123,17 @@ const config: Config = {
             },
             {
               label: 'Search Nostr',
-              href: 'https://nostr.band',
+              href: 'https://nos.today',
             },
           ],
         },
         {
           title: 'Resources',
           items: [
+            {
+              label: 'Quick Guide (Wiki)',
+              href: 'https://github.com/nostrcg/userguide/wiki',
+            },
             {
               label: 'Developer Guide',
               href: 'https://nostrcg.github.io/devguide/',
@@ -145,7 +149,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Built with love for the Nostr community.`,
+      copyright: `Built with love for the Nostr community. Last reviewed October 2026.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,74 +1,68 @@
 ---
 sidebar_position: 2
 title: Verification
-description: NIP-05 identity verification on Nostr
+description: Readable handles (NIP-05) and what they do and don't prove
 ---
 
 # Verification (NIP-05)
 
-NIP-05 verification links your Nostr identity to a domain name, adding credibility to your profile.
+A **readable handle** (techies call it **NIP-05**) turns `npub1x7q3…` into something like `alice@example.com`, and shows it next to your name in most apps.
 
-## What is NIP-05?
+It's often called "verification", but be careful with that word:
 
-NIP-05 is a verification standard that:
-- Links your Nostr key to a domain
-- Shows as `name@domain.com` on your profile
-- Helps others verify it's really you
-- Many clients show a checkmark or badge
+:::caution What it proves
+A readable handle only proves that the account **controls a domain**. It does **not** prove who someone is. Anyone can register `famousperson@somedomain.com`.
+:::
+
+## What it looks like
+
+| Without a handle | With a handle |
+|---|---|
+| Alice | Alice |
+| `npub1abc…` | `alice@example.com` |
+
+Some apps also show a small badge or tick next to accounts whose handle checks out.
+
+## How it works
+
+1. You put `alice@example.com` in your profile.
+2. Apps look up `https://example.com/.well-known/nostr.json?name=alice`.
+3. That file lists the public key for "alice".
+4. If it matches your key, apps show the handle.
+
+## Getting a handle
+
+| Option | Cost | Notes |
+|---|---|---|
+| **Your own domain** | Free if you already own one | The most durable option, because nobody can take it away. See below. |
+| [**nostrplebs.com**](https://nostrplebs.com) | Paid | Long-running provider |
+| [**nostrcheck.me**](https://nostrcheck.me) | Free and paid options | Also hosts media |
+| [**iris.to**](https://iris.to) | Free | Claim `you@iris.to`. Paid supporter tiers are optional. |
+| [**Primal Premium**](https://primal.net) | Paid | Gives you `you@primal.net` |
+
+With a provider, you usually sign in with your Nostr account, pick a name, and then add the handle to your profile.
+
+## Adding it to your profile
+
+1. Open **Edit profile**.
+2. Find the field called **NIP-05**, *Nostr address*, *Verification* or similar.
+3. Enter your handle, for example `alice@example.com`.
+4. Save.
+
+## Using your own domain
+
+### 1. Create the file
+
+On your website, create a file at:
 
 ```
-Your Profile                  Domain Server
-    │                             │
-    │  alice@example.com          │
-    └─────────────────────────────┘
-              ↓
-      Clients can verify:
-      "Yes, example.com confirms
-       this is the real alice"
+https://yourdomain.com/.well-known/nostr.json
 ```
 
-## What It Looks Like
+### 2. Add your public key
 
-| Without NIP-05 | With NIP-05 |
-|----------------|-------------|
-| Alice | Alice ✓ |
-| npub1abc... | alice@example.com |
+The file uses your public key in **hex** format (64 characters of 0–9 and a–f), not your npub. Many apps and key tools can show your key in hex.
 
-## How It Works
-
-1. You claim `alice@example.com` in your profile
-2. Your client checks `example.com/.well-known/nostr.json`
-3. The server returns your public key
-4. If it matches, you're verified!
-
-## Getting Verified
-
-### Option 1: Free Services
-
-Several services offer free NIP-05:
-
-| Service | Format | Notes |
-|---------|--------|-------|
-| [nostrcheck.me](https://nostrcheck.me) | you@nostrcheck.me | Free |
-| [nostrplebs.com](https://nostrplebs.com) | you@nostrplebs.com | Donation-based |
-| [verified-nostr.com](https://verified-nostr.com) | you@verified-nostr.com | Free |
-
-**Steps:**
-1. Visit the service
-2. Connect your Nostr account
-3. Choose your username
-4. Add the address to your profile
-
-### Option 2: Your Own Domain
-
-If you own a domain:
-
-**Step 1:** Create the file
-```
-/.well-known/nostr.json
-```
-
-**Step 2:** Add your info
 ```json
 {
   "names": {
@@ -77,177 +71,86 @@ If you own a domain:
 }
 ```
 
-**Step 3:** Configure your web server
-- Serve with `Content-Type: application/json`
-- Allow CORS: `Access-Control-Allow-Origin: *`
+You can list several people on one domain by adding more names.
 
-**Step 4:** Add to your Nostr profile
-```
-alice@yourdomain.com
-```
+You can also add an optional `relays` section, which tells apps where to find your posts:
 
-### Option 3: Paid Services
-
-Premium verification services:
-- Custom domains
-- Additional features
-- Support included
-
-## Adding to Your Profile
-
-1. Open your Nostr client
-2. Go to profile settings
-3. Find "NIP-05" or "Verification" field
-4. Enter your address (e.g., `alice@example.com`)
-5. Save
-
-## Benefits
-
-### Trust
-
-- Others know the account is legitimate
-- Reduces impersonation risk
-- Builds credibility
-
-### Discoverability
-
-- Easier to find: search `alice@example.com`
-- Memorable identifier
-- Professional appearance
-
-### Identity Continuity
-
-- Even if you change keys, domain proves ownership
-- Bridges to your other online presence
-
-## Verification Levels
-
-| Type | Example | Trust Level |
-|------|---------|-------------|
-| Free service | you@nostrcheck.me | Basic |
-| Personal domain | you@yourname.com | Strong |
-| Organization | ceo@company.com | Very strong |
-
-## Common Issues
-
-### "Invalid NIP-05"
-
-Check:
-- Correct format: `name@domain.com`
-- Server is accessible
-- JSON is valid
-- Public key matches
-
-### Verification Not Showing
-
-1. Wait a few minutes
-2. Refresh the profile
-3. Check the JSON file
-4. Verify CORS headers
-
-### Can't Find the Setting
-
-Look for:
-- "NIP-05"
-- "Verification"
-- "Nostr address"
-- "Identity"
-
-## Technical Details
-
-### JSON Format
-
-The `nostr.json` file:
 ```json
 {
   "names": {
-    "alice": "abc123...hex-pubkey...",
-    "bob": "def456...hex-pubkey..."
+    "alice": "your-public-key-in-hex"
   },
   "relays": {
-    "abc123...hex-pubkey...": ["wss://relay.example.com"]
+    "your-public-key-in-hex": ["wss://relay.damus.io"]
   }
 }
 ```
 
-### Required Headers
+### 3. Allow web apps to read it
 
-Your server must return:
+Web apps can only read the file if your server sends this header with it:
+
 ```
-Content-Type: application/json
 Access-Control-Allow-Origin: *
 ```
 
-### URL Format
-
-Clients check:
-```
-https://domain.com/.well-known/nostr.json?name=alice
-```
-
-## Self-Hosting Tips
-
-### Static Site (GitHub Pages, Netlify)
-
-Create `.well-known/nostr.json`:
-```json
-{
-  "names": {
-    "yourname": "your-hex-public-key"
-  }
-}
-```
-
-### With Redirects
-
-Some hosts need configuration for `.well-known` paths.
-
-### CORS Configuration
-
 **Nginx:**
+
 ```nginx
 location /.well-known/nostr.json {
     add_header Access-Control-Allow-Origin *;
-    add_header Content-Type application/json;
 }
 ```
 
-**Apache (.htaccess):**
+**Apache (`.htaccess`):**
+
 ```apache
-Header set Access-Control-Allow-Origin "*"
+<Files "nostr.json">
+    Header set Access-Control-Allow-Origin "*"
+</Files>
 ```
 
-## Privacy Note
+Some static hosts skip folders that start with a dot, such as `.well-known`, so check that the file actually loads in your browser.
 
-NIP-05 links your Nostr identity to a domain:
-- This is public information
-- Consider if you want this connection
-- Use a pseudonymous domain if desired
+### 4. Add it to your profile
 
-## FAQ
+Enter `alice@yourdomain.com` in your profile and save.
 
-### Is verification required?
+:::tip Using "_" for your bare domain
+If you use the name `_` in the file, many apps show your handle as just `yourdomain.com`.
+:::
 
-No! It's optional but recommended.
+## When it doesn't show up
 
-### Does it cost money?
+| Problem | Check |
+|---|---|
+| Handle shows as invalid | The file loads at `https://yourdomain.com/.well-known/nostr.json`, the JSON is valid, and the key is in **hex**, not npub |
+| Works in phone apps but not web apps | The `Access-Control-Allow-Origin: *` header is missing |
+| Still not showing | Wait a few minutes and refresh; apps cache results |
+| Can't find the setting | Look for *NIP-05*, *Nostr address*, *Verification* or *Identity* |
 
-Free options exist. Own domain costs domain price.
+## Spotting impersonators
 
-### Can I change it later?
+Anyone can copy a name and photo. To check an account, look at its **npub** or its readable handle, never just the display name. A handle on a domain you recognise, such as an organisation's own website, is a good sign. A handle on a random domain proves very little.
 
-Yes, just update your profile.
+## Privacy
 
-### What if the domain expires?
+Your handle publicly links your Nostr account to a domain. If you want to stay pseudonymous, don't use a domain registered in your real name.
 
-Verification will stop working. Keep domains renewed!
+## Questions
 
-### Can multiple people use one domain?
+**Do I need one?** No. It's optional.
 
-Yes! Add multiple entries to the JSON.
+**Does it cost money?** Free options exist. With your own domain, you only pay for the domain.
 
-## Next Steps
+**Can I change it?** Yes, any time. Just update your profile.
 
-- [Backup Your Keys](/account/backup-keys)
-- [Profile Setup](/account/profile-setup)
-- [Multiple Clients](/account/multiple-clients)
+**What if my domain expires, or a provider shuts down?** The handle stops working. Your account is fine; only the readable name disappears. Keep your domain renewed.
+
+**What if I move to a new key?** Point the handle at your new key, so people can find you there.
+
+## Next steps
+
+- [Profile Setup](./profile-setup.md)
+- [Backup Your Keys](./backup-keys.md)
+- [Multiple Clients](./multiple-clients.md)

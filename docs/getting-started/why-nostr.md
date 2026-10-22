@@ -1,130 +1,96 @@
 ---
 sidebar_position: 2
 title: Why Nostr?
-description: Benefits of using the decentralized social network
+description: The benefits of Nostr, and the honest trade-offs
 ---
 
-# Why Choose Nostr?
+# Why Nostr?
 
-There are many reasons people are moving to Nostr. Here are the most important ones.
+Here are the main reasons people choose Nostr, followed by the trade-offs you should know about.
 
-## Freedom & Ownership
+## You own your account
 
-### You Own Your Identity
+On most platforms, your account belongs to the company. It can suspend you, change the rules, or shut down altogether (remember Vine and Google+?).
 
-On traditional platforms, your account belongs to the company. They can:
-- Suspend or delete your account
-- Change the rules anytime
-- Sell your data
-- Disappear (remember Vine, Google+?)
+On Nostr, your account is a **key that you hold**. No single company can delete it or take it away. Individual apps and relays can refuse to show your posts, but you can simply use others.
 
-On Nostr, **you own your cryptographic keys**. No one can take your identity away.
+## Hard to silence
 
-### Censorship Resistant
+Your posts are copied to several independent servers called **relays**. If one goes down or bans you, the others carry on, and your followers can still find you.
 
-Because Nostr is decentralized:
-- No single company controls it
-- Your posts exist on multiple servers
-- If one server bans you, you can use others
-- Your followers stay with you
+## One account, many apps
 
-## Interoperability
+Your Nostr account works in every Nostr app. Try a few and use each for what it does best.
 
-### One Account, Many Apps
-
-Your Nostr identity works across all Nostr apps:
-
-| Want to... | Use apps like... |
-|------------|-----------------|
-| Microblog (like Twitter) | Damus, Primal, Amethyst |
-| Long-form writing | Habla, Yakihonne |
-| Share photos | Olas, Nostragram |
-| Stream video | Zap.stream |
-| Chat | 0xchat, Coracle |
+| Want to… | Try apps like… |
+|---|---|
+| Post short notes (like X) | Damus, Primal, Amethyst, Jumble |
+| Write and read long articles | YakiHonne, Pareto |
+| Share short looping videos | Divine |
+| Stream live video | zap.stream |
+| Chat privately or in groups | 0xchat, Keychat, Flotilla, White Noise (beta) |
+| Listen to music | Wavlake |
 | Listen to podcasts | Fountain |
 
-**Same account. Same followers. Different experiences.**
+**Same account. Same followers. Different experiences.** See [Clients](../clients/overview.md) for more.
 
-### Take Your Followers
+### Your followers come with you
 
-Switching apps? Your followers come with you automatically because they follow your **key**, not an account on a specific platform.
+People follow your **key**, not an account inside one app. So if you switch apps, or an app closes, your followers are still there. This has already happened many times: plenty of early Nostr apps have closed, and people who had saved their key simply moved to another app.
 
-## Privacy & Security
+## No personal details needed
 
-### No Personal Data Required
-
-- No email address needed
-- No phone number needed
-- No real name needed
+- No email address
+- No phone number
+- No real name
 - Sign up in seconds
 
-### Cryptographic Security
+## Every post is signed
 
-Every post you make is **signed** with your private key:
-- People can verify posts are really from you
-- No one can forge your messages
-- No one can alter your posts
+Each post is signed with your private key. Apps check that signature, so nobody can forge a post in your name or quietly change what you wrote.
 
-## Bitcoin Integration
+## Tips, straight to creators (optional)
 
-Nostr has native integration with Bitcoin's Lightning Network:
+Fans can send you small bitcoin tips called **zaps**. They arrive in seconds, work worldwide, and usually no platform takes a cut. Many writers, artists and developers on Nostr are paid this way.
 
-### Zaps
+Zaps are completely optional. You can use Nostr for years without touching bitcoin. See [Zaps](../using-nostr/zaps.md).
 
-Send small Bitcoin payments (called "zaps") directly to content creators:
-- Tip a post you like
-- Support your favorite creators
-- Get paid for your content
-- Instant, global, low-fee payments
+## Open and community-built
 
-### No Middleman
+- The protocol is open, and anyone can build on it.
+- There's no company in charge of Nostr itself.
+- New apps keep appearing, built by many small, independent teams.
 
-Unlike traditional platforms that take 30%+ of creator payments:
-- Zaps go directly to creators
-- No minimum payout thresholds
-- No waiting periods
-- Works globally
+## The trade-offs
 
-## Community
+:::caution Be honest with yourself about these
+- **You look after your key.** There's no "forgot password". If you lose your private key (nsec), nobody can recover your account. Backing it up takes two minutes: see [Backup Your Keys](../account/backup-keys.md).
+- **It's small.** Nostr is much smaller than X or Instagram. The early crowd leans towards tech and bitcoin, though art, photography, music and local communities are growing.
+- **Rough edges.** Every app is built by a small team. If something breaks, try another app with the same account.
+- **Posts are public and hard to remove.** You can send a deletion request, but copies can survive. Treat every post like a postcard.
+:::
 
-### Open Development
-
-- The protocol is open source
-- Anyone can contribute
-- No corporate gatekeepers
-- Community-driven improvements
-
-### Growing Ecosystem
-
-- New apps launching regularly
-- Active developer community
-- Friendly and helpful users
-- Global and diverse
-
-## What About...?
+## Common questions
 
 ### "Isn't it complicated?"
 
-Getting started is actually simple:
+Getting started is simple:
+
 1. Download an app
-2. Create an account (takes 30 seconds)
-3. Start posting!
+2. Tap **Create account**
+3. Save your key
+4. Follow some people and post
 
-The technology is complex, but using it is easy.
+The technology underneath is clever, but using it is easy.
 
-### "Is there anyone on Nostr?"
+### "Is anyone actually on Nostr?"
 
-Yes! Nostr has a vibrant community including:
-- Developers and tech enthusiasts
-- Bitcoin advocates
-- Writers and journalists
-- Artists and musicians
-- Regular people tired of Big Tech
+Yes. You'll find developers, bitcoin fans, writers, journalists, artists, musicians, photographers and plenty of ordinary people. The trick is to follow at least 20 people early on, so your feed has something in it.
 
 ### "Can I still use other social media?"
 
-Absolutely! Many people use Nostr alongside other platforms. There are even tools to cross-post.
+Of course. Many people use Nostr alongside other networks. Put your npub in your bio elsewhere so people can find you. You can also follow Mastodon and other fediverse accounts from Nostr through [Mostr](https://mostr.pub), although some Mastodon servers block it. There's currently no maintained bridge to Bluesky.
 
-## Ready to Start?
+## Ready?
 
-→ [Quick Start Guide](./quick-start) - Get set up in 5 minutes
+→ [Quick Start](./quick-start.md): your first post in about 10 minutes
