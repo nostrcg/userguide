@@ -30,6 +30,7 @@ description: Link one Lightning wallet to every Nostr app, with a spending budge
 1. **Get a wallet that supports NWC.** Good choices:
    - [Alby Hub](https://getalby.com/alby-hub) (self-custody, the reference wallet for Nostr apps; run it yourself or let Alby host it for a monthly fee), with [Alby Go](https://getalby.com/alby-go) on your phone
    - [Coinos](https://coinos.io) (custodial, web-based, set up in a minute; it disclosed a credential leak in August 2026, so pocket money only)
+   - [Rizful](https://rizful.com) (web-based; each connection gets its own budget and expiry, and receive-only codes can't spend at all)
    - [Zeus](https://zeusln.com) (self-custody, more control)
 
    More wallets are listed at [nwc.dev](https://nwc.dev).

@@ -74,6 +74,7 @@ Zaps are optional. If you want them:
 | [nostrplebs.com](https://nostrplebs.com) | Paid, long-running provider |
 | [nostrcheck.me](https://nostrcheck.me) | Free and paid options |
 | [iris.to](https://iris.to) | Free `you@iris.to` |
+| [rizful.com](https://rizful.com) | Free `you@rizful.com`, the same name as your Rizful Lightning address |
 | [Primal Premium](https://primal.net) | Paid, gives you `you@primal.net` |
 
 ## Media hosting
