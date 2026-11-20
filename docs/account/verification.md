@@ -38,6 +38,7 @@ Some apps also show a small badge or tick next to accounts whose handle checks o
 | [**nostrplebs.com**](https://nostrplebs.com) | Paid | Long-running provider |
 | [**nostrcheck.me**](https://nostrcheck.me) | Free and paid options | Also hosts media |
 | [**iris.to**](https://iris.to) | Free | Claim `you@iris.to`. Paid supporter tiers are optional. |
+| [**rizful.com**](https://rizful.com) | Free | Comes with a free Rizful wallet: add your public key in Rizful and `you@rizful.com` is both your NIP-05 name and your Lightning address. |
 | [**Primal Premium**](https://primal.net) | Paid | Gives you `you@primal.net` |
 
 With a provider, you usually sign in with your Nostr account, pick a name, and then add the handle to your profile.
