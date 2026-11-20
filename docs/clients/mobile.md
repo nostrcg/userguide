@@ -87,6 +87,16 @@ Primal still sends private messages with the older NIP-04 standard (as of Octobe
 
 ---
 
+### Monostr
+
+A clean Android app where the "zap" is a Monero tip. You pay from your own Monero wallet app (like Cake Wallet, monerujo, monfluo etc.) and the tip shows up on the note.
+
+- **Get it:** [F-Droid](https://f-droid.org/packages/com.monostr.app/) · [Zapstore](https://zapstore.dev/apps/com.monostr.app) · [monostr.com](https://monostr.com)
+
+**Good at:** private tips (amounts and senders can stay hidden), private messages (NIP-17) and an optional Tor mode.
+
+---
+
 ### Damus, Ditto and YakiHonne
 
 - [**Damus**](https://damus.io) is now on Android too.
